@@ -19,7 +19,7 @@ jobs:
       UV_PYTHON: ${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v6
-      - uses: astral-sh/setup-uv@v8.3.2
+      - uses: astral-sh/setup-uv@v10.1.0
       - run: uv sync --extra dev
       # generate -> validate -> load -> dbt build -> analytics -> dashboard -> lint, mypy, pytest
       - run: make pipeline
