@@ -1,3 +1,5 @@
+> **Status:** roadmap specification. Only the Executive Overview, Revenue & Retention, Customer Risk and Finance Controls pages are built, in [`dashboard/index.html`](../dashboard/index.html). Other pages described here have no tested marts yet and are not shown anywhere.
+
 # Eight-Page Report Design
 
 ## Global design system

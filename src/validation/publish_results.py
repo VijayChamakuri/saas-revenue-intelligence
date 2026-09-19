@@ -6,21 +6,27 @@ from pathlib import Path
 
 import duckdb
 
+from src.db import fetch_row
+
 
 def publish(database: Path, manifest: Path, output: Path) -> dict[str, object]:
     generated = json.loads(manifest.read_text())
     with duckdb.connect(str(database), read_only=True) as con:
-        bridge = con.execute(
-            "select max(abs(reconciliation_difference)) from analytics_revenue.mart_mrr_bridge"
-        ).fetchone()[0]
+        bridge = fetch_row(
+            con,
+            "select max(abs(reconciliation_difference)) from analytics_revenue.mart_mrr_bridge",
+        )[0]
         exceptions = dict(
             con.execute(
                 "select exception_type, count(*) from analytics_finance.mart_finance_exceptions group by 1"
             ).fetchall()
         )
-        latest = con.execute(
-            "select month_start, closing_mrr, arr, net_new_mrr, gross_revenue_retention, net_revenue_retention from analytics_revenue.mart_revenue_kpis order by month_start desc limit 1"
-        ).fetchone()
+        latest = fetch_row(
+            con,
+            "select month_start, closing_mrr, arr, net_new_mrr, gross_revenue_retention, "
+            "net_revenue_retention from analytics_revenue.mart_revenue_kpis "
+            "order by month_start desc limit 1",
+        )
     result = {
         "synthetic_data": True,
         "seed": generated["seed"],

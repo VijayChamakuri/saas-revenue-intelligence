@@ -261,12 +261,51 @@ def _usage(path: Path, account_ids: set[object], errors: list[str]) -> None:
             errors.append(
                 f"product_usage_events.account_id references {len(unknown)} unknown dim_account keys"
             )
-        dates = pd.to_datetime(chunk.event_timestamp, errors="coerce")
+        dates = pd.to_datetime(chunk.event_timestamp, format="ISO8601", errors="coerce")
         if dates.isna().any():
             errors.append("product_usage_events.event_timestamp contains invalid dates")
         minutes = pd.to_numeric(chunk.session_minutes, errors="coerce")
         if minutes.isna().any() or (minutes < 0).any():
             errors.append("product_usage_events.session_minutes outside [0, infinity]")
+
+
+def _business_rules(frames: dict[str, pd.DataFrame], errors: list[str]) -> None:
+    """Cross-table rules that column-level schema checks cannot express."""
+    if {"fact_refunds", "fact_payments"} <= frames.keys():
+        paid = frames["fact_payments"].set_index("payment_id")["amount"]
+        refunded = frames["fact_refunds"].groupby("payment_id")["amount"].sum()
+        over = refunded[refunded > paid.reindex(refunded.index).fillna(0) + 0.005]
+        if not over.empty:
+            errors.append(f"fact_refunds exceed the original payment for {len(over)} payments")
+    if {"fact_invoices", "fact_subscriptions"} <= frames.keys():
+        joined = frames["fact_invoices"].merge(
+            frames["fact_subscriptions"][["subscription_id", "currency"]],
+            on="subscription_id",
+            suffixes=("", "_subscription"),
+        )
+        mismatched = joined[joined.currency != joined.currency_subscription]
+        if not mismatched.empty:
+            errors.append(f"fact_invoices currency differs from its subscription: {len(mismatched)} rows")
+    if {"fact_payments", "fact_invoices"} <= frames.keys():
+        joined = frames["fact_payments"].merge(
+            frames["fact_invoices"][["invoice_id", "invoice_date"]], on="invoice_id"
+        )
+        paid_on = pd.to_datetime(joined.payment_date, format="ISO8601", errors="coerce")
+        billed_on = pd.to_datetime(joined.invoice_date, format="ISO8601", errors="coerce")
+        early = paid_on < billed_on
+        if early.any():
+            errors.append(f"fact_payments dated before their invoice: {int(early.sum())} rows")
+    if "fact_contracts" in frames:
+        contracts = frames["fact_contracts"].dropna(subset=["start_date"]).copy()
+        contracts["start"] = pd.to_datetime(contracts.start_date, format="ISO8601", errors="coerce")
+        # An empty end date means the contract is open ended.
+        contracts["end"] = pd.to_datetime(contracts.end_date, format="ISO8601", errors="coerce").fillna(pd.Timestamp.max)
+        overlaps = 0
+        for _, group in contracts.sort_values("start").groupby("subscription_id"):
+            running_end = group.end.cummax().iloc[:-1].to_numpy()
+            overlaps += int((group.start.iloc[1:].to_numpy() < running_end).sum())
+        if overlaps:
+            errors.append(f"fact_contracts overlap within a subscription: {overlaps} pairs")
 
 
 def validate(data_dir: Path) -> dict[str, object]:
@@ -295,7 +334,7 @@ def validate(data_dir: Path) -> dict[str, object]:
                 errors.append(f"{table}.{PRIMARY_KEYS[table]} must be unique and non-null")
         for column in DATE_COLUMNS.get(table, ()):
             populated = frame[column].notna()
-            if pd.to_datetime(frame.loc[populated, column], errors="coerce").isna().any():
+            if pd.to_datetime(frame.loc[populated, column], format="ISO8601", errors="coerce").isna().any():
                 errors.append(f"{table}.{column} contains invalid dates")
 
     if "model_churn_snapshots" in frames:
@@ -342,7 +381,8 @@ def validate(data_dir: Path) -> dict[str, object]:
     if "fact_subscriptions" in frames:
         subs = frames["fact_subscriptions"]
         dated = subs.dropna(subset=["start_date", "end_date"])
-        if (pd.to_datetime(dated.end_date) < pd.to_datetime(dated.start_date)).any():
+        ends = pd.to_datetime(dated.end_date, format="ISO8601", errors="coerce")
+        if (ends < pd.to_datetime(dated.start_date, format="ISO8601", errors="coerce")).any():
             errors.append("fact_subscriptions end_date precedes start_date")
     for table, earlier, later in (
         ("fact_invoices", "invoice_date", "due_date"),
@@ -351,14 +391,17 @@ def validate(data_dir: Path) -> dict[str, object]:
     ):
         if table in frames:
             dated = frames[table].dropna(subset=[earlier, later])
-            if (pd.to_datetime(dated[later]) < pd.to_datetime(dated[earlier])).any():
+            later_dates = pd.to_datetime(dated[later], format="ISO8601", errors="coerce")
+            if (later_dates < pd.to_datetime(dated[earlier], format="ISO8601", errors="coerce")).any():
                 errors.append(f"{table}.{later} precedes {earlier}")
+
+    _business_rules(frames, errors)
 
     usage_path = data_dir / "product_usage_events.csv"
     if usage_path.exists() and "dim_account" in frames:
         _usage(usage_path, set(frames["dim_account"].account_id), errors)
 
-    result = {
+    result: dict[str, object] = {
         "status": "failed" if errors else "passed",
         "errors": errors,
         "tables_checked": sum((data_dir / f"{table}.csv").exists() for table in SCHEMAS),

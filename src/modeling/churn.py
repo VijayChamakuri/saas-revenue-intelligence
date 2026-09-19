@@ -7,8 +7,9 @@ and post-outcome fields are deliberately excluded from the feature matrix.
 
 from __future__ import annotations
 
+import hashlib
 import json
-from collections.abc import Iterable
+from collections.abc import Iterable, Mapping
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
@@ -206,12 +207,12 @@ def run_churn_experiment(
     frame: pd.DataFrame,
     dates: SplitDates,
     economics: InterventionEconomics | None = None,
-) -> tuple[dict[str, dict[str, float]], pd.DataFrame]:
+) -> tuple[dict[str, Mapping[str, float | str]], pd.DataFrame]:
     economics = economics or InterventionEconomics()
     train, calibration, test = temporal_split(frame, dates)
     models = fit_models(train, calibration)
     features = NUMERIC_FEATURES + CATEGORICAL_FEATURES
-    results: dict[str, dict[str, float]] = {}
+    results: dict[str, Mapping[str, float | str]] = {}
     scored = test[[column for column in ("account_id", DATE, LABEL) if column in test]].copy()
     for name, model in models.items():
         calibration_probability = model.predict_proba(calibration[features])[:, 1]
@@ -289,11 +290,30 @@ def main(input_csv: str | None = None, output_dir: str = "data/exports/modeling"
         if input_csv and Path(input_csv).exists()
         else synthetic_churn_fixture()
     )
-    results, scores = run_churn_experiment(frame, SplitDates("2024-06-30", "2024-12-31"))
+    dates = SplitDates("2024-06-30", "2024-12-31")
+    results, scores = run_churn_experiment(frame, dates)
     target = Path(output_dir)
     target.mkdir(parents=True, exist_ok=True)
     (target / "churn_metrics.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
     scores.to_csv(target / "churn_scores.csv", index=False)
+
+    from src.modeling.diagnostics import write_run_artifacts  # avoids a circular import
+
+    source = Path(input_csv) if input_csv and Path(input_csv).exists() else None
+    input_hash = (
+        hashlib.sha256(source.read_bytes()).hexdigest() if source else "synthetic-fixture"
+    )
+    write_run_artifacts(
+        target / "runs",
+        frame,
+        dates,
+        InterventionEconomics(),
+        results,
+        scores,
+        "logistic_regression",
+        temporal_split(frame, dates),
+        input_hash,
+    )
 
 
 if __name__ == "__main__":

@@ -7,6 +7,8 @@ from pathlib import Path
 
 import duckdb
 
+from src.db import fetch_row
+
 QUERY = """
 with spells as (
   select *, coalesce(cast(end_date as date), date '2025-12-31') spell_end
@@ -56,7 +58,7 @@ def export(database: Path, output: Path) -> int:
         connection.execute(
             "copy (" + QUERY + ") to ? (header, delimiter ',')", [str(output)]
         )
-        rows = connection.execute("select count(*) from (" + QUERY + ")").fetchone()[0]
+        rows = int(fetch_row(connection, "select count(*) from (" + QUERY + ")")[0])
     return rows
 
 

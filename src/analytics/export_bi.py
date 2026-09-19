@@ -5,6 +5,8 @@ from pathlib import Path
 
 import duckdb
 
+from src.db import fetch_row
+
 TABLES = {
     "mrr_movement": "analytics_revenue.fct_mrr_movement",
     "mrr_bridge": "analytics_revenue.mart_mrr_bridge",
@@ -18,14 +20,14 @@ TABLES = {
 
 def export(database: Path, output: Path) -> dict[str, int]:
     output.mkdir(parents=True, exist_ok=True)
-    counts = {}
+    counts: dict[str, int] = {}
     with duckdb.connect(str(database), read_only=True) as con:
         for name, relation in TABLES.items():
             path = output / f"{name}.csv"
             con.execute(
                 f"copy (select * from {relation}) to ? (header, delimiter ',')", [str(path)]
             )
-            counts[name] = con.execute(f"select count(*) from {relation}").fetchone()[0]
+            counts[name] = int(fetch_row(con, f"select count(*) from {relation}")[0])
         forecast_sql = """
             select k.month_start as month, k.closing_mrr as mrr, b.churned_mrr,
                    b.expansion_mrr, sum(r.net_collected_cash) as cash_collected,
@@ -46,9 +48,9 @@ def export(database: Path, output: Path) -> dict[str, int]:
             "copy (" + forecast_sql + ") to ? (header, delimiter ',')",
             [str(forecast_path)],
         )
-        counts["forecast_input"] = con.execute(
-            "select count(*) from (" + forecast_sql + ")"
-        ).fetchone()[0]
+        counts["forecast_input"] = int(
+            fetch_row(con, "select count(*) from (" + forecast_sql + ")")[0]
+        )
     return counts
 
 

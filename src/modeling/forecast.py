@@ -72,7 +72,7 @@ def rolling_backtest(
         actual = data[target].iloc[cutoff : cutoff + horizon].to_numpy(dtype=float)
         for method in methods:
             predicted = _predict(data[target].iloc[:cutoff].to_numpy(dtype=float), horizon, method)
-            for step, (truth, estimate) in enumerate(zip(actual, predicted), start=1):
+            for step, (truth, estimate) in enumerate(zip(actual, predicted, strict=False), start=1):
                 rows.append(
                     {
                         "method": method,
@@ -90,7 +90,15 @@ def rolling_backtest(
 def summarize_backtest(backtest: pd.DataFrame) -> pd.DataFrame:
     return (
         backtest.groupby("method", as_index=False)
-        .agg(mae=("absolute_error", "mean"), mape=("ape", "mean"), observations=("actual", "size"))
+        .agg(
+            mae=("absolute_error", "mean"),
+            mape=("ape", "mean"),
+            total_abs_error=("absolute_error", "sum"),
+            total_actual=("actual", "sum"),
+            observations=("actual", "size"),
+        )
+        .assign(wape=lambda d: d["total_abs_error"] / d["total_actual"].replace(0, np.nan))
+        .drop(columns=["total_abs_error", "total_actual"])
         .sort_values(["mae", "method"])
         .reset_index(drop=True)
     )

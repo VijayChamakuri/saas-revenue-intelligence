@@ -2,11 +2,13 @@ version: 2
 
 models:
   - name: dim_customer
+    meta: {owner: Data Analytics, grain: "one row per customer", primary_key: "customer_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     description: Conformed customer dimension at one row per customer.
     columns:
       - {name: customer_id, tests: [not_null, unique]}
       - {name: account_id, tests: [not_null]}
   - name: dim_product
+    meta: {owner: Data Analytics, grain: "one row per product", primary_key: "product_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     columns:
       - {name: product_id, tests: [not_null, unique]}
       - name: gross_margin_pct
@@ -14,6 +16,7 @@ models:
           - dbt_utils.accepted_range:
               arguments: {min_value: 0, max_value: 1, inclusive: true}
   - name: dim_plan
+    meta: {owner: Data Analytics, grain: "one row per plan", primary_key: "plan_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     columns:
       - {name: plan_id, tests: [not_null, unique]}
       - name: product_id
@@ -23,9 +26,11 @@ models:
               arguments: {to: "ref('dim_product')", field: product_id}
       - {name: list_price, tests: [not_null, non_negative]}
   - name: dim_date
+    meta: {owner: Data Analytics, grain: "one row per calendar day", primary_key: "date_day", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     columns:
       - {name: date_day, tests: [not_null, unique]}
   - name: fct_mrr_movement
+    meta: {owner: Revenue Operations, grain: "month x customer x product x plan", primary_key: "month_start, customer_id, product_id, plan_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     description: Customer-product-plan monthly MRR bridge with mutually exclusive movement classification.
     tests:
       - dbt_utils.unique_combination_of_columns:
@@ -49,6 +54,7 @@ models:
       - {name: opening_mrr, tests: [not_null, non_negative]}
       - {name: closing_mrr, tests: [not_null, non_negative]}
   - name: mart_mrr_bridge
+    meta: {owner: Revenue Operations, grain: "one row per month", primary_key: "month_start", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     description: Company monthly MRR bridge. Reconciliation difference must be at most one cent.
     columns:
       - {name: month_start, tests: [not_null, unique]}
@@ -57,6 +63,7 @@ models:
       - cents_close:
           arguments: {expression_a: reconciliation_difference, expression_b: "0"}
   - name: mart_revenue_kpis
+    meta: {owner: Revenue Operations, grain: "one row per month", primary_key: "month_start", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     columns:
       - {name: month_start, tests: [not_null, unique]}
       - {name: closing_mrr, tests: [non_negative]}
@@ -68,12 +75,14 @@ models:
               config:
                 where: gross_revenue_retention is not null
   - name: fct_billing_reconciliation
+    meta: {owner: Finance, grain: "one row per invoice", primary_key: "invoice_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     description: Invoice grain comparison of billed, paid, failed, refunded, recognized, deferred, and collected amounts.
     columns:
       - {name: invoice_id, tests: [not_null, unique]}
       - {name: failed_payment_exposure, tests: [non_negative]}
       - {name: refunded_amount, tests: [non_negative]}
   - name: mart_finance_exceptions
+    meta: {owner: Finance, grain: "invoice x exception rule", primary_key: "invoice_id, exception_type", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     description: Action queue for finance data quality and reconciliation failures. One source row may produce multiple exceptions.
     columns:
       - {name: invoice_id, tests: [not_null]}
@@ -87,6 +96,7 @@ models:
           - accepted_values:
               arguments: {values: [high, medium, low]}
   - name: mart_customer_monthly_health
+    meta: {owner: Customer Success, grain: "month x customer", primary_key: "month_start, customer_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     tests:
       - dbt_utils.unique_combination_of_columns:
           arguments: {combination_of_columns: [month_start, customer_id]}
@@ -95,6 +105,7 @@ models:
       - {name: events_count, tests: [non_negative]}
       - {name: ticket_count, tests: [non_negative]}
   - name: mart_channel_efficiency
+    meta: {owner: Marketing, grain: "month x channel", primary_key: "month_start, channel_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     tests:
       - dbt_utils.unique_combination_of_columns:
           arguments: {combination_of_columns: [month_start, channel_id]}
@@ -102,3 +113,18 @@ models:
       - {name: spend, tests: [non_negative]}
       - {name: leads, tests: [non_negative]}
       - {name: acquired_customers, tests: [non_negative]}
+  - name: mart_cohort_retention
+    meta: {owner: Revenue Operations, grain: "acquisition cohort x months since start", primary_key: "cohort_month, months_since_start", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
+    description: >
+      Acquisition-cohort logo and dollar retention. Grain is cohort_month by months_since_start.
+      Cohort is the first month a customer holds MRR. Certified: tested.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments: {combination_of_columns: [cohort_month, months_since_start]}
+    columns:
+      - {name: cohort_month, tests: [not_null]}
+      - {name: cohort_customers, tests: [not_null]}
+      - name: logo_retention
+        tests:
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 0, max_value: 1, inclusive: true}

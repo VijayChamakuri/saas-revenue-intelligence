@@ -83,7 +83,7 @@ def revenue_story() -> None:
     ax = axes[1]
     bars = ax.bar(movement_names, movement_values, color=colors, width=0.68)
     ax.axhline(0, color=NAVY, linewidth=0.9)
-    for bar, value in zip(bars, movement_values):
+    for bar, value in zip(bars, movement_values, strict=False):
         ax.text(
             bar.get_x() + bar.get_width() / 2,
             value + (5500 if value >= 0 else -5500),
@@ -194,7 +194,7 @@ def model_story() -> None:
     ax = axes[0]
     x = np.arange(len(metric_names))
     width = 0.34
-    for index, (name, color) in enumerate(zip(model_names, [BLUE, TEAL])):
+    for index, (name, color) in enumerate(zip(model_names, [BLUE, TEAL], strict=False)):
         bars = ax.bar(x + (index - 0.5) * width, values[index], width, label=name, color=color)
         ax.bar_label(
             bars, labels=[f"{value:.3f}" for value in values[index]], padding=4, fontsize=9
@@ -219,7 +219,7 @@ def model_story() -> None:
     ]
     ax = axes[1]
     bars = ax.bar(labels, mapes, color=[BLUE, RED, TEAL], width=0.62)
-    for bar, mape, method in zip(bars, mapes, methods):
+    for bar, mape, method in zip(bars, mapes, methods, strict=False):
         if mape > 0.25:
             label_y = mape - 0.07
             vertical_alignment = "top"

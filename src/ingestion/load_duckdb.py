@@ -1,24 +1,39 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import uuid
+from datetime import UTC, datetime
 from pathlib import Path
 
 import duckdb
+
+from src.db import fetch_row
 
 
 def load(data_dir: Path, database: Path) -> int:
     database.parent.mkdir(parents=True, exist_ok=True)
     files = sorted(data_dir.glob("*.csv"))
+    started = datetime.now(UTC).replace(tzinfo=None)
+    run_id = uuid.uuid4().hex[:12]
+    digest = hashlib.sha256()
+    for path in files:
+        digest.update(path.name.encode())
+        digest.update(hashlib.sha256(path.read_bytes()).digest())
+    loaded_tables: list[str] = []
     with duckdb.connect(str(database)) as con:
         con.execute("create schema if not exists raw")
+        con.execute("create schema if not exists audit")
         for path in files:
             if path.name == "product_usage_events.csv":
                 continue
             table = path.stem
+            loaded_tables.append(table)
             con.execute(
                 f'create or replace table raw."{table}" as select * from read_csv_auto(?)',
                 [str(path)],
             )
+        loaded_tables.append("fact_product_usage")
         con.execute(
             "create or replace table raw.fact_product_usage as select * from read_csv_auto(?)",
             [str(data_dir / "product_usage_events.csv")],
@@ -48,8 +63,27 @@ def load(data_dir: Path, database: Path) -> int:
             "customer_health": "select h.health_id, c.customer_id, h.snapshot_date score_date, h.health_score, (100-h.health_score)/100.0 risk_probability, case when h.health_score<40 then 'high' when h.health_score<70 then 'medium' else 'low' end risk_tier, 'synthetic_rules_v1' model_version from raw.fact_customer_health h join raw.dim_customer c using(account_id)",
             "revenue_recognition": "select r.recognition_id, l.invoice_line_id, c.customer_id, r.recognition_date, r.recognized_amount, 0.0 deferred_amount, r.currency from raw.fact_revenue_recognition r join raw.fact_invoices i using(invoice_id) join raw.fact_invoice_lines l using(invoice_id) join raw.dim_customer c on r.account_id=c.account_id",
         }
+        # Every contract view carries _loaded_at so dbt source freshness can run.
+        con.execute("create or replace table raw._load_audit as select ? as run_id, ? as loaded_at", [run_id, started])
         for name, query in views.items():
-            con.execute(f'create or replace view raw."{name}" as {query}')
+            con.execute(
+                f'create or replace view raw."{name}" as select q.*, a.loaded_at as _loaded_at '
+                f"from ({query}) q cross join raw._load_audit a"
+            )
+        source_rows = sum(
+            int(fetch_row(con, f'select count(*) from raw."{name}"')[0]) for name in loaded_tables
+        )
+        con.execute(
+            """create table if not exists audit.pipeline_runs (
+                 run_id varchar primary key, started_at timestamp, finished_at timestamp, status varchar,
+                 source_files integer, source_rows bigint, source_sha256 varchar,
+                 dbt_resources_passed integer, dbt_resources_total integer,
+                 dashboard_measures_passed integer, dashboard_measures_total integer)"""
+        )
+        con.execute(
+            "insert into audit.pipeline_runs values (?, ?, ?, 'loaded', ?, ?, ?, null, null, null, null)",
+            [run_id, started, datetime.now(UTC).replace(tzinfo=None), len(files), source_rows, digest.hexdigest()],
+        )
     return len(files)
 
 

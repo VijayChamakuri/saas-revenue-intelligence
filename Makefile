@@ -1,4 +1,4 @@
-.PHONY: setup generate validate load dbt-deps dbt spark spark-validate survival analytics test pipeline pipeline-full airflow-test clean
+.PHONY: setup generate validate load dbt-deps dbt spark spark-validate survival analytics dashboard dashboard-export dashboard-screenshots excel audit lint typecheck test build pipeline pipeline-full airflow-test clean
 
 setup:
 	uv sync --extra dev
@@ -17,6 +17,7 @@ dbt-deps:
 
 dbt: dbt-deps
 	cd dbt && ../.venv/bin/dbt build --profiles-dir .
+	cd dbt && ../.venv/bin/dbt source freshness --profiles-dir .
 
 spark:
 	uv run --extra spark spark-submit spark/process_usage_events.py --input data/raw/product_usage_events.csv --output data/processed/product_usage_daily
@@ -35,11 +36,34 @@ analytics:
 	uv run python -m src.modeling.forecast --input-csv data/exports/forecast_input.csv --output-dir artifacts/forecast
 	uv run python -m src.validation.publish_results
 
-test:
-	uv run ruff check src tests spark airflow
-	uv run pytest
+dashboard:
+	uv run python -m src.dashboard.build
+	uv run python -m src.dashboard.validate
 
-pipeline: generate validate load dbt analytics test
+dashboard-export: analytics
+	@echo "BI exports written to data/exports (import these into Power BI or Excel)"
+
+dashboard-screenshots: dashboard
+	uv run python scripts/capture_dashboard.py
+
+audit:
+	uv run python -m src.validation.run_audit
+
+excel:
+	uv run python -m src.excel.build_workbook
+
+lint:
+	uv run ruff check src tests spark airflow scripts
+
+typecheck:
+	uv run mypy src
+
+test: lint typecheck
+	uv run pytest --cov=src --cov-report=term-missing:skip-covered
+
+build: generate validate load dbt
+
+pipeline: generate validate load dbt analytics dashboard excel audit test
 
 pipeline-full: pipeline spark spark-validate survival
 

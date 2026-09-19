@@ -29,3 +29,9 @@ artifacts/
 !data/processed/.gitkeep
 !data/exports/.gitkeep
 !artifacts/.gitkeep
+
+# Coverage and CI scratch
+.coverage
+.coverage.*
+coverage.xml
+ci-artifacts/

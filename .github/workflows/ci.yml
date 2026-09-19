@@ -1,16 +1,39 @@
 name: validation
-on: [push, pull_request]
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
 jobs:
-  test:
+  pipeline:
+    name: pipeline (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    env:
+      UV_PYTHON: ${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v8.3.2
       - run: uv sync --extra dev
-      - run: uv run python -m src.generation.generate --config config/project.yml
-      - run: uv run python -m src.validation.validate_sources --data-dir data/raw
-      - run: uv run python -m src.ingestion.load_duckdb --data-dir data/raw --database data/warehouse/subscription.duckdb
-      - run: cd dbt && ../.venv/bin/dbt deps --profiles-dir .
-      - run: cd dbt && ../.venv/bin/dbt build --profiles-dir .
-      - run: uv run pytest
-      - run: uv run ruff check src tests spark airflow
+      # generate -> validate -> load -> dbt build -> analytics -> dashboard -> lint, mypy, pytest
+      - run: make pipeline
+      - name: Generate dbt docs
+        run: cd dbt && ../.venv/bin/dbt docs generate --profiles-dir .
+      - name: Collect validation artifacts
+        if: always()
+        run: |
+          mkdir -p ci-artifacts
+          cp -r dashboard/validation_evidence.csv artifacts/verification_summary.json ci-artifacts/ || true
+          cp dbt/target/manifest.json dbt/target/catalog.json dbt/target/run_results.json ci-artifacts/ || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-python-${{ matrix.python-version }}
+          path: ci-artifacts/
+          retention-days: 30

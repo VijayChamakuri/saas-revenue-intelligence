@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import pandas as pd
@@ -97,14 +98,12 @@ def generate(config_path: Path, output: Path) -> dict[str, int]:
         }
     )
 
-    sub_rows, event_rows, invoice_rows, line_rows, payment_rows, refund_rows = (
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-    )
+    sub_rows: list[list[Any]] = []
+    event_rows: list[list[Any]] = []
+    invoice_rows: list[list[Any]] = []
+    line_rows: list[list[Any]] = []
+    payment_rows: list[list[Any]] = []
+    refund_rows: list[list[Any]] = []
     # Ex-ante latent account characteristics are shared causes of observed behavior
     # and later cancellation. Predictors never read the realized churn outcome.
     risk_rng = np.random.default_rng(int(cfg["seed"]) + 17)
@@ -307,7 +306,9 @@ def generate(config_path: Path, output: Path) -> dict[str, int]:
             "escalated": rng.random(n * 3) < 0.09,
         }
     )
-    spend_rows, lead_rows, opp_rows = [], [], []
+    spend_rows: list[list[Any]] = []
+    lead_rows: list[list[Any]] = []
+    opp_rows: list[list[Any]] = []
     for month in months:
         for ch in channels.marketing_channel_id:
             spend = round(float(rng.uniform(2500, 22000)), 2)

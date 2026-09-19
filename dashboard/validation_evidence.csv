@@ -1,0 +1,129 @@
+run_id,page,measure,filter,warehouse_total,report_total,variance,tolerance,status
+c45027722671,Executive Overview,closing_mrr,month=2025-12,1914752.620000,1914752.620000,0.000000,0.01,pass
+c45027722671,Executive Overview,arr,month=2025-12,22977031.440000,22977031.440000,0.000000,0.01,pass
+c45027722671,Executive Overview,net_new_mrr,month=2025-12,-259564.020000,-259564.020000,0.000000,0.01,pass
+c45027722671,Executive Overview,churned_mrr,month=2025-12,335100.150000,335100.150000,0.000000,0.01,pass
+c45027722671,Executive Overview,nrr,month=2025-12,0.852511,0.852511,0.000000,1e-06,pass
+c45027722671,Executive Overview,grr,month=2025-12,0.844535,0.844535,0.000000,1e-06,pass
+c45027722671,Executive Overview,closing_mrr,month=2025-06,1841521.000000,1841521.000000,0.000000,0.01,pass
+c45027722671,Executive Overview,arr,month=2025-06,22098252.000000,22098252.000000,0.000000,0.01,pass
+c45027722671,Executive Overview,net_new_mrr,month=2025-06,51205.170000,51205.170000,0.000000,0.01,pass
+c45027722671,Executive Overview,churned_mrr,month=2025-06,40862.450000,40862.450000,0.000000,0.01,pass
+c45027722671,Executive Overview,nrr,month=2025-06,0.983484,0.983484,0.000000,1e-06,pass
+c45027722671,Executive Overview,grr,month=2025-06,0.975959,0.975959,0.000000,1e-06,pass
+c45027722671,Executive Overview,closing_mrr,month=2023-01,54743.250000,54743.250000,0.000000,0.01,pass
+c45027722671,Executive Overview,arr,month=2023-01,656919.000000,656919.000000,0.000000,0.01,pass
+c45027722671,Executive Overview,net_new_mrr,month=2023-01,54743.250000,54743.250000,0.000000,0.01,pass
+c45027722671,Executive Overview,churned_mrr,month=2023-01,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Executive Overview,cash_collected,month=2025-12,2194268.830000,2194268.830000,0.000000,0.01,pass
+c45027722671,Executive Overview,cash_collected_total,none,39290231.490000,39290231.490000,0.000000,0.01,pass
+c45027722671,Executive Overview,exception_exposure,none,2128457.550000,2128457.550000,0.000000,0.01,pass
+c45027722671,Executive Overview,exception_invoices,none,969.000000,969.000000,0.000000,0.0,pass
+c45027722671,Executive Overview,failed_payment_exposure_total,none,1461681.540000,1461681.540000,0.000000,0.01,pass
+c45027722671,Executive Overview,failed_payment_attempts,none,638.000000,638.000000,0.000000,0.0,pass
+c45027722671,Executive Overview,cancellations_in_latest_month,none,132.000000,132.000000,0.000000,0.0,pass
+c45027722671,Executive Overview,cancellations_on_last_day,none,120.000000,120.000000,0.000000,0.0,pass
+c45027722671,Finance Controls,conflicts_before_contract_start,none,969.000000,969.000000,0.000000,0.0,pass
+c45027722671,Finance Controls,conflicts_same_month_as_start,none,969.000000,969.000000,0.000000,0.0,pass
+c45027722671,Finance Controls,conflicts_after_contract_end,none,0.000000,0.000000,0.000000,0.0,pass
+c45027722671,Revenue & Retention,closing_mrr,month=2025-12; segment=enterprise,329936.530000,329936.530000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,new_mrr,month=2025-12; segment=enterprise,3190.000000,3190.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,expansion_mrr,month=2025-12; segment=enterprise,3631.050000,3631.050000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,contraction_mrr,month=2025-12; segment=enterprise,41.960000,41.960000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,churned_mrr,month=2025-12; segment=enterprise,31802.460000,31802.460000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,bridge_variance,month=2025-12; segment=enterprise,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,nrr,month=2025-12; segment=enterprise,0.920517,0.920517,-0.000000,1e-06,pass
+c45027722671,Revenue & Retention,grr,month=2025-12; segment=enterprise,0.910287,0.910287,-0.000000,1e-06,pass
+c45027722671,Revenue & Retention,closing_mrr,month=2025-12; segment=smb; plan=Growth,273377.210000,273377.210000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,new_mrr,month=2025-12; segment=smb; plan=Growth,12248.950000,12248.950000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,expansion_mrr,month=2025-12; segment=smb; plan=Growth,2637.340000,2637.340000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,contraction_mrr,month=2025-12; segment=smb; plan=Growth,778.550000,778.550000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,churned_mrr,month=2025-12; segment=smb; plan=Growth,56111.290000,56111.290000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,bridge_variance,month=2025-12; segment=smb; plan=Growth,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,nrr,month=2025-12; segment=smb; plan=Growth,0.827978,0.827978,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,grr,month=2025-12; segment=smb; plan=Growth,0.819615,0.819615,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,closing_mrr,month=2025-06; plan=Growth,536878.560000,536878.560000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,new_mrr,month=2025-06; plan=Growth,19975.150000,19975.150000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,expansion_mrr,month=2025-06; plan=Growth,3637.550000,3637.550000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,contraction_mrr,month=2025-06; plan=Growth,1909.820000,1909.820000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,churned_mrr,month=2025-06; plan=Growth,5605.050000,5605.050000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,bridge_variance,month=2025-06; plan=Growth,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,nrr,month=2025-06; plan=Growth,0.992555,0.992555,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,grr,month=2025-06; plan=Growth,0.985570,0.985570,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,closing_mrr,month=2024-12; product=Workflow Automation,579029.830000,579029.830000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,new_mrr,month=2024-12; product=Workflow Automation,22077.950000,22077.950000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,expansion_mrr,month=2024-12; product=Workflow Automation,11692.120000,11692.120000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,contraction_mrr,month=2024-12; product=Workflow Automation,1332.370000,1332.370000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,churned_mrr,month=2024-12; product=Workflow Automation,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,bridge_variance,month=2024-12; product=Workflow Automation,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,nrr,month=2024-12; product=Workflow Automation,1.018953,1.018953,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,grr,month=2024-12; product=Workflow Automation,0.997562,0.997562,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,closing_mrr,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,10771.670000,10771.670000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,new_mrr,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,expansion_mrr,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,contraction_mrr,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,97.500000,97.500000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,churned_mrr,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,1610.210000,1610.210000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,bridge_variance,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,nrr,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,0.863157,0.863157,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,grr,month=2025-12; segment=mid-market; product=Core Analytics; plan=Starter,0.863157,0.863157,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,closing_mrr,month=2025-12; customerId=C000844,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,new_mrr,month=2025-12; customerId=C000844,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,expansion_mrr,month=2025-12; customerId=C000844,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,contraction_mrr,month=2025-12; customerId=C000844,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,churned_mrr,month=2025-12; customerId=C000844,16474.190000,16474.190000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,bridge_variance,month=2025-12; customerId=C000844,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Revenue & Retention,nrr,month=2025-12; customerId=C000844,0.000000,0.000000,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,grr,month=2025-12; customerId=C000844,0.000000,0.000000,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,cohort_customers,cohort=2023-01; age=12,17.000000,17.000000,0.000000,0.0,pass
+c45027722671,Revenue & Retention,cohort_logo_retention,cohort=2023-01; age=12,1.000000,1.000000,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,cohort_ndr,cohort=2023-01; age=12,1.081081,1.081081,-0.000000,1e-06,pass
+c45027722671,Revenue & Retention,cohort_customers,cohort=2024-03; age=6,28.000000,28.000000,0.000000,0.0,pass
+c45027722671,Revenue & Retention,cohort_logo_retention,cohort=2024-03; age=6,0.964286,0.964286,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,cohort_ndr,cohort=2024-03; age=6,0.954617,0.954617,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,cohort_customers,cohort=2025-01; age=0,25.000000,25.000000,0.000000,0.0,pass
+c45027722671,Revenue & Retention,cohort_logo_retention,cohort=2025-01; age=0,1.000000,1.000000,0.000000,1e-06,pass
+c45027722671,Revenue & Retention,cohort_ndr,cohort=2025-01; age=0,1.000000,1.000000,0.000000,1e-06,pass
+c45027722671,Customer Risk,risk_scored,threshold=0.02,3057.000000,3057.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_flagged,threshold=0.02,1767.000000,1767.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_true_positives,threshold=0.02,48.000000,48.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_queue_accounts,threshold=0.02,700.000000,700.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_precision,threshold=0.02,0.027165,0.027165,0.000000,1e-06,pass
+c45027722671,Customer Risk,risk_recall,threshold=0.02,0.827586,0.827586,0.000000,1e-06,pass
+c45027722671,Customer Risk,risk_exposed_mrr,threshold=0.02,3975767.850000,3975767.850000,0.000000,0.01,pass
+c45027722671,Customer Risk,risk_net_value,threshold=0.02,-10005.000000,-10005.000000,0.000000,0.01,pass
+c45027722671,Customer Risk,risk_scored,threshold=0.04,3057.000000,3057.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_flagged,threshold=0.04,419.000000,419.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_true_positives,threshold=0.04,12.000000,12.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_queue_accounts,threshold=0.04,206.000000,206.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_precision,threshold=0.04,0.028640,0.028640,0.000000,1e-06,pass
+c45027722671,Customer Risk,risk_recall,threshold=0.04,0.206897,0.206897,0.000000,1e-06,pass
+c45027722671,Customer Risk,risk_exposed_mrr,threshold=0.04,958792.700000,958792.700000,0.000000,0.01,pass
+c45027722671,Customer Risk,risk_net_value,threshold=0.04,-1705.000000,-1705.000000,0.000000,0.01,pass
+c45027722671,Customer Risk,risk_scored,threshold=0.1,3057.000000,3057.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_flagged,threshold=0.1,0.000000,0.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_true_positives,threshold=0.1,0.000000,0.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_queue_accounts,threshold=0.1,0.000000,0.000000,0.000000,0.0,pass
+c45027722671,Customer Risk,risk_precision,threshold=0.1,n/a,n/a,0.000000,1e-06,pass
+c45027722671,Customer Risk,risk_recall,threshold=0.1,0.000000,0.000000,0.000000,1e-06,pass
+c45027722671,Customer Risk,risk_exposed_mrr,threshold=0.1,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Customer Risk,risk_net_value,threshold=0.1,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Finance Controls,invoiced,month=2025-12,2259102.980000,2259102.980000,0.000000,0.01,pass
+c45027722671,Finance Controls,cash_collected,month=2025-12,2194268.830000,2194268.830000,0.000000,0.01,pass
+c45027722671,Finance Controls,failed_payment_exposure,month=2025-12,53721.830000,53721.830000,0.000000,0.01,pass
+c45027722671,Finance Controls,refunded,month=2025-12,11112.320000,11112.320000,0.000000,0.01,pass
+c45027722671,Finance Controls,recognized,month=2025-12,2259102.980000,2259102.980000,0.000000,0.01,pass
+c45027722671,Finance Controls,deferred,month=2025-12,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Finance Controls,tie_out_variance,month=2025-12,0.000000,0.000000,-0.000000,0.01,pass
+c45027722671,Finance Controls,invoiced,month=2024-06,1078369.330000,1078369.330000,0.000000,0.01,pass
+c45027722671,Finance Controls,cash_collected,month=2024-06,1059706.140000,1059706.140000,0.000000,0.01,pass
+c45027722671,Finance Controls,failed_payment_exposure,month=2024-06,14232.100000,14232.100000,0.000000,0.01,pass
+c45027722671,Finance Controls,refunded,month=2024-06,4431.090000,4431.090000,0.000000,0.01,pass
+c45027722671,Finance Controls,recognized,month=2024-06,1078369.330000,1078369.330000,0.000000,0.01,pass
+c45027722671,Finance Controls,deferred,month=2024-06,0.000000,0.000000,0.000000,0.01,pass
+c45027722671,Finance Controls,tie_out_variance,month=2024-06,0.000000,0.000000,-0.000000,0.01,pass
+c45027722671,Finance Controls,exception_records,severity=all; rule=all,969.000000,969.000000,0.000000,0.0,pass
+c45027722671,Finance Controls,exception_exposure,severity=all; rule=all,2128457.550000,2128457.550000,0.000000,0.01,pass
+c45027722671,Finance Controls,exception_records,severity=medium; rule=contract_date_conflict,969.000000,969.000000,0.000000,0.0,pass
+c45027722671,Finance Controls,exception_exposure,severity=medium; rule=contract_date_conflict,2128457.550000,2128457.550000,0.000000,0.01,pass
+c45027722671,Finance Controls,exception_records,severity=high; rule=all,0.000000,0.000000,0.000000,0.0,pass
+c45027722671,Finance Controls,exception_exposure,severity=high; rule=all,0.000000,0.000000,0.000000,0.01,pass
