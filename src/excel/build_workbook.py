@@ -9,7 +9,9 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import subprocess
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 
 import duckdb
@@ -17,6 +19,8 @@ import pandas as pd
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill, Protection
 from openpyxl.utils import get_column_letter
+from openpyxl.worksheet.properties import PageSetupProperties
+from openpyxl.worksheet.table import Table, TableStyleInfo
 from openpyxl.worksheet.worksheet import Worksheet
 
 SHEETS = [
@@ -29,6 +33,8 @@ HEADER_FONT = Font(bold=True, color="FFFFFF")
 TITLE_FONT = Font(bold=True, size=14)
 MONEY = '#,##0.00;[Red]-#,##0.00'
 PERCENT = "0.0%"
+CAVEAT = "Synthetic data from a seeded generator. Not real company, customer or financial results."
+TITLE = "SaaS Revenue Intelligence | MRR, Retention & Billing Controls"
 
 BRIDGE_SQL = """
 select b.month_start, b.opening_mrr, b.new_mrr, b.expansion_mrr, b.reactivation_mrr,
@@ -91,6 +97,32 @@ def _header(ws: Worksheet, row: int, labels: list[str]) -> None:
     ws.row_dimensions[row].height = 32
 
 
+def _table(ws: Worksheet, name: str, first_col: str, header_row: int, last_col: str, last_row: int) -> None:
+    """Register a named Excel Table (header row plus data) so the range filters and sorts as one object."""
+    table = Table(displayName=name, ref=f"{first_col}{header_row}:{last_col}{max(last_row, header_row + 1)}")
+    table.tableStyleInfo = TableStyleInfo(name="TableStyleLight9", showRowStripes=True)
+    ws.add_table(table)
+
+
+def _print_setup(ws: Worksheet, refresh: str, one_page: bool = False, title_rows: str | None = None) -> None:
+    ws.page_setup.orientation = "landscape"
+    ws.page_setup.paperSize = ws.PAPERSIZE_LETTER
+    ws.page_setup.fitToWidth = 1
+    ws.page_setup.fitToHeight = 1 if one_page else 0
+    ws.sheet_properties.pageSetUpPr = PageSetupProperties(fitToPage=True)
+    ws.page_margins.left = ws.page_margins.right = 0.4
+    if title_rows:
+        ws.print_title_rows = title_rows
+    ws.print_area = f"A1:{get_column_letter(ws.max_column)}{ws.max_row}"
+    header, footer = ws.oddHeader, ws.oddFooter
+    assert header is not None and footer is not None
+    header.left.text, header.left.size = TITLE.replace("&", "&&"), 9
+    header.right.text, header.right.size = ws.title, 9
+    footer.left.text, footer.left.size = "Synthetic data. Not real financial results.", 8
+    footer.center.text, footer.center.size = refresh, 8
+    footer.right.text, footer.right.size = "Page &P of &N", 8
+
+
 def _widths(ws: Worksheet, widths: list[int]) -> None:
     for index, width in enumerate(widths, start=1):
         ws.column_dimensions[get_column_letter(index)].width = width
@@ -118,6 +150,7 @@ def _bridge_sheet(ws: Worksheet, frame: pd.DataFrame) -> int:
         ws.cell(r, 16, '="OK"' if offset == 0 else f'=IF(ABS(B{r}-H{r - 1})<=0.01,"OK","CHECK")')
     _widths(ws, [10] + [15] * 15)
     ws.freeze_panes = "B5"
+    _table(ws, "MrrBridge", "A", 4, "P", first + len(frame) - 1)
     return first + len(frame) - 1
 
 
@@ -141,6 +174,7 @@ def _billing_sheet(ws: Worksheet, frame: pd.DataFrame) -> int:
         ws.cell(r, 13, f"=ROUND(C{r}-H{r}-I{r},2)").number_format = MONEY
         ws.cell(r, 14, f'=IF(AND(ABS(J{r})<=0.01,ABS(L{r})<=0.01,ABS(M{r})<=0.01),"OK","CHECK")')
     last = first + len(frame) - 1
+    _table(ws, "BillingReconciliation", "A", 4, "N", last)
     total = last + 1
     ws.cell(total, 1, "Total").font = Font(bold=True)
     for column in range(2, 14):
@@ -168,6 +202,7 @@ def _exception_sheet(ws: Worksheet, frame: pd.DataFrame) -> None:
         ws.cell(r, 3, f"=COUNTIF($B${first}:$B${last},A{r})")
         ws.cell(r, 4, f"=SUMIF($B${first}:$B${last},A{r},$F${first}:$F${last})").number_format = MONEY
     total = 5 + len(rules)
+    _table(ws, "ExceptionSummary", "A", 4, "D", total - 1)
     ws.cell(total, 1, "Total").font = Font(bold=True)
     ws.cell(total, 3, f"=SUM(C5:C{total - 1})").font = Font(bold=True)
     ws.cell(total, 4, f"=SUM(D5:D{total - 1})").number_format = MONEY
@@ -185,6 +220,7 @@ def _exception_sheet(ws: Worksheet, frame: pd.DataFrame) -> None:
         ws.cell(r, 7, row.details)
     _widths(ws, [30, 26, 12, 16, 14, 16, 60])
     ws.freeze_panes = f"A{first}"
+    _table(ws, "ExceptionDetail", "A", detail_header, "G", last)
 
 
 def _scenario_inputs(ws: Worksheet) -> dict[str, str]:
@@ -207,6 +243,7 @@ def _scenario_inputs(ws: Worksheet) -> dict[str, str]:
         ws.cell(r, 3, meaning)
         cells[label] = f"'Scenario Inputs'!$B${r}"
     _widths(ws, [28, 12, 60])
+    _table(ws, "ScenarioInputs", "A", 4, "C", 4 + len(rows))
     return cells
 
 
@@ -232,24 +269,61 @@ def _scenario_output(ws: Worksheet, inputs: dict[str, str], bridge_last: int, bi
             ws.cell(r, column).number_format = MONEY
     _widths(ws, [10] + [17] * 9)
     ws.freeze_panes = "B5"
+    _table(ws, "ScenarioOutput", "A", 4, "J", 4 + (bridge_last - 4))
 
 
-def _control(ws: Worksheet, data: WorkbookData, bridge_last: int, billing_last: int) -> None:
+def _source_commit() -> str:
+    try:
+        return subprocess.run(["git", "rev-parse", "--short=12", "HEAD"], capture_output=True, text=True,
+                              check=True).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return "unknown"
+
+
+def _control(ws: Worksheet, data: WorkbookData, bridge_last: int, billing_last: int, refreshed: str) -> None:
     run_id = hashlib.sha256("".join(f"{k}{v}" for k, v in sorted(data.export_hashes.items())).encode()).hexdigest()[:12]
-    ws["A1"], ws["A1"].font = "Finance reconciliation workbook", TITLE_FONT
-    ws["A2"] = "Synthetic dataset. Built by src/excel/build_workbook.py from the tested dbt marts. No macros."
-    ws["A4"], ws["B4"] = "Run ID", run_id
-    ws["A5"], ws["B5"] = "MRR bridge breaks", f"=COUNTIF('MRR Bridge'!L5:L{bridge_last},\"CHECK\")"
-    ws["A6"], ws["B6"] = "Opening balance breaks", f"=COUNTIF('MRR Bridge'!P5:P{bridge_last},\"CHECK\")"
-    ws["A7"], ws["B7"] = "Billing reconciliation breaks", f"=COUNTIF('Billing Reconciliation'!N5:N{billing_last},\"CHECK\")"
-    ws["A8"], ws["B8"] = "Overall status", '=IF(B5+B6+B7=0,"ALL CHECKS PASS","REVIEW")'
-    ws["B8"].font = Font(bold=True)
-    _header(ws, 10, ["Export", "SHA-256", "", ""])
+    detail_header = 6 + data.exceptions["exception_type"].nunique() + 1  # same layout as _exception_sheet
+    detail_first, detail_last = detail_header + 1, detail_header + len(data.exceptions)
+    ws["A1"], ws["A1"].font = TITLE, TITLE_FONT
+    ws["A2"], ws["A2"].font = CAVEAT, Font(bold=True, color="9C0006")
+    ws["A3"] = "Built by src/excel/build_workbook.py from the tested dbt marts. No macros. Shaded cells on Scenario Inputs are the only editable cells."
+    rows = [
+        ("Refreshed (UTC)", refreshed),
+        ("Source commit", _source_commit()),
+        ("Run ID (hash of exports)", run_id),
+        ("Data window", f"{data.bridge.month_start.min():%Y-%m} to {data.bridge.month_start.max():%Y-%m}"),
+        ("MRR bridge breaks", f"=COUNTIF('MRR Bridge'!L5:L{bridge_last},\"CHECK\")"),
+        ("Opening balance breaks", f"=COUNTIF('MRR Bridge'!P5:P{bridge_last},\"CHECK\")"),
+        ("Billing reconciliation breaks", f"=COUNTIF('Billing Reconciliation'!N5:N{billing_last},\"CHECK\")"),
+        ("Reconciliation status", '=IF(B9+B10+B11=0,"ALL CHECKS PASS","REVIEW")'),
+        ("Latest closing MRR", f"='MRR Bridge'!H{bridge_last}"),
+        ("Latest net revenue retention", f"='MRR Bridge'!M{bridge_last}"),
+        ("Latest gross revenue retention", f"='MRR Bridge'!N{bridge_last}"),
+        ("Total invoiced", f"='Billing Reconciliation'!C{billing_last + 1}"),
+        ("Total failed-payment exposure", f"='Billing Reconciliation'!E{billing_last + 1}"),
+        ("Finance exceptions queued", f"=COUNTA(Exceptions!A{detail_first}:A{detail_last})"),
+        ("Caveat", "December 2025 churn is concentrated on the last day of the data window; treat it as a data-dating question."),
+    ]
+    _header(ws, 4, ["Control item", "Value"])
+    for offset, (label, value) in enumerate(rows):
+        r = 5 + offset
+        ws.cell(r, 1, label)
+        cell = ws.cell(r, 2, value)
+        if label.startswith(("Latest closing", "Total")):
+            cell.number_format = MONEY
+        elif "retention" in label:
+            cell.number_format = PERCENT
+        cell.alignment = Alignment(wrap_text=True, vertical="top", horizontal="left")
+    ws["B12"].font = Font(bold=True)
+    last = 4 + len(rows)
+    _table(ws, "ControlItems", "A", 4, "B", last)
+    hashes = last + 2
+    _header(ws, hashes, ["Export", "SHA-256"])
     for offset, (name, digest) in enumerate(sorted(data.export_hashes.items())):
-        ws.cell(11 + offset, 1, f"{name}.csv")
-        ws.cell(11 + offset, 2, digest)
-    _widths(ws, [32, 70])
-
+        ws.cell(hashes + 1 + offset, 1, f"{name}.csv")
+        ws.cell(hashes + 1 + offset, 2, digest)
+    _table(ws, "ExportHashes", "A", hashes, "B", hashes + len(data.export_hashes))
+    _widths(ws, [34, 90])
 
 def _definitions(ws: Worksheet) -> None:
     ws["A1"], ws["A1"].font = "Metric definitions (implemented metrics only)", TITLE_FONT
@@ -258,6 +332,7 @@ def _definitions(ws: Worksheet) -> None:
         for column, value in enumerate(row, start=1):
             ws.cell(4 + offset, column, value)
     _widths(ws, [24, 70, 34, 30])
+    _table(ws, "MetricDefinitions", "A", 3, "D", 3 + len(DEFINITIONS))
 
 
 def build_workbook(data: WorkbookData, path: Path) -> Path:
@@ -269,13 +344,37 @@ def build_workbook(data: WorkbookData, path: Path) -> Path:
     _exception_sheet(sheets["Exceptions"], data.exceptions)
     inputs = _scenario_inputs(sheets["Scenario Inputs"])
     _scenario_output(sheets["Scenario Output"], inputs, bridge_last, billing_last)
-    _control(sheets["Control"], data, bridge_last, billing_last)
+    refreshed = datetime.now(UTC).strftime("%Y-%m-%d %H:%M")
+    _control(sheets["Control"], data, bridge_last, billing_last, refreshed)
     _definitions(sheets["Metric Definitions"])
     for ws in wb.worksheets:
         ws.protection.sheet = True  # formulas locked; only shaded scenario inputs are editable
+        ws.protection.autoFilter = False  # filters and sorting stay usable on the protected sheets
+        ws.protection.sort = False
+        header_rows = {"MRR Bridge": "4:4", "Billing Reconciliation": "4:4", "Scenario Output": "4:4"}
+        _print_setup(ws, f"Refreshed {refreshed} UTC", one_page=ws.title == "Control", title_rows=header_rows.get(ws.title))
     path.parent.mkdir(parents=True, exist_ok=True)
     wb.save(path)
     return path
+
+
+def export_control_pdf(workbook: Path, output: Path) -> Path | None:
+    """Render the workbook with LibreOffice and keep page 1 (the Control sheet) as a one-page PDF."""
+    import shutil
+    import tempfile
+
+    soffice = shutil.which("soffice") or ("/Applications/LibreOffice.app/Contents/MacOS/soffice"
+                                          if Path("/Applications/LibreOffice.app").exists() else None)
+    if soffice is None or shutil.which("pdfseparate") is None:
+        print("LibreOffice or pdfseparate not found: control PDF not exported")
+        return None
+    with tempfile.TemporaryDirectory() as tmp:
+        subprocess.run([soffice, f"-env:UserInstallation=file://{tmp}/profile", "--headless", "--convert-to", "pdf",
+                        "--outdir", tmp, str(workbook)], check=True, capture_output=True, timeout=180)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run(["pdfseparate", "-f", "1", "-l", "1", str(Path(tmp) / f"{workbook.stem}.pdf"), str(output)],
+                       check=True)
+    return output
 
 
 if __name__ == "__main__":
@@ -283,5 +382,8 @@ if __name__ == "__main__":
     parser.add_argument("--database", type=Path, default=Path("data/warehouse/subscription.duckdb"))
     parser.add_argument("--exports", type=Path, default=Path("data/exports"))
     parser.add_argument("--output", type=Path, default=Path("excel/finance_reconciliation.xlsx"))
+    parser.add_argument("--pdf", type=Path, default=Path("reports/finance_control_summary.pdf"))
     args = parser.parse_args()
-    print(build_workbook(load_data(args.database, args.exports), args.output))
+    path = build_workbook(load_data(args.database, args.exports), args.output)
+    print(path)
+    print(export_control_pdf(path, args.pdf))
