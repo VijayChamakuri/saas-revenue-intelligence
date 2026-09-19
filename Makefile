@@ -1,4 +1,4 @@
-.PHONY: setup generate validate load dbt-deps dbt spark spark-validate survival analytics dashboard dashboard-export dashboard-screenshots excel audit lint typecheck test build pipeline pipeline-full airflow-test clean
+.PHONY: semantic tableau setup generate validate load dbt-deps dbt spark spark-validate survival analytics dashboard dashboard-export dashboard-screenshots excel audit lint typecheck test build pipeline pipeline-full airflow-test clean
 
 setup:
 	uv sync --extra dev
@@ -52,6 +52,14 @@ audit:
 excel:
 	uv run python -m src.excel.build_workbook
 
+# Portable metric contract: tie every governed metric to the marts and regenerate docs/metric_dictionary.md.
+semantic:
+	uv run python -m src.validation.semantic_layer
+
+# Governed extracts, the packaged Tableau workbook, expected KPIs and the Hyper tie-out.
+tableau:
+	uv run python -m src.tableau.build
+
 lint:
 	uv run ruff check src tests spark airflow scripts
 
@@ -63,7 +71,7 @@ test: lint typecheck
 
 build: generate validate load dbt
 
-pipeline: generate validate load dbt analytics dashboard excel audit test
+pipeline: generate validate load dbt analytics semantic dashboard excel tableau audit test
 
 pipeline-full: pipeline spark spark-validate survival
 

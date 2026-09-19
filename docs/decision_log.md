@@ -13,3 +13,13 @@ recommendations are kept separate. Every measure below is tied to the warehouse 
 | Which accounts to contact? | Calibrated 90-day churn risk times MRR | Model estimate | Customer Success | Pilot the queue with a holdout group | Incremental renewal versus holdout |
 | Is the retention queue worth running? | Threshold economics | Scenario | Customer Success, Finance | Do not scale until holdout net value is positive | On the synthetic holdout it is about -$2K at the cost-selected 4% threshold |
 | Can the reconciliation be trusted? | Tie-out variance | Observed fact | Finance | Block reporting when a check fails | Control sheet in `excel/finance_reconciliation.xlsx` |
+
+## Design choices and rejected alternatives
+
+| Choice | Chosen | Rejected and why |
+|---|---|---|
+| Metric layer | Portable contract in `metrics/semantic_layer.yml`, validated against the marts | dbt Semantic Layer (MetricFlow): not installed cleanly with the pinned dbt version here; claiming it would be unsupported. |
+| KPI mart ARPA column | Active customers from `fct_mrr_movement`, and ARPA = ending MRR / active customers | The old column divided by the number of mart rows (one per month), so it equaled MRR. Found while writing the contract. |
+| Tableau workbook | Generated XML plus Hyper extracts from governed marts, opened and checked in Tableau Public | Hand-built workbook (not reproducible, not diffable); raw generator files as sources (bypass tested marts). |
+| Risk page framing | Lift, precision, recall and queue size at a threshold | ROC-AUC alone: at 0.63 it hides that the queue is only modestly better than random. |
+| Power BI | Specification only | A `.pbix` cannot be built or verified on macOS here. |

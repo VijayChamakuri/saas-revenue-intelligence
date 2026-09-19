@@ -1,0 +1,289 @@
+month_start,field,expected_value,tableau_sheet
+2023-01-01,active_customers,17.0,KPI Active customers
+2023-01-01,closing_mrr,54743.25,KPI Ending MRR
+2023-01-01,exception_count,969.0,KPI Billing exceptions
+2023-01-01,failed_payment_exposure,0.0,KPI Failed-payment exposure
+2023-01-01,gross_revenue_retention,,KPI Gross revenue retention
+2023-01-01,net_new_mrr,54743.25,KPI Net new MRR
+2023-01-01,net_revenue_retention,,KPI Net revenue retention
+2023-01-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-02-01,active_customers,55.0,KPI Active customers
+2023-02-01,closing_mrr,173378.4,KPI Ending MRR
+2023-02-01,exception_count,969.0,KPI Billing exceptions
+2023-02-01,failed_payment_exposure,32709.15,KPI Failed-payment exposure
+2023-02-01,gross_revenue_retention,1.0,KPI Gross revenue retention
+2023-02-01,net_new_mrr,118635.15,KPI Net new MRR
+2023-02-01,net_revenue_retention,1.0,KPI Net revenue retention
+2023-02-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-03-01,active_customers,83.0,KPI Active customers
+2023-03-01,closing_mrr,216666.86,KPI Ending MRR
+2023-03-01,exception_count,969.0,KPI Billing exceptions
+2023-03-01,failed_payment_exposure,468.0,KPI Failed-payment exposure
+2023-03-01,gross_revenue_retention,0.9606828186210047,KPI Gross revenue retention
+2023-03-01,net_new_mrr,43288.46,KPI Net new MRR
+2023-03-01,net_revenue_retention,0.9785374648745173,KPI Net revenue retention
+2023-03-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-04-01,active_customers,113.0,KPI Active customers
+2023-04-01,closing_mrr,266760.43,KPI Ending MRR
+2023-04-01,exception_count,969.0,KPI Billing exceptions
+2023-04-01,failed_payment_exposure,5270.05,KPI Failed-payment exposure
+2023-04-01,gross_revenue_retention,0.9981769247036671,KPI Gross revenue retention
+2023-04-01,net_new_mrr,50093.57,KPI Net new MRR
+2023-04-01,net_revenue_retention,1.0000743999336126,KPI Net revenue retention
+2023-04-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-05-01,active_customers,141.0,KPI Active customers
+2023-05-01,closing_mrr,342084.2,KPI Ending MRR
+2023-05-01,exception_count,969.0,KPI Billing exceptions
+2023-05-01,failed_payment_exposure,18811.36,KPI Failed-payment exposure
+2023-05-01,gross_revenue_retention,0.9984267156864307,KPI Gross revenue retention
+2023-05-01,net_new_mrr,75323.77,KPI Net new MRR
+2023-05-01,net_revenue_retention,1.0099674453216319,KPI Net revenue retention
+2023-05-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-06-01,active_customers,160.0,KPI Active customers
+2023-06-01,closing_mrr,368840.66,KPI Ending MRR
+2023-06-01,exception_count,969.0,KPI Billing exceptions
+2023-06-01,failed_payment_exposure,23521.25,KPI Failed-payment exposure
+2023-06-01,gross_revenue_retention,0.9912118127642259,KPI Gross revenue retention
+2023-06-01,net_new_mrr,26756.46,KPI Net new MRR
+2023-06-01,net_revenue_retention,0.9986763785056426,KPI Net revenue retention
+2023-06-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-07-01,active_customers,191.0,KPI Active customers
+2023-07-01,closing_mrr,423532.58,KPI Ending MRR
+2023-07-01,exception_count,969.0,KPI Billing exceptions
+2023-07-01,failed_payment_exposure,18747.11,KPI Failed-payment exposure
+2023-07-01,gross_revenue_retention,0.9996193478235291,KPI Gross revenue retention
+2023-07-01,net_new_mrr,54691.92,KPI Net new MRR
+2023-07-01,net_revenue_retention,1.005198504958754,KPI Net revenue retention
+2023-07-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-08-01,active_customers,220.0,KPI Active customers
+2023-08-01,closing_mrr,485101.69,KPI Ending MRR
+2023-08-01,exception_count,969.0,KPI Billing exceptions
+2023-08-01,failed_payment_exposure,25559.57,KPI Failed-payment exposure
+2023-08-01,gross_revenue_retention,0.9989862645277489,KPI Gross revenue retention
+2023-08-01,net_new_mrr,61569.11,KPI Net new MRR
+2023-08-01,net_revenue_retention,1.0126407276625566,KPI Net revenue retention
+2023-08-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-09-01,active_customers,242.0,KPI Active customers
+2023-09-01,closing_mrr,527323.91,KPI Ending MRR
+2023-09-01,exception_count,969.0,KPI Billing exceptions
+2023-09-01,failed_payment_exposure,11650.65,KPI Failed-payment exposure
+2023-09-01,gross_revenue_retention,0.9976443289653351,KPI Gross revenue retention
+2023-09-01,net_new_mrr,42222.22,KPI Net new MRR
+2023-09-01,net_revenue_retention,1.0137808631423237,KPI Net revenue retention
+2023-09-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-10-01,active_customers,265.0,KPI Active customers
+2023-10-01,closing_mrr,565680.43,KPI Ending MRR
+2023-10-01,exception_count,969.0,KPI Billing exceptions
+2023-10-01,failed_payment_exposure,5875.3,KPI Failed-payment exposure
+2023-10-01,gross_revenue_retention,0.9789961923023743,KPI Gross revenue retention
+2023-10-01,net_new_mrr,38356.52,KPI Net new MRR
+2023-10-01,net_revenue_retention,0.9826971054659743,KPI Net revenue retention
+2023-10-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-11-01,active_customers,280.0,KPI Active customers
+2023-11-01,closing_mrr,601133.74,KPI Ending MRR
+2023-11-01,exception_count,969.0,KPI Billing exceptions
+2023-11-01,failed_payment_exposure,7580.21,KPI Failed-payment exposure
+2023-11-01,gross_revenue_retention,0.9967114824884432,KPI Gross revenue retention
+2023-11-01,net_new_mrr,35453.31,KPI Net new MRR
+2023-11-01,net_revenue_retention,1.0083566794064274,KPI Net revenue retention
+2023-11-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2023-12-01,active_customers,306.0,KPI Active customers
+2023-12-01,closing_mrr,627480.12,KPI Ending MRR
+2023-12-01,exception_count,969.0,KPI Billing exceptions
+2023-12-01,failed_payment_exposure,47237.9,KPI Failed-payment exposure
+2023-12-01,gross_revenue_retention,0.9878182349238956,KPI Gross revenue retention
+2023-12-01,net_new_mrr,26346.38,KPI Net new MRR
+2023-12-01,net_revenue_retention,0.9918304868397505,KPI Net revenue retention
+2023-12-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-01-01,active_customers,342.0,KPI Active customers
+2024-01-01,closing_mrr,727993.67,KPI Ending MRR
+2024-01-01,exception_count,969.0,KPI Billing exceptions
+2024-01-01,failed_payment_exposure,17675.35,KPI Failed-payment exposure
+2024-01-01,gross_revenue_retention,0.9973301146178144,KPI Gross revenue retention
+2024-01-01,net_new_mrr,100513.55,KPI Net new MRR
+2024-01-01,net_revenue_retention,1.0113349407786816,KPI Net revenue retention
+2024-01-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-02-01,active_customers,370.0,KPI Active customers
+2024-02-01,closing_mrr,841981.03,KPI Ending MRR
+2024-02-01,exception_count,969.0,KPI Billing exceptions
+2024-02-01,failed_payment_exposure,5954.35,KPI Failed-payment exposure
+2024-02-01,gross_revenue_retention,0.982234639485258,KPI Gross revenue retention
+2024-02-01,net_new_mrr,113987.36,KPI Net new MRR
+2024-02-01,net_revenue_retention,1.0084109385181879,KPI Net revenue retention
+2024-02-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-03-01,active_customers,397.0,KPI Active customers
+2024-03-01,closing_mrr,924297.04,KPI Ending MRR
+2024-03-01,exception_count,969.0,KPI Billing exceptions
+2024-03-01,failed_payment_exposure,40420.61,KPI Failed-payment exposure
+2024-03-01,gross_revenue_retention,0.9973000579359845,KPI Gross revenue retention
+2024-03-01,net_new_mrr,82316.01,KPI Net new MRR
+2024-03-01,net_revenue_retention,1.0155077840649214,KPI Net revenue retention
+2024-03-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-04-01,active_customers,425.0,KPI Active customers
+2024-04-01,closing_mrr,952491.13,KPI Ending MRR
+2024-04-01,exception_count,969.0,KPI Billing exceptions
+2024-04-01,failed_payment_exposure,42702.45,KPI Failed-payment exposure
+2024-04-01,gross_revenue_retention,0.987917141874651,KPI Gross revenue retention
+2024-04-01,net_new_mrr,28194.09,KPI Net new MRR
+2024-04-01,net_revenue_retention,0.9937869432103774,KPI Net revenue retention
+2024-04-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-05-01,active_customers,459.0,KPI Active customers
+2024-05-01,closing_mrr,1032953.46,KPI Ending MRR
+2024-05-01,exception_count,969.0,KPI Billing exceptions
+2024-05-01,failed_payment_exposure,35837.81,KPI Failed-payment exposure
+2024-05-01,gross_revenue_retention,0.9920436844383003,KPI Gross revenue retention
+2024-05-01,net_new_mrr,80462.33,KPI Net new MRR
+2024-05-01,net_revenue_retention,1.0029938651502193,KPI Net revenue retention
+2024-05-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-06-01,active_customers,479.0,KPI Active customers
+2024-06-01,closing_mrr,1066757.42,KPI Ending MRR
+2024-06-01,exception_count,969.0,KPI Billing exceptions
+2024-06-01,failed_payment_exposure,14232.1,KPI Failed-payment exposure
+2024-06-01,gross_revenue_retention,0.9853480233272078,KPI Gross revenue retention
+2024-06-01,net_new_mrr,33803.96,KPI Net new MRR
+2024-06-01,net_revenue_retention,0.9967144792757653,KPI Net revenue retention
+2024-06-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-07-01,active_customers,515.0,KPI Active customers
+2024-07-01,closing_mrr,1131775.13,KPI Ending MRR
+2024-07-01,exception_count,969.0,KPI Billing exceptions
+2024-07-01,failed_payment_exposure,47251.57,KPI Failed-payment exposure
+2024-07-01,gross_revenue_retention,0.9956299624332587,KPI Gross revenue retention
+2024-07-01,net_new_mrr,65017.71,KPI Net new MRR
+2024-07-01,net_revenue_retention,1.0119523049579537,KPI Net revenue retention
+2024-07-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-08-01,active_customers,542.0,KPI Active customers
+2024-08-01,closing_mrr,1198750.11,KPI Ending MRR
+2024-08-01,exception_count,969.0,KPI Billing exceptions
+2024-08-01,failed_payment_exposure,21586.55,KPI Failed-payment exposure
+2024-08-01,gross_revenue_retention,0.9940779402000114,KPI Gross revenue retention
+2024-08-01,net_new_mrr,66974.98,KPI Net new MRR
+2024-08-01,net_revenue_retention,1.0058227821281072,KPI Net revenue retention
+2024-08-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-09-01,active_customers,567.0,KPI Active customers
+2024-09-01,closing_mrr,1289302.29,KPI Ending MRR
+2024-09-01,exception_count,969.0,KPI Billing exceptions
+2024-09-01,failed_payment_exposure,39746.27,KPI Failed-payment exposure
+2024-09-01,gross_revenue_retention,0.9850936238913046,KPI Gross revenue retention
+2024-09-01,net_new_mrr,90552.18,KPI Net new MRR
+2024-09-01,net_revenue_retention,0.9935605678484567,KPI Net revenue retention
+2024-09-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-10-01,active_customers,596.0,KPI Active customers
+2024-10-01,closing_mrr,1333032.87,KPI Ending MRR
+2024-10-01,exception_count,969.0,KPI Billing exceptions
+2024-10-01,failed_payment_exposure,28544.84,KPI Failed-payment exposure
+2024-10-01,gross_revenue_retention,0.9838376692870063,KPI Gross revenue retention
+2024-10-01,net_new_mrr,43730.58,KPI Net new MRR
+2024-10-01,net_revenue_retention,0.9886932489664623,KPI Net revenue retention
+2024-10-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-11-01,active_customers,615.0,KPI Active customers
+2024-11-01,closing_mrr,1402735.24,KPI Ending MRR
+2024-11-01,exception_count,969.0,KPI Billing exceptions
+2024-11-01,failed_payment_exposure,65218.59,KPI Failed-payment exposure
+2024-11-01,gross_revenue_retention,0.9801148564326099,KPI Gross revenue retention
+2024-11-01,net_new_mrr,69702.37,KPI Net new MRR
+2024-11-01,net_revenue_retention,0.9900949329178957,KPI Net revenue retention
+2024-11-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2024-12-01,active_customers,639.0,KPI Active customers
+2024-12-01,closing_mrr,1468598.74,KPI Ending MRR
+2024-12-01,exception_count,969.0,KPI Billing exceptions
+2024-12-01,failed_payment_exposure,54864.68,KPI Failed-payment exposure
+2024-12-01,gross_revenue_retention,0.9777996879867366,KPI Gross revenue retention
+2024-12-01,net_new_mrr,65863.5,KPI Net new MRR
+2024-12-01,net_revenue_retention,0.9895289933686987,KPI Net revenue retention
+2024-12-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-01-01,active_customers,657.0,KPI Active customers
+2025-01-01,closing_mrr,1527758.64,KPI Ending MRR
+2025-01-01,exception_count,969.0,KPI Billing exceptions
+2025-01-01,failed_payment_exposure,50642.79,KPI Failed-payment exposure
+2025-01-01,gross_revenue_retention,0.9915985492402097,KPI Gross revenue retention
+2025-01-01,net_new_mrr,59159.9,KPI Net new MRR
+2025-01-01,net_revenue_retention,1.0019227171609857,KPI Net revenue retention
+2025-01-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-02-01,active_customers,669.0,KPI Active customers
+2025-02-01,closing_mrr,1571455.1,KPI Ending MRR
+2025-02-01,exception_count,969.0,KPI Billing exceptions
+2025-02-01,failed_payment_exposure,57509.58,KPI Failed-payment exposure
+2025-02-01,gross_revenue_retention,0.993773420911565,KPI Gross revenue retention
+2025-02-01,net_new_mrr,43696.46,KPI Net new MRR
+2025-02-01,net_revenue_retention,1.0057210673015733,KPI Net revenue retention
+2025-02-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-03-01,active_customers,685.0,KPI Active customers
+2025-03-01,closing_mrr,1650459.71,KPI Ending MRR
+2025-03-01,exception_count,969.0,KPI Billing exceptions
+2025-03-01,failed_payment_exposure,106300.19,KPI Failed-payment exposure
+2025-03-01,gross_revenue_retention,0.9948963161594625,KPI Gross revenue retention
+2025-03-01,net_new_mrr,79004.61,KPI Net new MRR
+2025-03-01,net_revenue_retention,1.0089062741913528,KPI Net revenue retention
+2025-03-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-04-01,active_customers,700.0,KPI Active customers
+2025-04-01,closing_mrr,1697120.84,KPI Ending MRR
+2025-04-01,exception_count,969.0,KPI Billing exceptions
+2025-04-01,failed_payment_exposure,77733.11,KPI Failed-payment exposure
+2025-04-01,gross_revenue_retention,0.9887573989915815,KPI Gross revenue retention
+2025-04-01,net_new_mrr,46661.13,KPI Net new MRR
+2025-04-01,net_revenue_retention,0.9972324862144015,KPI Net revenue retention
+2025-04-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-05-01,active_customers,735.0,KPI Active customers
+2025-05-01,closing_mrr,1790315.83,KPI Ending MRR
+2025-05-01,exception_count,969.0,KPI Billing exceptions
+2025-05-01,failed_payment_exposure,86492.09,KPI Failed-payment exposure
+2025-05-01,gross_revenue_retention,0.994580491981938,KPI Gross revenue retention
+2025-05-01,net_new_mrr,93194.99,KPI Net new MRR
+2025-05-01,net_revenue_retention,1.0015267268770325,KPI Net revenue retention
+2025-05-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-06-01,active_customers,755.0,KPI Active customers
+2025-06-01,closing_mrr,1841521.0,KPI Ending MRR
+2025-06-01,exception_count,969.0,KPI Billing exceptions
+2025-06-01,failed_payment_exposure,30372.34,KPI Failed-payment exposure
+2025-06-01,gross_revenue_retention,0.9759588396199346,KPI Gross revenue retention
+2025-06-01,net_new_mrr,51205.17,KPI Net new MRR
+2025-06-01,net_revenue_retention,0.9834840425892899,KPI Net revenue retention
+2025-06-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-07-01,active_customers,783.0,KPI Active customers
+2025-07-01,closing_mrr,1937071.03,KPI Ending MRR
+2025-07-01,exception_count,969.0,KPI Billing exceptions
+2025-07-01,failed_payment_exposure,68509.17,KPI Failed-payment exposure
+2025-07-01,gross_revenue_retention,0.9949835000524023,KPI Gross revenue retention
+2025-07-01,net_new_mrr,95550.03,KPI Net new MRR
+2025-07-01,net_revenue_retention,1.0020365665121385,KPI Net revenue retention
+2025-07-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-08-01,active_customers,811.0,KPI Active customers
+2025-08-01,closing_mrr,2003777.04,KPI Ending MRR
+2025-08-01,exception_count,969.0,KPI Billing exceptions
+2025-08-01,failed_payment_exposure,80215.72,KPI Failed-payment exposure
+2025-08-01,gross_revenue_retention,0.9967828799752376,KPI Gross revenue retention
+2025-08-01,net_new_mrr,66706.01,KPI Net new MRR
+2025-08-01,net_revenue_retention,1.0061847035108464,KPI Net revenue retention
+2025-08-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-09-01,active_customers,824.0,KPI Active customers
+2025-09-01,closing_mrr,2050506.87,KPI Ending MRR
+2025-09-01,exception_count,969.0,KPI Billing exceptions
+2025-09-01,failed_payment_exposure,93846.33,KPI Failed-payment exposure
+2025-09-01,gross_revenue_retention,0.9941501575444741,KPI Gross revenue retention
+2025-09-01,net_new_mrr,46729.83,KPI Net new MRR
+2025-09-01,net_revenue_retention,1.0013939325305374,KPI Net revenue retention
+2025-09-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-10-01,active_customers,846.0,KPI Active customers
+2025-10-01,closing_mrr,2122615.05,KPI Ending MRR
+2025-10-01,exception_count,969.0,KPI Billing exceptions
+2025-10-01,failed_payment_exposure,111221.75,KPI Failed-payment exposure
+2025-10-01,gross_revenue_retention,0.9911813658054215,KPI Gross revenue retention
+2025-10-01,net_new_mrr,72108.18,KPI Net new MRR
+2025-10-01,net_revenue_retention,1.0045191411623995,KPI Net revenue retention
+2025-10-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-11-01,active_customers,860.0,KPI Active customers
+2025-11-01,closing_mrr,2174316.64,KPI Ending MRR
+2025-11-01,exception_count,969.0,KPI Billing exceptions
+2025-11-01,failed_payment_exposure,33650.92,KPI Failed-payment exposure
+2025-11-01,gross_revenue_retention,0.9952295400901828,KPI Gross revenue retention
+2025-11-01,net_new_mrr,51701.59,KPI Net new MRR
+2025-11-01,net_revenue_retention,1.0055493057961689,KPI Net revenue retention
+2025-11-01,reconciliation_variance,0.0,KPI Reconciliation variance
+2025-12-01,active_customers,756.0,KPI Active customers
+2025-12-01,closing_mrr,1914752.62,KPI Ending MRR
+2025-12-01,exception_count,969.0,KPI Billing exceptions
+2025-12-01,failed_payment_exposure,53721.83,KPI Failed-payment exposure
+2025-12-01,gross_revenue_retention,0.8445352191206152,KPI Gross revenue retention
+2025-12-01,net_new_mrr,-259564.02,KPI Net new MRR
+2025-12-01,net_revenue_retention,0.8525110997632801,KPI Net revenue retention
+2025-12-01,reconciliation_variance,0.0,KPI Reconciliation variance

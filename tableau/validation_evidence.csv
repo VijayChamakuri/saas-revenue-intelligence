@@ -1,0 +1,289 @@
+month_start,field,tableau_sheet,expected_value,extract_value,passed
+2023-01-01,active_customers,KPI Active customers,17.0,17.0,True
+2023-01-01,closing_mrr,KPI Ending MRR,54743.25,54743.25,True
+2023-01-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-01-01,failed_payment_exposure,KPI Failed-payment exposure,0.0,0.0,True
+2023-01-01,gross_revenue_retention,KPI Gross revenue retention,,,True
+2023-01-01,net_new_mrr,KPI Net new MRR,54743.25,54743.25,True
+2023-01-01,net_revenue_retention,KPI Net revenue retention,,,True
+2023-01-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-02-01,active_customers,KPI Active customers,55.0,55.0,True
+2023-02-01,closing_mrr,KPI Ending MRR,173378.4,173378.4,True
+2023-02-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-02-01,failed_payment_exposure,KPI Failed-payment exposure,32709.15,32709.15,True
+2023-02-01,gross_revenue_retention,KPI Gross revenue retention,1.0,1.0,True
+2023-02-01,net_new_mrr,KPI Net new MRR,118635.15,118635.15,True
+2023-02-01,net_revenue_retention,KPI Net revenue retention,1.0,1.0,True
+2023-02-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-03-01,active_customers,KPI Active customers,83.0,83.0,True
+2023-03-01,closing_mrr,KPI Ending MRR,216666.86,216666.86,True
+2023-03-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-03-01,failed_payment_exposure,KPI Failed-payment exposure,468.0,468.0,True
+2023-03-01,gross_revenue_retention,KPI Gross revenue retention,0.9606828186210047,0.9606828186210048,True
+2023-03-01,net_new_mrr,KPI Net new MRR,43288.46,43288.46,True
+2023-03-01,net_revenue_retention,KPI Net revenue retention,0.9785374648745173,0.9785374648745172,True
+2023-03-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-04-01,active_customers,KPI Active customers,113.0,113.0,True
+2023-04-01,closing_mrr,KPI Ending MRR,266760.43,266760.43,True
+2023-04-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-04-01,failed_payment_exposure,KPI Failed-payment exposure,5270.05,5270.05,True
+2023-04-01,gross_revenue_retention,KPI Gross revenue retention,0.9981769247036671,0.9981769247036671,True
+2023-04-01,net_new_mrr,KPI Net new MRR,50093.57,50093.57,True
+2023-04-01,net_revenue_retention,KPI Net revenue retention,1.0000743999336126,1.0000743999336126,True
+2023-04-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-05-01,active_customers,KPI Active customers,141.0,141.0,True
+2023-05-01,closing_mrr,KPI Ending MRR,342084.2,342084.2,True
+2023-05-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-05-01,failed_payment_exposure,KPI Failed-payment exposure,18811.36,18811.36,True
+2023-05-01,gross_revenue_retention,KPI Gross revenue retention,0.9984267156864307,0.9984267156864308,True
+2023-05-01,net_new_mrr,KPI Net new MRR,75323.77,75323.77,True
+2023-05-01,net_revenue_retention,KPI Net revenue retention,1.0099674453216319,1.009967445321632,True
+2023-05-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-06-01,active_customers,KPI Active customers,160.0,160.0,True
+2023-06-01,closing_mrr,KPI Ending MRR,368840.66,368840.66,True
+2023-06-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-06-01,failed_payment_exposure,KPI Failed-payment exposure,23521.25,23521.25,True
+2023-06-01,gross_revenue_retention,KPI Gross revenue retention,0.9912118127642259,0.991211812764226,True
+2023-06-01,net_new_mrr,KPI Net new MRR,26756.46,26756.46,True
+2023-06-01,net_revenue_retention,KPI Net revenue retention,0.9986763785056426,0.9986763785056426,True
+2023-06-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-07-01,active_customers,KPI Active customers,191.0,191.0,True
+2023-07-01,closing_mrr,KPI Ending MRR,423532.58,423532.58,True
+2023-07-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-07-01,failed_payment_exposure,KPI Failed-payment exposure,18747.11,18747.11,True
+2023-07-01,gross_revenue_retention,KPI Gross revenue retention,0.9996193478235291,0.9996193478235292,True
+2023-07-01,net_new_mrr,KPI Net new MRR,54691.92,54691.92,True
+2023-07-01,net_revenue_retention,KPI Net revenue retention,1.005198504958754,1.005198504958754,True
+2023-07-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-08-01,active_customers,KPI Active customers,220.0,220.0,True
+2023-08-01,closing_mrr,KPI Ending MRR,485101.69,485101.69,True
+2023-08-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-08-01,failed_payment_exposure,KPI Failed-payment exposure,25559.57,25559.57,True
+2023-08-01,gross_revenue_retention,KPI Gross revenue retention,0.9989862645277489,0.9989862645277487,True
+2023-08-01,net_new_mrr,KPI Net new MRR,61569.11,61569.11,True
+2023-08-01,net_revenue_retention,KPI Net revenue retention,1.0126407276625566,1.0126407276625566,True
+2023-08-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-09-01,active_customers,KPI Active customers,242.0,242.0,True
+2023-09-01,closing_mrr,KPI Ending MRR,527323.91,527323.91,True
+2023-09-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-09-01,failed_payment_exposure,KPI Failed-payment exposure,11650.65,11650.65,True
+2023-09-01,gross_revenue_retention,KPI Gross revenue retention,0.9976443289653351,0.9976443289653352,True
+2023-09-01,net_new_mrr,KPI Net new MRR,42222.22,42222.22,True
+2023-09-01,net_revenue_retention,KPI Net revenue retention,1.0137808631423237,1.0137808631423235,True
+2023-09-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-10-01,active_customers,KPI Active customers,265.0,265.0,True
+2023-10-01,closing_mrr,KPI Ending MRR,565680.43,565680.43,True
+2023-10-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-10-01,failed_payment_exposure,KPI Failed-payment exposure,5875.3,5875.3,True
+2023-10-01,gross_revenue_retention,KPI Gross revenue retention,0.9789961923023743,0.9789961923023744,True
+2023-10-01,net_new_mrr,KPI Net new MRR,38356.52,38356.52,True
+2023-10-01,net_revenue_retention,KPI Net revenue retention,0.9826971054659743,0.9826971054659744,True
+2023-10-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-11-01,active_customers,KPI Active customers,280.0,280.0,True
+2023-11-01,closing_mrr,KPI Ending MRR,601133.74,601133.74,True
+2023-11-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-11-01,failed_payment_exposure,KPI Failed-payment exposure,7580.21,7580.21,True
+2023-11-01,gross_revenue_retention,KPI Gross revenue retention,0.9967114824884432,0.9967114824884432,True
+2023-11-01,net_new_mrr,KPI Net new MRR,35453.31,35453.31,True
+2023-11-01,net_revenue_retention,KPI Net revenue retention,1.0083566794064274,1.0083566794064274,True
+2023-11-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2023-12-01,active_customers,KPI Active customers,306.0,306.0,True
+2023-12-01,closing_mrr,KPI Ending MRR,627480.12,627480.12,True
+2023-12-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2023-12-01,failed_payment_exposure,KPI Failed-payment exposure,47237.9,47237.9,True
+2023-12-01,gross_revenue_retention,KPI Gross revenue retention,0.9878182349238956,0.9878182349238956,True
+2023-12-01,net_new_mrr,KPI Net new MRR,26346.38,26346.38,True
+2023-12-01,net_revenue_retention,KPI Net revenue retention,0.9918304868397505,0.9918304868397504,True
+2023-12-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-01-01,active_customers,KPI Active customers,342.0,342.0,True
+2024-01-01,closing_mrr,KPI Ending MRR,727993.67,727993.67,True
+2024-01-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-01-01,failed_payment_exposure,KPI Failed-payment exposure,17675.35,17675.35,True
+2024-01-01,gross_revenue_retention,KPI Gross revenue retention,0.9973301146178144,0.9973301146178144,True
+2024-01-01,net_new_mrr,KPI Net new MRR,100513.55,100513.55,True
+2024-01-01,net_revenue_retention,KPI Net revenue retention,1.0113349407786816,1.0113349407786816,True
+2024-01-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-02-01,active_customers,KPI Active customers,370.0,370.0,True
+2024-02-01,closing_mrr,KPI Ending MRR,841981.03,841981.03,True
+2024-02-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-02-01,failed_payment_exposure,KPI Failed-payment exposure,5954.35,5954.35,True
+2024-02-01,gross_revenue_retention,KPI Gross revenue retention,0.982234639485258,0.982234639485258,True
+2024-02-01,net_new_mrr,KPI Net new MRR,113987.36,113987.36,True
+2024-02-01,net_revenue_retention,KPI Net revenue retention,1.0084109385181879,1.008410938518188,True
+2024-02-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-03-01,active_customers,KPI Active customers,397.0,397.0,True
+2024-03-01,closing_mrr,KPI Ending MRR,924297.04,924297.04,True
+2024-03-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-03-01,failed_payment_exposure,KPI Failed-payment exposure,40420.61,40420.61,True
+2024-03-01,gross_revenue_retention,KPI Gross revenue retention,0.9973000579359845,0.9973000579359844,True
+2024-03-01,net_new_mrr,KPI Net new MRR,82316.01,82316.01,True
+2024-03-01,net_revenue_retention,KPI Net revenue retention,1.0155077840649214,1.0155077840649214,True
+2024-03-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-04-01,active_customers,KPI Active customers,425.0,425.0,True
+2024-04-01,closing_mrr,KPI Ending MRR,952491.13,952491.13,True
+2024-04-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-04-01,failed_payment_exposure,KPI Failed-payment exposure,42702.45,42702.45,True
+2024-04-01,gross_revenue_retention,KPI Gross revenue retention,0.987917141874651,0.987917141874651,True
+2024-04-01,net_new_mrr,KPI Net new MRR,28194.09,28194.09,True
+2024-04-01,net_revenue_retention,KPI Net revenue retention,0.9937869432103774,0.9937869432103774,True
+2024-04-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-05-01,active_customers,KPI Active customers,459.0,459.0,True
+2024-05-01,closing_mrr,KPI Ending MRR,1032953.46,1032953.46,True
+2024-05-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-05-01,failed_payment_exposure,KPI Failed-payment exposure,35837.81,35837.81,True
+2024-05-01,gross_revenue_retention,KPI Gross revenue retention,0.9920436844383003,0.9920436844383004,True
+2024-05-01,net_new_mrr,KPI Net new MRR,80462.33,80462.33,True
+2024-05-01,net_revenue_retention,KPI Net revenue retention,1.0029938651502193,1.0029938651502193,True
+2024-05-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-06-01,active_customers,KPI Active customers,479.0,479.0,True
+2024-06-01,closing_mrr,KPI Ending MRR,1066757.42,1066757.42,True
+2024-06-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-06-01,failed_payment_exposure,KPI Failed-payment exposure,14232.1,14232.1,True
+2024-06-01,gross_revenue_retention,KPI Gross revenue retention,0.9853480233272078,0.9853480233272078,True
+2024-06-01,net_new_mrr,KPI Net new MRR,33803.96,33803.96,True
+2024-06-01,net_revenue_retention,KPI Net revenue retention,0.9967144792757653,0.9967144792757652,True
+2024-06-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-07-01,active_customers,KPI Active customers,515.0,515.0,True
+2024-07-01,closing_mrr,KPI Ending MRR,1131775.13,1131775.13,True
+2024-07-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-07-01,failed_payment_exposure,KPI Failed-payment exposure,47251.57,47251.57,True
+2024-07-01,gross_revenue_retention,KPI Gross revenue retention,0.9956299624332587,0.9956299624332589,True
+2024-07-01,net_new_mrr,KPI Net new MRR,65017.71,65017.71,True
+2024-07-01,net_revenue_retention,KPI Net revenue retention,1.0119523049579537,1.0119523049579535,True
+2024-07-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-08-01,active_customers,KPI Active customers,542.0,542.0,True
+2024-08-01,closing_mrr,KPI Ending MRR,1198750.11,1198750.11,True
+2024-08-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-08-01,failed_payment_exposure,KPI Failed-payment exposure,21586.55,21586.55,True
+2024-08-01,gross_revenue_retention,KPI Gross revenue retention,0.9940779402000114,0.9940779402000114,True
+2024-08-01,net_new_mrr,KPI Net new MRR,66974.98,66974.98,True
+2024-08-01,net_revenue_retention,KPI Net revenue retention,1.0058227821281072,1.0058227821281072,True
+2024-08-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-09-01,active_customers,KPI Active customers,567.0,567.0,True
+2024-09-01,closing_mrr,KPI Ending MRR,1289302.29,1289302.29,True
+2024-09-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-09-01,failed_payment_exposure,KPI Failed-payment exposure,39746.27,39746.27,True
+2024-09-01,gross_revenue_retention,KPI Gross revenue retention,0.9850936238913046,0.9850936238913046,True
+2024-09-01,net_new_mrr,KPI Net new MRR,90552.18,90552.18,True
+2024-09-01,net_revenue_retention,KPI Net revenue retention,0.9935605678484567,0.9935605678484568,True
+2024-09-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-10-01,active_customers,KPI Active customers,596.0,596.0,True
+2024-10-01,closing_mrr,KPI Ending MRR,1333032.87,1333032.87,True
+2024-10-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-10-01,failed_payment_exposure,KPI Failed-payment exposure,28544.84,28544.84,True
+2024-10-01,gross_revenue_retention,KPI Gross revenue retention,0.9838376692870063,0.9838376692870064,True
+2024-10-01,net_new_mrr,KPI Net new MRR,43730.58,43730.58,True
+2024-10-01,net_revenue_retention,KPI Net revenue retention,0.9886932489664623,0.9886932489664624,True
+2024-10-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-11-01,active_customers,KPI Active customers,615.0,615.0,True
+2024-11-01,closing_mrr,KPI Ending MRR,1402735.24,1402735.24,True
+2024-11-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-11-01,failed_payment_exposure,KPI Failed-payment exposure,65218.59,65218.59,True
+2024-11-01,gross_revenue_retention,KPI Gross revenue retention,0.9801148564326099,0.98011485643261,True
+2024-11-01,net_new_mrr,KPI Net new MRR,69702.37,69702.37,True
+2024-11-01,net_revenue_retention,KPI Net revenue retention,0.9900949329178957,0.9900949329178956,True
+2024-11-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2024-12-01,active_customers,KPI Active customers,639.0,639.0,True
+2024-12-01,closing_mrr,KPI Ending MRR,1468598.74,1468598.74,True
+2024-12-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2024-12-01,failed_payment_exposure,KPI Failed-payment exposure,54864.68,54864.68,True
+2024-12-01,gross_revenue_retention,KPI Gross revenue retention,0.9777996879867366,0.9777996879867366,True
+2024-12-01,net_new_mrr,KPI Net new MRR,65863.5,65863.5,True
+2024-12-01,net_revenue_retention,KPI Net revenue retention,0.9895289933686987,0.9895289933686988,True
+2024-12-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-01-01,active_customers,KPI Active customers,657.0,657.0,True
+2025-01-01,closing_mrr,KPI Ending MRR,1527758.64,1527758.64,True
+2025-01-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-01-01,failed_payment_exposure,KPI Failed-payment exposure,50642.79,50642.79,True
+2025-01-01,gross_revenue_retention,KPI Gross revenue retention,0.9915985492402097,0.9915985492402096,True
+2025-01-01,net_new_mrr,KPI Net new MRR,59159.9,59159.9,True
+2025-01-01,net_revenue_retention,KPI Net revenue retention,1.0019227171609857,1.0019227171609857,True
+2025-01-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-02-01,active_customers,KPI Active customers,669.0,669.0,True
+2025-02-01,closing_mrr,KPI Ending MRR,1571455.1,1571455.1,True
+2025-02-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-02-01,failed_payment_exposure,KPI Failed-payment exposure,57509.58,57509.58,True
+2025-02-01,gross_revenue_retention,KPI Gross revenue retention,0.993773420911565,0.993773420911565,True
+2025-02-01,net_new_mrr,KPI Net new MRR,43696.46,43696.46,True
+2025-02-01,net_revenue_retention,KPI Net revenue retention,1.0057210673015733,1.0057210673015733,True
+2025-02-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-03-01,active_customers,KPI Active customers,685.0,685.0,True
+2025-03-01,closing_mrr,KPI Ending MRR,1650459.71,1650459.71,True
+2025-03-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-03-01,failed_payment_exposure,KPI Failed-payment exposure,106300.19,106300.19,True
+2025-03-01,gross_revenue_retention,KPI Gross revenue retention,0.9948963161594625,0.9948963161594624,True
+2025-03-01,net_new_mrr,KPI Net new MRR,79004.61,79004.61,True
+2025-03-01,net_revenue_retention,KPI Net revenue retention,1.0089062741913528,1.0089062741913528,True
+2025-03-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-04-01,active_customers,KPI Active customers,700.0,700.0,True
+2025-04-01,closing_mrr,KPI Ending MRR,1697120.84,1697120.84,True
+2025-04-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-04-01,failed_payment_exposure,KPI Failed-payment exposure,77733.11,77733.11,True
+2025-04-01,gross_revenue_retention,KPI Gross revenue retention,0.9887573989915815,0.9887573989915815,True
+2025-04-01,net_new_mrr,KPI Net new MRR,46661.13,46661.13,True
+2025-04-01,net_revenue_retention,KPI Net revenue retention,0.9972324862144015,0.9972324862144016,True
+2025-04-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-05-01,active_customers,KPI Active customers,735.0,735.0,True
+2025-05-01,closing_mrr,KPI Ending MRR,1790315.83,1790315.83,True
+2025-05-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-05-01,failed_payment_exposure,KPI Failed-payment exposure,86492.09,86492.09,True
+2025-05-01,gross_revenue_retention,KPI Gross revenue retention,0.994580491981938,0.994580491981938,True
+2025-05-01,net_new_mrr,KPI Net new MRR,93194.99,93194.99,True
+2025-05-01,net_revenue_retention,KPI Net revenue retention,1.0015267268770325,1.0015267268770325,True
+2025-05-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-06-01,active_customers,KPI Active customers,755.0,755.0,True
+2025-06-01,closing_mrr,KPI Ending MRR,1841521.0,1841521.0,True
+2025-06-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-06-01,failed_payment_exposure,KPI Failed-payment exposure,30372.34,30372.34,True
+2025-06-01,gross_revenue_retention,KPI Gross revenue retention,0.9759588396199346,0.9759588396199346,True
+2025-06-01,net_new_mrr,KPI Net new MRR,51205.17,51205.17,True
+2025-06-01,net_revenue_retention,KPI Net revenue retention,0.9834840425892899,0.98348404258929,True
+2025-06-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-07-01,active_customers,KPI Active customers,783.0,783.0,True
+2025-07-01,closing_mrr,KPI Ending MRR,1937071.03,1937071.03,True
+2025-07-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-07-01,failed_payment_exposure,KPI Failed-payment exposure,68509.17,68509.17,True
+2025-07-01,gross_revenue_retention,KPI Gross revenue retention,0.9949835000524023,0.9949835000524024,True
+2025-07-01,net_new_mrr,KPI Net new MRR,95550.03,95550.03,True
+2025-07-01,net_revenue_retention,KPI Net revenue retention,1.0020365665121385,1.0020365665121385,True
+2025-07-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-08-01,active_customers,KPI Active customers,811.0,811.0,True
+2025-08-01,closing_mrr,KPI Ending MRR,2003777.04,2003777.04,True
+2025-08-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-08-01,failed_payment_exposure,KPI Failed-payment exposure,80215.72,80215.72,True
+2025-08-01,gross_revenue_retention,KPI Gross revenue retention,0.9967828799752376,0.9967828799752376,True
+2025-08-01,net_new_mrr,KPI Net new MRR,66706.01,66706.01,True
+2025-08-01,net_revenue_retention,KPI Net revenue retention,1.0061847035108464,1.0061847035108464,True
+2025-08-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-09-01,active_customers,KPI Active customers,824.0,824.0,True
+2025-09-01,closing_mrr,KPI Ending MRR,2050506.87,2050506.87,True
+2025-09-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-09-01,failed_payment_exposure,KPI Failed-payment exposure,93846.33,93846.33,True
+2025-09-01,gross_revenue_retention,KPI Gross revenue retention,0.9941501575444741,0.994150157544474,True
+2025-09-01,net_new_mrr,KPI Net new MRR,46729.83,46729.83,True
+2025-09-01,net_revenue_retention,KPI Net revenue retention,1.0013939325305374,1.0013939325305374,True
+2025-09-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-10-01,active_customers,KPI Active customers,846.0,846.0,True
+2025-10-01,closing_mrr,KPI Ending MRR,2122615.05,2122615.05,True
+2025-10-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-10-01,failed_payment_exposure,KPI Failed-payment exposure,111221.75,111221.75,True
+2025-10-01,gross_revenue_retention,KPI Gross revenue retention,0.9911813658054215,0.9911813658054216,True
+2025-10-01,net_new_mrr,KPI Net new MRR,72108.18,72108.18,True
+2025-10-01,net_revenue_retention,KPI Net revenue retention,1.0045191411623995,1.0045191411623997,True
+2025-10-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-11-01,active_customers,KPI Active customers,860.0,860.0,True
+2025-11-01,closing_mrr,KPI Ending MRR,2174316.64,2174316.64,True
+2025-11-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-11-01,failed_payment_exposure,KPI Failed-payment exposure,33650.92,33650.92,True
+2025-11-01,gross_revenue_retention,KPI Gross revenue retention,0.9952295400901828,0.9952295400901828,True
+2025-11-01,net_new_mrr,KPI Net new MRR,51701.59,51701.59,True
+2025-11-01,net_revenue_retention,KPI Net revenue retention,1.0055493057961689,1.0055493057961689,True
+2025-11-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True
+2025-12-01,active_customers,KPI Active customers,756.0,756.0,True
+2025-12-01,closing_mrr,KPI Ending MRR,1914752.62,1914752.62,True
+2025-12-01,exception_count,KPI Billing exceptions,969.0,969.0,True
+2025-12-01,failed_payment_exposure,KPI Failed-payment exposure,53721.83,53721.83,True
+2025-12-01,gross_revenue_retention,KPI Gross revenue retention,0.8445352191206152,0.8445352191206152,True
+2025-12-01,net_new_mrr,KPI Net new MRR,-259564.02,-259564.02,True
+2025-12-01,net_revenue_retention,KPI Net revenue retention,0.8525110997632801,0.8525110997632801,True
+2025-12-01,reconciliation_variance,KPI Reconciliation variance,0.0,0.0,True

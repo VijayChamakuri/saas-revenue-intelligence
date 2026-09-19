@@ -1,61 +1,225 @@
-# Metric Dictionary
+# Metric dictionary
 
-## Governance conventions
+> Synthetic data from a seeded generator. Not real company, customer or financial results.
 
-The SQL references below define the governed target state. The current executable release implements and tests the MRR movement bridge, ARR, net new MRR, GRR, NRR, billing reconciliation, finance exceptions, customer-month health inputs, and channel efficiency. Other rows are explicitly backlog definitions and must not be interpreted as implemented marts. The test-reference column states the test required before a backlog metric can be promoted to trusted status. Currency metrics use reporting currency unless explicitly labeled otherwise.
+Generated from `metrics/semantic_layer.yml` (contract version 1) by `python -m src.validation.semantic_layer`. That file is a portable metric contract shaped like a dbt Semantic Layer spec; it is validated against the marts by this project, not executed by MetricFlow. The broader catalog, including backlog definitions, is in [metric_backlog.md](metric_backlog.md) and `dbt/metrics.yml`. Change rules: [metric governance](metric_governance.md).
 
-## Revenue metrics
+## Ending MRR
 
-| Metric | Business definition and target SQL | Grain | Owner | Inclusion and exclusion rules | Implemented or required test | Limitation |
-|---|---|---|---|---|---|---|
-| MRR | Normalized recurring subscription value at month end. `SUM(closing_mrr)` from `mart_mrr_movement` | month and allowed slices | RevOps | active recurring lines; excludes tax, fees, one-time services, trials | `assert_mrr_nonnegative`; `assert_mrr_snapshot_ties_subscription` | Contract value may differ from billed timing |
-| ARR | Run-rate recurring value. `12 * MRR` | month and slices | RevOps | same as MRR | `assert_arr_equals_12_mrr` | Not GAAP revenue or contracted backlog |
-| New MRR | Closing MRR from accounts with no prior paid recurring state. `SUM(CASE movement_type WHEN 'new' THEN movement_mrr END)` | account-product-month | RevOps | first paid activation | `assert_movement_type_exclusive`; bridge test | Definition depends on account identity resolution |
-| Expansion MRR | Positive increase for a continuing recurring relationship | account-product-month | RevOps | upgrades and seat expansion; excludes reactivation | movement sign and bridge tests | Price and volume effects may require deeper decomposition |
-| Contraction MRR | Absolute negative decrease while recurring relationship remains active | account-product-month | RevOps | downgrades and seat contraction | movement sign and bridge tests | Does not represent full logo churn |
-| Churned MRR | Absolute opening MRR lost when relationship becomes inactive | account-product-month | Customer Success | paid recurring value only | movement sign and bridge tests | Product-level churn can coexist with account retention |
-| Reactivation MRR | Closing MRR after at least one inactive paid month | account-product-month | RevOps | requires prior paid state and gap | reactivation-history test | Sensitive to observation-window start |
-| Net new MRR | `new + expansion + reactivation - contraction - churned` | month and slices | RevOps | completed periods | `assert_net_new_components`; bridge test | Same limitations as components |
-| GRR | `(opening MRR - contraction - churned) / opening MRR` | cohort or period | Customer Success | starting recurring base; caps expansion benefit at zero | bounds test; numerator-component test | Mix changes affect comparisons |
-| NRR | `(opening MRR + expansion + reactivation - contraction - churned) / opening MRR` | cohort or period | RevOps | starting base; reactivation policy documented | numerator-component test | Can exceed 100 percent; small cohorts are volatile |
-| ARPA | `SUM(closing_mrr) / COUNT(DISTINCT active_account_id)` | month and slices | Finance | active paid accounts | denominator and weighted-total test | Account structure affects comparability |
-| Recognized revenue | Revenue allocated to accounting period from eligible invoice lines | accounting period and line | Finance | excludes tax and refundable deposits; follows service period | schedule-to-line tie-out | Illustrative policy, not audited GAAP conclusion |
-| Deferred revenue | Eligible billed amount not yet recognized at period end | account-period | Finance | billed service not delivered; net of eligible adjustments | roll-forward and nonnegative tests | Simplifies contract modifications |
-| Collected cash | Settled payments less settled refunds in period | payment date and slices | Finance | successful settlements only | payment-refund tie-out | Excludes processor timing outside data window |
-| Failed-payment exposure | Open recurring invoice amount associated with latest failed attempt | invoice-period | Finance | unpaid or partially paid recurring invoices; avoids duplicate attempts | invoice uniqueness and amount ceiling tests | Exposure is not certain loss |
-| Refund rate | `refunded amount / settled payment amount` | period and slices | Finance | comparable settled payments; zero denominator returns null | bounds and denominator tests | Timing differences can distort short periods |
-| Discount leakage | Discount beyond policy or lacking valid approval, measured against list price | invoice line | Finance | eligible recurring lines; flagged policy exceptions | policy threshold and approval tests | Estimated counterfactual, not recoverable cash |
+- **ID and version:** `ending_mrr` v1 (headline KPI)
+- **Business question:** How much recurring revenue is active at the end of the month?
+- **Owner role:** Revenue Operations
+- **Description:** Monthly recurring revenue active at month end.
+- **Grain:** month
+- **Source model:** `fct_mrr_movement` (semantic model `customer_month_revenue`)
+- **Calculation:** `sum(closing_mrr)`
+- **Numerator:** sum of closing MRR
+- **Denominator:** none
+- **Inclusions:** active recurring subscription lines
+- **Exclusions:** one-time fees, taxes, refunds
+- **Valid dimensions:** month, segment, plan_name, acquisition_channel
+- **Time basis:** calendar month of the MRR snapshot
+- **Refresh expectation:** rebuilt from the seeded generator on every pipeline run
+- **Quality checks:** assert_mrr_bridge_rolls_forward, mart_mrr_bridge cents_close
+- **Tie-out:** `analytics_revenue.mart_revenue_kpis.closing_mrr`
+- **Known limits:** Contract value can differ from billed timing.
 
-## Customer and unit-economics metrics
+## ARR
 
-| Metric | Business definition and target SQL | Grain | Owner | Inclusion and exclusion rules | Implemented or required test | Limitation |
-|---|---|---|---|---|---|---|
-| Logo churn | churned starting accounts divided by starting paid accounts | cohort-period | Customer Success | account inactive across all products at period end | bounds and starting-base tests | Does not weight revenue |
-| Revenue churn | churned MRR divided by opening MRR | cohort-period | RevOps | full churn component only | bounds and component test | Excludes contraction by design |
-| Renewal rate | renewed eligible contracts divided by contracts due for renewal | renewal period and slices | Customer Success | excludes not-yet-due and administrative replacements | bounds and eligibility tests | Renewal can occur with contraction |
-| Cohort retention | retained logos or MRR divided by cohort starting value at month age | cohort-month age | Product Analytics | fixed cohort membership; logo and revenue variants separate | month-age uniqueness and month-zero tests | Recent cohorts have censored tails |
-| CLV | Expected discounted contribution from an account using documented retention and margin assumptions | cohort or account estimate | Finance | paid customers; sensitivity ranges required | input completeness and monotonic sensitivity tests | Model-based estimate, not realized value |
-| CAC | Eligible acquisition spend divided by newly acquired paid accounts | channel-cohort | Marketing | defined attribution window; includes stated sales cost policy | spend and denominator tie-outs | Attribution and shared cost allocation are assumptions |
-| LTV:CAC | gross-margin-adjusted CLV divided by CAC | channel-cohort | Finance | comparable acquisition cohorts only | ratio recomputation test | Inherits both estimates' uncertainty |
-| CAC payback | acquisition cost divided by expected monthly contribution margin | channel-cohort | Marketing | positive contribution only | recomputation and null-policy tests | Ignores timing variation within cohort |
-| Customer health score | weighted, normalized payment, usage, adoption, support, and renewal components | account-score date | Customer Success | features available as of score date; score 0 to 100 | bounds, component, and as-of tests | Operational heuristic, not causal probability |
-| Support burden | weighted tickets or support hours per active account or recurring revenue unit | account-period | Customer Success | valid resolved and open tickets; weighting documented | nonnegative and denominator tests | Synthetic effort proxy may simplify real staffing |
-| Feature adoption | eligible key features used divided by eligible key features | account-product-period | Product | requires minimum activity and valid feature catalog | bounds and feature-eligibility tests | Breadth does not measure depth or value |
-| Time to value | days from activation to first defined value event | account-product | Product | converted paid accounts; censored if not reached | nonnegative chronology test | Value event is a documented proxy |
+- **ID and version:** `arr` v1
+- **Business question:** What is the annualized recurring run rate?
+- **Owner role:** Finance
+- **Description:** Ending MRR times 12.
+- **Grain:** month
+- **Source model:** `fct_mrr_movement` (semantic model `customer_month_revenue`)
+- **Calculation:** `ending_mrr * 12`
+- **Numerator:** ending MRR times 12
+- **Denominator:** none
+- **Inclusions:** same as ending MRR
+- **Exclusions:** same as ending MRR
+- **Valid dimensions:** month, segment, plan_name
+- **Time basis:** calendar month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** mart_revenue_kpis arr non_negative
+- **Tie-out:** `analytics_revenue.mart_revenue_kpis.arr`
+- **Known limits:** A run rate, not GAAP revenue or contracted backlog.
 
-## Sales and marketing metrics
+## Net new MRR
 
-| Metric | Business definition and target SQL | Grain | Owner | Inclusion and exclusion rules | Implemented or required test | Limitation |
-|---|---|---|---|---|---|---|
-| Lead-to-opportunity conversion | leads creating a qualified opportunity divided by eligible leads | channel-cohort | Marketing | deduplicated leads within attribution window | funnel bounds and chronology tests | Lead identity and attribution can be ambiguous |
-| Opportunity-to-win conversion | closed-won opportunities divided by closed opportunities | close period and slices | Sales | excludes open opportunities | bounds and status tests | Does not adjust for deal-size mix |
-| Sales-cycle length | days from opportunity creation to closed-won date | won opportunity | Sales | won deals with valid timestamps | nonnegative chronology test | Excludes unresolved open pipeline |
-| Pipeline coverage | open weighted or unweighted pipeline divided by target for horizon | period, team | RevOps | eligible stages and target period | amount and target-presence tests | Depends on CRM hygiene and probability policy |
-| Win rate | won value or count divided by closed value or count, variant labeled | period and slices | Sales | closed outcomes only | bounds and variant-label tests | Count and value variants answer different questions |
-| Acquisition cost by channel | eligible acquisition spend divided by new paid accounts attributed to channel | channel-cohort | Marketing | documented first-touch policy and window | spend-to-source and denominator tests | Multi-touch influence is simplified |
-| Revenue and retention by channel | MRR, NRR, and logo retention grouped by acquisition channel | channel-cohort-period | Marketing | fixed acquisition channel; mature cohorts flagged | aggregate tie-out and cohort tests | Channel selection may correlate with customer mix |
-| Marketing return | attributable gross-margin value less eligible spend, divided by spend | channel-horizon-scenario | Marketing | labels modeled attribution and horizon assumptions | recomputation and scenario-label tests | Scenario estimate, not causal return |
+- **ID and version:** `net_new_mrr` v1 (headline KPI)
+- **Business question:** Did recurring revenue grow or shrink this month, and why?
+- **Owner role:** Finance
+- **Description:** New plus expansion plus reactivation, less contraction and churned MRR.
+- **Grain:** month
+- **Source model:** `fct_mrr_movement` (semantic model `customer_month_revenue`)
+- **Calculation:** `new_mrr + expansion_mrr + reactivation_mrr - contraction_mrr - churned_mrr`
+- **Numerator:** movement components
+- **Denominator:** none
+- **Inclusions:** every customer-product-plan movement in the month
+- **Exclusions:** one-time fees
+- **Valid dimensions:** month, segment, plan_name, acquisition_channel
+- **Time basis:** calendar month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** assert_mrr_bridge_rolls_forward, mart_mrr_bridge cents_close
+- **Tie-out:** `analytics_revenue.mart_revenue_kpis.net_new_mrr`
+- **Known limits:** A movement metric, not recognized revenue.
 
-## Required metric test pattern
+## Gross revenue retention
 
-Each implemented metric must have at least one explicit dbt test named in model YAML or `tests/`, a documented owner, and a queryable reconciliation field. Ratio metrics return null for zero denominators rather than zero. Aggregate totals are computed from additive numerators and denominators, never as unweighted averages of displayed percentages.
+- **ID and version:** `gross_revenue_retention` v1 (headline KPI)
+- **Business question:** How much of last month's recurring revenue did we keep before expansion?
+- **Owner role:** Customer Success
+- **Description:** Opening MRR less contraction and churned MRR, divided by opening MRR.
+- **Grain:** month
+- **Source model:** `fct_mrr_movement` (semantic model `customer_month_revenue`)
+- **Calculation:** `(opening_mrr - contraction_mrr - churned_mrr) / opening_mrr`
+- **Numerator:** opening MRR less contraction and churned MRR
+- **Denominator:** opening MRR (null when zero)
+- **Inclusions:** customers with opening MRR
+- **Exclusions:** new, expansion and reactivation MRR
+- **Valid dimensions:** month, segment, plan_name
+- **Time basis:** calendar month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** mart_revenue_kpis accepted_range 0 to 1
+- **Tie-out:** `analytics_revenue.mart_revenue_kpis.gross_revenue_retention`
+- **Known limits:** Undefined when opening MRR is zero; mix changes affect comparisons.
+
+## Net revenue retention
+
+- **ID and version:** `net_revenue_retention` v1 (headline KPI)
+- **Business question:** Including expansion, how much of last month's recurring revenue do we have now?
+- **Owner role:** Revenue Operations
+- **Description:** Opening MRR plus expansion and reactivation, less contraction and churned MRR, divided by opening MRR.
+- **Grain:** month
+- **Source model:** `fct_mrr_movement` (semantic model `customer_month_revenue`)
+- **Calculation:** `(opening_mrr + expansion_mrr + reactivation_mrr - contraction_mrr - churned_mrr) / opening_mrr`
+- **Numerator:** opening MRR plus expansion and reactivation, less contraction and churn
+- **Denominator:** opening MRR (null when zero)
+- **Inclusions:** customers with opening MRR
+- **Exclusions:** new MRR
+- **Valid dimensions:** month, segment, plan_name
+- **Time basis:** calendar month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** mart_revenue_kpis accepted_range 0 to 2
+- **Tie-out:** `analytics_revenue.mart_revenue_kpis.net_revenue_retention`
+- **Known limits:** Can exceed 100 percent; small bases are volatile.
+
+## Active customers
+
+- **ID and version:** `active_customers` v1 (headline KPI)
+- **Business question:** How many customers pay recurring revenue at month end?
+- **Owner role:** Revenue Operations
+- **Description:** Distinct customers with closing MRR above zero.
+- **Grain:** month
+- **Source model:** `fct_mrr_movement` (semantic model `customer_month_revenue`)
+- **Calculation:** `count distinct customer_id where closing_mrr > 0`
+- **Numerator:** customers with positive closing MRR
+- **Denominator:** none
+- **Inclusions:** customers with positive closing MRR on any product
+- **Exclusions:** zero-MRR customers
+- **Valid dimensions:** month, segment, plan_name, acquisition_channel
+- **Time basis:** calendar month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** mart_revenue_kpis active_customers not_null
+- **Tie-out:** `analytics_revenue.mart_revenue_kpis.active_customers`
+- **Known limits:** Counts customers, not accounts; product-level churn can leave the customer active.
+
+## Churned customers
+
+- **ID and version:** `logo_churn` v1
+- **Business question:** How many customers moved from positive MRR to zero this month?
+- **Owner role:** Customer Success
+- **Description:** Distinct customers with a churn movement in the month.
+- **Grain:** month
+- **Source model:** `fct_mrr_movement` (semantic model `customer_month_revenue`)
+- **Calculation:** `count distinct customer_id where movement_type = 'churn'`
+- **Numerator:** customers with a churn movement
+- **Denominator:** none
+- **Inclusions:** product-level churn rows
+- **Exclusions:** partial contraction
+- **Valid dimensions:** month, segment, plan_name
+- **Time basis:** calendar month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** fct_mrr_movement movement_type accepted_values
+- **Tie-out:** contract value is the reference; Tableau and Excel tie to it
+- **Known limits:** 120 of 132 December 2025 cancellations are dated on the last day of the data window.
+
+## Failed-payment exposure
+
+- **ID and version:** `failed_payment_exposure` v1 (headline KPI)
+- **Business question:** How much billed revenue is sitting on failed payment attempts?
+- **Owner role:** Billing Operations
+- **Description:** Invoice total on invoices whose payment attempts failed.
+- **Grain:** invoice month
+- **Source model:** `fct_billing_reconciliation` (semantic model `billing_reconciliation`)
+- **Calculation:** `sum(failed_payment_exposure)`
+- **Numerator:** failed-payment exposure
+- **Denominator:** none
+- **Inclusions:** invoices with a failed attempt and no successful payment
+- **Exclusions:** successful attempts
+- **Valid dimensions:** month, status, currency
+- **Time basis:** invoice date month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** assert_failed_payment_exposure_quantified, fct_billing_reconciliation non_negative
+- **Tie-out:** contract value is the reference; Tableau and Excel tie to it
+- **Known limits:** Exposure is not certain loss; attempts can later recover.
+
+## Billing reconciliation variance
+
+- **ID and version:** `reconciliation_variance` v1 (headline KPI)
+- **Business question:** Do invoices equal successful payments plus unpaid failed exposure?
+- **Owner role:** Finance
+- **Description:** Billed amount less successful payments less failed-payment exposure. Must be zero.
+- **Grain:** invoice month
+- **Source model:** `fct_billing_reconciliation` (semantic model `billing_reconciliation`)
+- **Calculation:** `billed_amount - paid_amount - failed_payment_exposure`
+- **Numerator:** billed less paid less unpaid exposure
+- **Denominator:** none
+- **Inclusions:** all invoices
+- **Exclusions:** none
+- **Valid dimensions:** month
+- **Time basis:** invoice date month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** assert_invoice_arithmetic, Excel Billing Reconciliation tie-out
+- **Tie-out:** contract value is the reference; Tableau and Excel tie to it
+- **Known limits:** Partial payments are not modeled.
+
+## Billed amount
+
+- **ID and version:** `billed_amount` v1
+- **Business question:** How much did we invoice?
+- **Owner role:** Finance
+- **Description:** Invoice totals including tax.
+- **Grain:** invoice month
+- **Source model:** `fct_billing_reconciliation` (semantic model `billing_reconciliation`)
+- **Calculation:** `sum(total_amount)`
+- **Numerator:** invoice totals
+- **Denominator:** none
+- **Inclusions:** all invoices
+- **Exclusions:** none
+- **Valid dimensions:** month, status, currency
+- **Time basis:** invoice date month
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** assert_invoice_arithmetic
+- **Tie-out:** contract value is the reference; Tableau and Excel tie to it
+- **Known limits:** Mixed-currency rows are exceptions until converted.
+
+## Billing exceptions requiring review
+
+- **ID and version:** `exception_count` v1 (headline KPI)
+- **Business question:** How many invoice-rule violations are waiting for review?
+- **Owner role:** Finance
+- **Description:** Invoice and rule pairs in the finance exception queue.
+- **Grain:** invoice and rule
+- **Source model:** `mart_finance_exceptions` (semantic model `finance_exceptions`)
+- **Calculation:** `count(*)`
+- **Numerator:** exception rows
+- **Denominator:** none
+- **Inclusions:** every rule violation
+- **Exclusions:** none
+- **Valid dimensions:** exception_type, severity
+- **Time basis:** not time-bound (queue at refresh)
+- **Refresh expectation:** every pipeline run
+- **Quality checks:** mart_finance_exceptions not_null
+- **Tie-out:** contract value is the reference; Tableau and Excel tie to it
+- **Known limits:** All 969 current exceptions trace to invoice dating in the generator.

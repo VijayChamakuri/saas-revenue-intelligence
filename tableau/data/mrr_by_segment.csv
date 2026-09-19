@@ -1,0 +1,1484 @@
+month_start,segment,plan_name,acquisition_channel,opening_mrr,new_mrr,expansion_mrr,reactivation_mrr,contraction_mrr,churned_mrr,closing_mrr
+2023-01-01,enterprise,Starter,Events,0.0,468.0,0.0,0.0,0.0,0.0,468.0
+2023-01-01,mid-market,Enterprise,Organic,0.0,11040.9,0.0,0.0,0.0,0.0,11040.9
+2023-01-01,mid-market,Enterprise,Partner,0.0,17641.6,0.0,0.0,0.0,0.0,17641.6
+2023-01-01,mid-market,Growth,Events,0.0,2899.3,0.0,0.0,0.0,0.0,2899.3
+2023-01-01,mid-market,Growth,Paid Search,0.0,1185.0,0.0,0.0,0.0,0.0,1185.0
+2023-01-01,smb,Enterprise,Paid Search,0.0,11398.5,0.0,0.0,0.0,0.0,11398.5
+2023-01-01,smb,Growth,Events,0.0,948.0,0.0,0.0,0.0,0.0,948.0
+2023-01-01,smb,Growth,Organic,0.0,2061.9,0.0,0.0,0.0,0.0,2061.9
+2023-01-01,smb,Growth,Paid Search,0.0,4668.9,0.0,0.0,0.0,0.0,4668.9
+2023-01-01,smb,Growth,Partner,0.0,1501.0,0.0,0.0,0.0,0.0,1501.0
+2023-01-01,smb,Starter,Events,0.0,631.8,0.0,0.0,0.0,0.0,631.8
+2023-01-01,smb,Starter,Paid Search,0.0,298.35,0.0,0.0,0.0,0.0,298.35
+2023-02-01,enterprise,Growth,Organic,0.0,948.0,0.0,0.0,0.0,0.0,948.0
+2023-02-01,enterprise,Starter,Events,468.0,222.3,0.0,0.0,0.0,0.0,690.3
+2023-02-01,enterprise,Starter,Outbound,0.0,245.7,0.0,0.0,0.0,0.0,245.7
+2023-02-01,enterprise,Starter,Paid Search,0.0,195.0,0.0,0.0,0.0,0.0,195.0
+2023-02-01,mid-market,Enterprise,Events,0.0,27267.0,0.0,0.0,0.0,0.0,27267.0
+2023-02-01,mid-market,Enterprise,Organic,11040.9,0.0,0.0,0.0,0.0,0.0,11040.9
+2023-02-01,mid-market,Enterprise,Outbound,0.0,7450.0,0.0,0.0,0.0,0.0,7450.0
+2023-02-01,mid-market,Enterprise,Partner,17641.6,0.0,0.0,0.0,0.0,0.0,17641.6
+2023-02-01,mid-market,Growth,Events,2899.3,0.0,0.0,0.0,0.0,0.0,2899.3
+2023-02-01,mid-market,Growth,Outbound,0.0,1343.0,0.0,0.0,0.0,0.0,1343.0
+2023-02-01,mid-market,Growth,Paid Search,1185.0,1817.0,0.0,0.0,0.0,0.0,3002.0
+2023-02-01,mid-market,Starter,Organic,0.0,195.0,0.0,0.0,0.0,0.0,195.0
+2023-02-01,mid-market,Starter,Outbound,0.0,934.05,0.0,0.0,0.0,0.0,934.05
+2023-02-01,mid-market,Starter,Paid Search,0.0,468.0,0.0,0.0,0.0,0.0,468.0
+2023-02-01,mid-market,Starter,Partner,0.0,165.75,0.0,0.0,0.0,0.0,165.75
+2023-02-01,smb,Enterprise,Events,0.0,12367.0,0.0,0.0,0.0,0.0,12367.0
+2023-02-01,smb,Enterprise,Organic,0.0,17433.0,0.0,0.0,0.0,0.0,17433.0
+2023-02-01,smb,Enterprise,Outbound,0.0,21754.0,0.0,0.0,0.0,0.0,21754.0
+2023-02-01,smb,Enterprise,Paid Search,11398.5,0.0,0.0,0.0,0.0,0.0,11398.5
+2023-02-01,smb,Enterprise,Partner,0.0,12277.6,0.0,0.0,0.0,0.0,12277.6
+2023-02-01,smb,Growth,Events,948.0,1975.0,0.0,0.0,0.0,0.0,2923.0
+2023-02-01,smb,Growth,Organic,2061.9,1817.0,0.0,0.0,0.0,0.0,3878.9
+2023-02-01,smb,Growth,Outbound,0.0,4661.0,0.0,0.0,0.0,0.0,4661.0
+2023-02-01,smb,Growth,Paid Search,4668.9,0.0,0.0,0.0,0.0,0.0,4668.9
+2023-02-01,smb,Growth,Partner,1501.0,1580.0,0.0,0.0,0.0,0.0,3081.0
+2023-02-01,smb,Starter,Events,631.8,1058.85,0.0,0.0,0.0,0.0,1690.65
+2023-02-01,smb,Starter,Organic,0.0,444.6,0.0,0.0,0.0,0.0,444.6
+2023-02-01,smb,Starter,Outbound,0.0,588.9,0.0,0.0,0.0,0.0,588.9
+2023-02-01,smb,Starter,Paid Search,298.35,210.6,0.0,0.0,0.0,0.0,508.95
+2023-02-01,smb,Starter,Partner,0.0,1216.8,0.0,0.0,0.0,0.0,1216.8
+2023-03-01,enterprise,Growth,Organic,948.0,0.0,0.0,0.0,0.0,0.0,948.0
+2023-03-01,enterprise,Growth,Outbound,0.0,3871.0,0.0,0.0,0.0,0.0,3871.0
+2023-03-01,enterprise,Starter,Events,690.3,195.0,0.0,0.0,0.0,0.0,885.3
+2023-03-01,enterprise,Starter,Organic,0.0,234.0,0.0,0.0,0.0,0.0,234.0
+2023-03-01,enterprise,Starter,Outbound,245.7,0.0,0.0,0.0,0.0,0.0,245.7
+2023-03-01,enterprise,Starter,Paid Search,195.0,0.0,0.0,0.0,0.0,0.0,195.0
+2023-03-01,mid-market,Enterprise,Events,27267.0,0.0,0.0,0.0,6816.75,0.0,20450.25
+2023-03-01,mid-market,Enterprise,Organic,11040.9,0.0,0.0,0.0,0.0,0.0,11040.9
+2023-03-01,mid-market,Enterprise,Outbound,7450.0,9089.0,0.0,0.0,0.0,0.0,16539.0
+2023-03-01,mid-market,Enterprise,Partner,17641.6,0.0,2576.21,0.0,0.0,0.0,20217.81
+2023-03-01,mid-market,Growth,Events,2899.3,0.0,0.0,0.0,0.0,0.0,2899.3
+2023-03-01,mid-market,Growth,Organic,0.0,1264.0,0.0,0.0,0.0,0.0,1264.0
+2023-03-01,mid-market,Growth,Outbound,1343.0,0.0,0.0,0.0,0.0,0.0,1343.0
+2023-03-01,mid-market,Growth,Paid Search,3002.0,3847.3,0.0,0.0,0.0,0.0,6849.3
+2023-03-01,mid-market,Growth,Partner,0.0,5079.7,0.0,0.0,0.0,0.0,5079.7
+2023-03-01,mid-market,Starter,Events,0.0,312.0,0.0,0.0,0.0,0.0,312.0
+2023-03-01,mid-market,Starter,Organic,195.0,175.5,0.0,0.0,0.0,0.0,370.5
+2023-03-01,mid-market,Starter,Outbound,934.05,0.0,0.0,0.0,0.0,0.0,934.05
+2023-03-01,mid-market,Starter,Paid Search,468.0,569.4,0.0,0.0,0.0,0.0,1037.4
+2023-03-01,mid-market,Starter,Partner,165.75,374.4,0.0,0.0,0.0,0.0,540.15
+2023-03-01,smb,Enterprise,Events,12367.0,0.0,0.0,0.0,0.0,0.0,12367.0
+2023-03-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,0.0,17433.0
+2023-03-01,smb,Enterprise,Outbound,21754.0,11920.0,0.0,0.0,0.0,0.0,33674.0
+2023-03-01,smb,Enterprise,Paid Search,11398.5,0.0,0.0,0.0,0.0,0.0,11398.5
+2023-03-01,smb,Enterprise,Partner,12277.6,0.0,0.0,0.0,0.0,0.0,12277.6
+2023-03-01,smb,Growth,Events,2923.0,4242.3,0.0,0.0,0.0,0.0,7165.3
+2023-03-01,smb,Growth,Organic,3878.9,0.0,363.4,0.0,0.0,0.0,4242.3
+2023-03-01,smb,Growth,Outbound,4661.0,2567.5,0.0,0.0,0.0,0.0,7228.5
+2023-03-01,smb,Growth,Paid Search,4668.9,1564.2,0.0,0.0,0.0,0.0,6233.1
+2023-03-01,smb,Growth,Partner,3081.0,0.0,0.0,0.0,0.0,0.0,3081.0
+2023-03-01,smb,Starter,Events,1690.65,0.0,109.2,0.0,0.0,0.0,1799.85
+2023-03-01,smb,Starter,Organic,444.6,495.3,0.0,0.0,0.0,0.0,939.9
+2023-03-01,smb,Starter,Outbound,588.9,936.0,0.0,0.0,0.0,0.0,1524.9
+2023-03-01,smb,Starter,Paid Search,508.95,273.0,0.0,0.0,0.0,0.0,781.95
+2023-03-01,smb,Starter,Partner,1216.8,0.0,46.8,0.0,0.0,0.0,1263.6
+2023-04-01,enterprise,Enterprise,Events,0.0,12963.0,0.0,0.0,0.0,0.0,12963.0
+2023-04-01,enterprise,Growth,Organic,948.0,0.0,0.0,0.0,0.0,0.0,948.0
+2023-04-01,enterprise,Growth,Outbound,3871.0,0.0,0.0,0.0,0.0,0.0,3871.0
+2023-04-01,enterprise,Starter,Events,885.3,195.0,0.0,0.0,0.0,0.0,1080.3
+2023-04-01,enterprise,Starter,Organic,234.0,0.0,0.0,0.0,0.0,0.0,234.0
+2023-04-01,enterprise,Starter,Outbound,245.7,210.6,0.0,0.0,0.0,0.0,456.3
+2023-04-01,enterprise,Starter,Paid Search,195.0,0.0,0.0,0.0,0.0,0.0,195.0
+2023-04-01,mid-market,Enterprise,Events,20450.25,0.0,0.0,0.0,0.0,0.0,20450.25
+2023-04-01,mid-market,Enterprise,Organic,11040.9,0.0,0.0,0.0,0.0,0.0,11040.9
+2023-04-01,mid-market,Enterprise,Outbound,16539.0,0.0,0.0,0.0,0.0,0.0,16539.0
+2023-04-01,mid-market,Enterprise,Partner,20217.81,6965.75,0.0,0.0,0.0,0.0,27183.56
+2023-04-01,mid-market,Growth,Events,2899.3,1975.0,0.0,0.0,0.0,0.0,4874.3
+2023-04-01,mid-market,Growth,Organic,1264.0,4424.0,0.0,0.0,0.0,0.0,5688.0
+2023-04-01,mid-market,Growth,Outbound,1343.0,0.0,0.0,0.0,0.0,0.0,1343.0
+2023-04-01,mid-market,Growth,Paid Search,6849.3,1185.0,0.0,0.0,0.0,0.0,8034.3
+2023-04-01,mid-market,Growth,Partner,5079.7,3033.6,0.0,0.0,0.0,0.0,8113.3
+2023-04-01,mid-market,Starter,Events,312.0,0.0,0.0,0.0,0.0,0.0,312.0
+2023-04-01,mid-market,Starter,Organic,370.5,0.0,0.0,0.0,0.0,0.0,370.5
+2023-04-01,mid-market,Starter,Outbound,934.05,555.75,0.0,0.0,0.0,0.0,1489.8
+2023-04-01,mid-market,Starter,Paid Search,1037.4,429.0,0.0,0.0,0.0,0.0,1466.4
+2023-04-01,mid-market,Starter,Partner,540.15,0.0,0.0,0.0,0.0,0.0,540.15
+2023-04-01,smb,Enterprise,Events,12367.0,8716.5,0.0,0.0,0.0,0.0,21083.5
+2023-04-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,0.0,17433.0
+2023-04-01,smb,Enterprise,Outbound,33674.0,0.0,0.0,0.0,0.0,0.0,33674.0
+2023-04-01,smb,Enterprise,Paid Search,11398.5,0.0,0.0,0.0,0.0,0.0,11398.5
+2023-04-01,smb,Enterprise,Partner,12277.6,0.0,0.0,0.0,0.0,0.0,12277.6
+2023-04-01,smb,Growth,Events,7165.3,1678.75,0.0,0.0,395.0,0.0,8449.05
+2023-04-01,smb,Growth,Organic,4242.3,0.0,0.0,0.0,0.0,0.0,4242.3
+2023-04-01,smb,Growth,Outbound,7228.5,1141.55,0.0,0.0,0.0,0.0,8370.05
+2023-04-01,smb,Growth,Paid Search,6233.1,2733.4,312.84,0.0,0.0,0.0,9279.34
+2023-04-01,smb,Growth,Partner,3081.0,1678.75,0.0,0.0,0.0,0.0,4759.75
+2023-04-01,smb,Starter,Events,1799.85,195.0,98.28,0.0,0.0,0.0,2093.13
+2023-04-01,smb,Starter,Organic,939.9,222.3,0.0,0.0,0.0,0.0,1162.2
+2023-04-01,smb,Starter,Outbound,1524.9,234.0,0.0,0.0,0.0,0.0,1758.9
+2023-04-01,smb,Starter,Paid Search,781.95,663.0,0.0,0.0,0.0,0.0,1444.95
+2023-04-01,smb,Starter,Partner,1263.6,877.5,0.0,0.0,0.0,0.0,2141.1
+2023-05-01,enterprise,Enterprise,Events,12963.0,0.0,0.0,0.0,0.0,0.0,12963.0
+2023-05-01,enterprise,Growth,Events,0.0,1422.0,0.0,0.0,0.0,0.0,1422.0
+2023-05-01,enterprise,Growth,Organic,948.0,1007.25,0.0,0.0,0.0,0.0,1955.25
+2023-05-01,enterprise,Growth,Outbound,3871.0,0.0,0.0,0.0,0.0,0.0,3871.0
+2023-05-01,enterprise,Starter,Events,1080.3,312.0,0.0,0.0,0.0,0.0,1392.3
+2023-05-01,enterprise,Starter,Organic,234.0,0.0,0.0,0.0,0.0,0.0,234.0
+2023-05-01,enterprise,Starter,Outbound,456.3,0.0,0.0,0.0,0.0,0.0,456.3
+2023-05-01,enterprise,Starter,Paid Search,195.0,0.0,0.0,0.0,0.0,0.0,195.0
+2023-05-01,mid-market,Enterprise,Events,20450.25,9245.45,0.0,0.0,0.0,0.0,29695.7
+2023-05-01,mid-market,Enterprise,Organic,11040.9,0.0,0.0,0.0,0.0,0.0,11040.9
+2023-05-01,mid-market,Enterprise,Outbound,16539.0,0.0,0.0,0.0,0.0,0.0,16539.0
+2023-05-01,mid-market,Enterprise,Partner,27183.56,29502.0,2438.01,0.0,0.0,0.0,59123.57
+2023-05-01,mid-market,Growth,Events,4874.3,0.0,0.0,0.0,0.0,0.0,4874.3
+2023-05-01,mid-market,Growth,Organic,5688.0,0.0,0.0,0.0,0.0,0.0,5688.0
+2023-05-01,mid-market,Growth,Outbound,1343.0,0.0,0.0,0.0,0.0,0.0,1343.0
+2023-05-01,mid-market,Growth,Paid Search,8034.3,5644.55,0.0,0.0,0.0,0.0,13678.85
+2023-05-01,mid-market,Growth,Partner,8113.3,0.0,0.0,0.0,0.0,0.0,8113.3
+2023-05-01,mid-market,Starter,Events,312.0,0.0,0.0,0.0,0.0,0.0,312.0
+2023-05-01,mid-market,Starter,Organic,370.5,0.0,0.0,0.0,0.0,0.0,370.5
+2023-05-01,mid-market,Starter,Outbound,1489.8,741.0,0.0,0.0,0.0,0.0,2230.8
+2023-05-01,mid-market,Starter,Paid Search,1466.4,195.0,0.0,0.0,0.0,0.0,1661.4
+2023-05-01,mid-market,Starter,Partner,540.15,0.0,0.0,0.0,0.0,0.0,540.15
+2023-05-01,smb,Enterprise,Events,21083.5,0.0,0.0,0.0,0.0,0.0,21083.5
+2023-05-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,0.0,17433.0
+2023-05-01,smb,Enterprise,Outbound,33674.0,0.0,0.0,0.0,0.0,0.0,33674.0
+2023-05-01,smb,Enterprise,Paid Search,11398.5,9766.95,0.0,0.0,0.0,0.0,21165.45
+2023-05-01,smb,Enterprise,Partner,12277.6,0.0,0.0,0.0,0.0,0.0,12277.6
+2023-05-01,smb,Growth,Events,8449.05,1425.95,587.56,0.0,0.0,0.0,10462.56
+2023-05-01,smb,Growth,Organic,4242.3,2385.8,0.0,0.0,0.0,0.0,6628.1
+2023-05-01,smb,Growth,Outbound,8370.05,2828.2,0.0,0.0,0.0,0.0,11198.25
+2023-05-01,smb,Growth,Paid Search,9279.34,4803.2,0.0,0.0,0.0,0.0,14082.54
+2023-05-01,smb,Growth,Partner,4759.75,1410.15,0.0,0.0,419.69,0.0,5750.21
+2023-05-01,smb,Starter,Events,2093.13,663.0,0.0,0.0,0.0,0.0,2756.13
+2023-05-01,smb,Starter,Organic,1162.2,0.0,0.0,0.0,0.0,0.0,1162.2
+2023-05-01,smb,Starter,Outbound,1758.9,245.7,0.0,0.0,0.0,0.0,2004.6
+2023-05-01,smb,Starter,Paid Search,1444.95,522.6,0.0,0.0,0.0,0.0,1967.55
+2023-05-01,smb,Starter,Partner,2141.1,544.05,53.04,0.0,0.0,0.0,2738.19
+2023-06-01,enterprise,Enterprise,Events,12963.0,0.0,0.0,0.0,0.0,0.0,12963.0
+2023-06-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2023-06-01,enterprise,Growth,Organic,1955.25,0.0,0.0,0.0,0.0,0.0,1955.25
+2023-06-01,enterprise,Growth,Outbound,3871.0,0.0,0.0,0.0,0.0,0.0,3871.0
+2023-06-01,enterprise,Starter,Events,1392.3,0.0,44.46,0.0,0.0,0.0,1436.76
+2023-06-01,enterprise,Starter,Organic,234.0,0.0,0.0,0.0,0.0,0.0,234.0
+2023-06-01,enterprise,Starter,Outbound,456.3,0.0,0.0,0.0,0.0,0.0,456.3
+2023-06-01,enterprise,Starter,Paid Search,195.0,0.0,0.0,0.0,0.0,0.0,195.0
+2023-06-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2023-06-01,mid-market,Enterprise,Organic,11040.9,0.0,0.0,0.0,0.0,0.0,11040.9
+2023-06-01,mid-market,Enterprise,Outbound,16539.0,0.0,1817.8,0.0,0.0,0.0,18356.8
+2023-06-01,mid-market,Enterprise,Partner,59123.57,0.0,0.0,0.0,2570.25,0.0,56553.32
+2023-06-01,mid-market,Growth,Events,4874.3,0.0,0.0,0.0,0.0,0.0,4874.3
+2023-06-01,mid-market,Growth,Organic,5688.0,0.0,0.0,0.0,0.0,0.0,5688.0
+2023-06-01,mid-market,Growth,Outbound,1343.0,1659.0,0.0,0.0,0.0,0.0,3002.0
+2023-06-01,mid-market,Growth,Paid Search,13678.85,1125.75,0.0,0.0,0.0,0.0,14804.6
+2023-06-01,mid-market,Growth,Partner,8113.3,1208.7,0.0,0.0,0.0,0.0,9322.0
+2023-06-01,mid-market,Starter,Events,312.0,0.0,0.0,0.0,0.0,0.0,312.0
+2023-06-01,mid-market,Starter,Organic,370.5,0.0,0.0,0.0,0.0,0.0,370.5
+2023-06-01,mid-market,Starter,Outbound,2230.8,0.0,0.0,0.0,0.0,0.0,2230.8
+2023-06-01,mid-market,Starter,Paid Search,1661.4,0.0,0.0,0.0,0.0,0.0,1661.4
+2023-06-01,mid-market,Starter,Partner,540.15,0.0,0.0,0.0,0.0,0.0,540.15
+2023-06-01,smb,Enterprise,Events,21083.5,7450.0,0.0,0.0,0.0,0.0,28533.5
+2023-06-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,0.0,17433.0
+2023-06-01,smb,Enterprise,Outbound,33674.0,0.0,0.0,0.0,0.0,0.0,33674.0
+2023-06-01,smb,Enterprise,Paid Search,21165.45,7450.0,0.0,0.0,0.0,0.0,28615.45
+2023-06-01,smb,Enterprise,Partner,12277.6,0.0,0.0,0.0,0.0,0.0,12277.6
+2023-06-01,smb,Growth,Events,10462.56,1264.0,691.25,0.0,356.49,0.0,12061.32
+2023-06-01,smb,Growth,Organic,6628.1,1659.0,0.0,0.0,0.0,0.0,8287.1
+2023-06-01,smb,Growth,Outbound,11198.25,0.0,0.0,0.0,0.0,0.0,11198.25
+2023-06-01,smb,Growth,Paid Search,14082.54,1007.25,0.0,0.0,0.0,0.0,15089.79
+2023-06-01,smb,Growth,Partner,5750.21,2310.75,0.0,0.0,0.0,0.0,8060.96
+2023-06-01,smb,Starter,Events,2756.13,0.0,0.0,0.0,79.56,0.0,2676.57
+2023-06-01,smb,Starter,Organic,1162.2,713.7,0.0,0.0,0.0,0.0,1875.9
+2023-06-01,smb,Starter,Outbound,2004.6,686.4,0.0,0.0,0.0,0.0,2691.0
+2023-06-01,smb,Starter,Paid Search,1967.55,0.0,0.0,0.0,0.0,0.0,1967.55
+2023-06-01,smb,Starter,Partner,2738.19,674.7,0.0,0.0,0.0,0.0,3412.89
+2023-07-01,enterprise,Enterprise,Events,12963.0,0.0,0.0,0.0,0.0,0.0,12963.0
+2023-07-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2023-07-01,enterprise,Growth,Organic,1955.25,1279.8,0.0,0.0,0.0,0.0,3235.05
+2023-07-01,enterprise,Growth,Outbound,3871.0,0.0,0.0,0.0,0.0,0.0,3871.0
+2023-07-01,enterprise,Starter,Events,1436.76,0.0,93.37,0.0,0.0,0.0,1530.13
+2023-07-01,enterprise,Starter,Organic,234.0,0.0,0.0,0.0,0.0,0.0,234.0
+2023-07-01,enterprise,Starter,Outbound,456.3,0.0,0.0,0.0,0.0,0.0,456.3
+2023-07-01,enterprise,Starter,Paid Search,195.0,526.5,0.0,0.0,0.0,0.0,721.5
+2023-07-01,enterprise,Starter,Partner,0.0,296.4,0.0,0.0,0.0,0.0,296.4
+2023-07-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2023-07-01,mid-market,Enterprise,Organic,11040.9,0.0,0.0,0.0,0.0,0.0,11040.9
+2023-07-01,mid-market,Enterprise,Outbound,18356.8,19161.4,0.0,0.0,0.0,0.0,37518.2
+2023-07-01,mid-market,Enterprise,Partner,56553.32,0.0,0.0,0.0,0.0,0.0,56553.32
+2023-07-01,mid-market,Growth,Events,4874.3,1007.25,0.0,0.0,0.0,0.0,5881.55
+2023-07-01,mid-market,Growth,Organic,5688.0,0.0,0.0,0.0,0.0,0.0,5688.0
+2023-07-01,mid-market,Growth,Outbound,3002.0,0.0,331.8,0.0,0.0,0.0,3333.8
+2023-07-01,mid-market,Growth,Paid Search,14804.6,1501.0,0.0,0.0,0.0,0.0,16305.6
+2023-07-01,mid-market,Growth,Partner,9322.0,3302.2,0.0,0.0,0.0,0.0,12624.2
+2023-07-01,mid-market,Starter,Events,312.0,280.8,0.0,0.0,0.0,0.0,592.8
+2023-07-01,mid-market,Starter,Organic,370.5,429.0,0.0,0.0,0.0,0.0,799.5
+2023-07-01,mid-market,Starter,Outbound,2230.8,390.0,172.67,0.0,43.88,0.0,2749.59
+2023-07-01,mid-market,Starter,Paid Search,1661.4,429.0,0.0,0.0,0.0,0.0,2090.4
+2023-07-01,mid-market,Starter,Partner,540.15,0.0,33.15,0.0,0.0,0.0,573.3
+2023-07-01,smb,Enterprise,Events,28533.5,0.0,0.0,0.0,0.0,0.0,28533.5
+2023-07-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,0.0,17433.0
+2023-07-01,smb,Enterprise,Outbound,33674.0,0.0,0.0,0.0,0.0,0.0,33674.0
+2023-07-01,smb,Enterprise,Paid Search,28615.45,7107.3,0.0,0.0,0.0,0.0,35722.75
+2023-07-01,smb,Enterprise,Partner,12277.6,8940.0,0.0,0.0,0.0,0.0,21217.6
+2023-07-01,smb,Growth,Events,12061.32,1185.0,453.26,0.0,0.0,0.0,13699.58
+2023-07-01,smb,Growth,Organic,8287.1,0.0,0.0,0.0,0.0,0.0,8287.1
+2023-07-01,smb,Growth,Outbound,11198.25,0.0,718.9,0.0,0.0,0.0,11917.15
+2023-07-01,smb,Growth,Paid Search,15089.79,2559.6,0.0,0.0,0.0,0.0,17649.39
+2023-07-01,smb,Growth,Partner,8060.96,1659.0,0.0,0.0,0.0,0.0,9719.96
+2023-07-01,smb,Starter,Events,2676.57,234.0,47.74,0.0,96.52,0.0,2861.79
+2023-07-01,smb,Starter,Organic,1875.9,0.0,0.0,0.0,0.0,0.0,1875.9
+2023-07-01,smb,Starter,Outbound,2691.0,639.6,95.55,0.0,0.0,0.0,3426.15
+2023-07-01,smb,Starter,Paid Search,1967.55,877.5,0.0,0.0,0.0,0.0,2845.05
+2023-07-01,smb,Starter,Partner,3412.89,969.15,111.38,0.0,0.0,0.0,4493.42
+2023-08-01,enterprise,Enterprise,Events,12963.0,13112.0,0.0,0.0,0.0,0.0,26075.0
+2023-08-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2023-08-01,enterprise,Growth,Organic,3235.05,0.0,0.0,0.0,0.0,0.0,3235.05
+2023-08-01,enterprise,Growth,Outbound,3871.0,2464.8,0.0,0.0,335.75,0.0,6000.05
+2023-08-01,enterprise,Starter,Events,1530.13,0.0,0.0,0.0,0.0,0.0,1530.13
+2023-08-01,enterprise,Starter,Organic,234.0,0.0,0.0,0.0,0.0,0.0,234.0
+2023-08-01,enterprise,Starter,Outbound,456.3,507.0,0.0,0.0,0.0,0.0,963.3
+2023-08-01,enterprise,Starter,Paid Search,721.5,0.0,0.0,0.0,43.88,0.0,677.62
+2023-08-01,enterprise,Starter,Partner,296.4,0.0,0.0,0.0,0.0,0.0,296.4
+2023-08-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2023-08-01,mid-market,Enterprise,Organic,11040.9,0.0,0.0,0.0,0.0,0.0,11040.9
+2023-08-01,mid-market,Enterprise,Outbound,37518.2,0.0,0.0,0.0,0.0,0.0,37518.2
+2023-08-01,mid-market,Enterprise,Partner,56553.32,7450.0,0.0,0.0,0.0,0.0,64003.32
+2023-08-01,mid-market,Growth,Events,5881.55,0.0,0.0,0.0,0.0,0.0,5881.55
+2023-08-01,mid-market,Growth,Organic,5688.0,0.0,0.0,0.0,0.0,0.0,5688.0
+2023-08-01,mid-market,Growth,Outbound,3333.8,0.0,0.0,0.0,0.0,0.0,3333.8
+2023-08-01,mid-market,Growth,Paid Search,16305.6,1343.0,1445.7,0.0,0.0,0.0,19094.3
+2023-08-01,mid-market,Growth,Partner,12624.2,0.0,0.0,0.0,0.0,0.0,12624.2
+2023-08-01,mid-market,Starter,Events,592.8,234.0,0.0,0.0,0.0,0.0,826.8
+2023-08-01,mid-market,Starter,Organic,799.5,0.0,0.0,0.0,0.0,0.0,799.5
+2023-08-01,mid-market,Starter,Outbound,2749.59,234.0,0.0,0.0,0.0,0.0,2983.59
+2023-08-01,mid-market,Starter,Paid Search,2090.4,1029.6,46.8,0.0,0.0,0.0,3166.8
+2023-08-01,mid-market,Starter,Partner,573.3,0.0,0.0,0.0,49.72,0.0,523.58
+2023-08-01,smb,Enterprise,Events,28533.5,0.0,0.0,0.0,0.0,0.0,28533.5
+2023-08-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,0.0,17433.0
+2023-08-01,smb,Enterprise,Outbound,33674.0,0.0,0.0,0.0,0.0,0.0,33674.0
+2023-08-01,smb,Enterprise,Paid Search,35722.75,0.0,0.0,0.0,0.0,0.0,35722.75
+2023-08-01,smb,Enterprise,Partner,21217.6,10474.7,3129.0,0.0,0.0,0.0,34821.3
+2023-08-01,smb,Growth,Events,13699.58,2449.0,0.0,0.0,0.0,0.0,16148.58
+2023-08-01,smb,Growth,Organic,8287.1,7200.85,240.16,0.0,0.0,0.0,15728.11
+2023-08-01,smb,Growth,Outbound,11917.15,0.0,0.0,0.0,0.0,0.0,11917.15
+2023-08-01,smb,Growth,Paid Search,17649.39,4029.0,0.0,0.0,0.0,0.0,21678.39
+2023-08-01,smb,Growth,Partner,9719.96,3792.0,853.2,0.0,0.0,0.0,14365.16
+2023-08-01,smb,Starter,Events,2861.79,813.15,68.25,0.0,0.0,0.0,3743.19
+2023-08-01,smb,Starter,Organic,1875.9,333.45,0.0,0.0,0.0,0.0,2209.35
+2023-08-01,smb,Starter,Outbound,3426.15,195.0,0.0,0.0,0.0,0.0,3621.15
+2023-08-01,smb,Starter,Paid Search,2845.05,273.0,0.0,0.0,0.0,0.0,3118.05
+2023-08-01,smb,Starter,Partner,4493.42,280.8,0.0,0.0,0.0,0.0,4774.22
+2023-09-01,enterprise,Enterprise,Events,26075.0,0.0,2592.6,0.0,0.0,0.0,28667.6
+2023-09-01,enterprise,Enterprise,Partner,0.0,6965.75,0.0,0.0,0.0,0.0,6965.75
+2023-09-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2023-09-01,enterprise,Growth,Organic,3235.05,0.0,255.96,0.0,0.0,0.0,3491.01
+2023-09-01,enterprise,Growth,Outbound,6000.05,0.0,0.0,0.0,0.0,0.0,6000.05
+2023-09-01,enterprise,Starter,Events,1530.13,678.6,0.0,0.0,0.0,0.0,2208.73
+2023-09-01,enterprise,Starter,Organic,234.0,0.0,0.0,0.0,0.0,0.0,234.0
+2023-09-01,enterprise,Starter,Outbound,963.3,536.25,0.0,0.0,0.0,0.0,1499.55
+2023-09-01,enterprise,Starter,Paid Search,677.62,0.0,0.0,0.0,0.0,0.0,677.62
+2023-09-01,enterprise,Starter,Partner,296.4,0.0,0.0,0.0,0.0,0.0,296.4
+2023-09-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2023-09-01,mid-market,Enterprise,Organic,11040.9,7450.0,0.0,0.0,0.0,0.0,18490.9
+2023-09-01,mid-market,Enterprise,Outbound,37518.2,8850.6,0.0,0.0,0.0,0.0,46368.8
+2023-09-01,mid-market,Enterprise,Partner,64003.32,0.0,0.0,0.0,0.0,0.0,64003.32
+2023-09-01,mid-market,Growth,Events,5881.55,0.0,0.0,0.0,0.0,0.0,5881.55
+2023-09-01,mid-market,Growth,Organic,5688.0,0.0,252.8,0.0,0.0,0.0,5940.8
+2023-09-01,mid-market,Growth,Outbound,3333.8,1350.9,0.0,0.0,0.0,0.0,4684.7
+2023-09-01,mid-market,Growth,Paid Search,19094.3,1951.3,474.0,0.0,0.0,0.0,21519.6
+2023-09-01,mid-market,Growth,Partner,12624.2,1185.0,0.0,0.0,0.0,0.0,13809.2
+2023-09-01,mid-market,Starter,Events,826.8,0.0,0.0,0.0,58.5,0.0,768.3
+2023-09-01,mid-market,Starter,Organic,799.5,0.0,0.0,0.0,0.0,0.0,799.5
+2023-09-01,mid-market,Starter,Outbound,2983.59,0.0,114.32,0.0,0.0,0.0,3097.91
+2023-09-01,mid-market,Starter,Paid Search,3166.8,653.25,0.0,0.0,0.0,0.0,3820.05
+2023-09-01,mid-market,Starter,Partner,523.58,210.6,0.0,0.0,0.0,0.0,734.18
+2023-09-01,smb,Enterprise,Events,28533.5,0.0,0.0,0.0,0.0,0.0,28533.5
+2023-09-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,0.0,17433.0
+2023-09-01,smb,Enterprise,Outbound,33674.0,0.0,3754.8,0.0,0.0,0.0,37428.8
+2023-09-01,smb,Enterprise,Paid Search,35722.75,0.0,0.0,0.0,0.0,0.0,35722.75
+2023-09-01,smb,Enterprise,Partner,34821.3,0.0,0.0,0.0,0.0,0.0,34821.3
+2023-09-01,smb,Growth,Events,16148.58,0.0,0.0,0.0,296.25,0.0,15852.33
+2023-09-01,smb,Growth,Organic,15728.11,0.0,0.0,0.0,0.0,0.0,15728.11
+2023-09-01,smb,Growth,Outbound,11917.15,0.0,0.0,0.0,693.22,0.0,11223.93
+2023-09-01,smb,Growth,Paid Search,21678.39,1659.0,0.0,0.0,0.0,0.0,23337.39
+2023-09-01,smb,Growth,Partner,14365.16,1817.0,282.03,0.0,0.0,0.0,16464.19
+2023-09-01,smb,Starter,Events,3743.19,175.5,101.35,0.0,94.77,0.0,3925.27
+2023-09-01,smb,Starter,Organic,2209.35,1287.0,0.0,0.0,0.0,0.0,3496.35
+2023-09-01,smb,Starter,Outbound,3621.15,390.0,0.0,0.0,0.0,0.0,4011.15
+2023-09-01,smb,Starter,Paid Search,3118.05,0.0,0.0,0.0,0.0,0.0,3118.05
+2023-09-01,smb,Starter,Partner,4774.22,376.35,0.0,0.0,0.0,0.0,5150.57
+2023-10-01,enterprise,Enterprise,Events,28667.6,0.0,0.0,0.0,0.0,0.0,28667.6
+2023-10-01,enterprise,Enterprise,Partner,6965.75,0.0,0.0,0.0,0.0,0.0,6965.75
+2023-10-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2023-10-01,enterprise,Growth,Organic,3491.01,0.0,0.0,0.0,0.0,0.0,3491.01
+2023-10-01,enterprise,Growth,Outbound,6000.05,0.0,0.0,0.0,0.0,0.0,6000.05
+2023-10-01,enterprise,Growth,Paid Search,0.0,1185.0,0.0,0.0,0.0,0.0,1185.0
+2023-10-01,enterprise,Starter,Events,2208.73,0.0,0.0,0.0,0.0,0.0,2208.73
+2023-10-01,enterprise,Starter,Organic,234.0,210.6,0.0,0.0,0.0,0.0,444.6
+2023-10-01,enterprise,Starter,Outbound,1499.55,0.0,0.0,0.0,0.0,0.0,1499.55
+2023-10-01,enterprise,Starter,Paid Search,677.62,312.0,0.0,0.0,0.0,0.0,989.62
+2023-10-01,enterprise,Starter,Partner,296.4,0.0,0.0,0.0,0.0,0.0,296.4
+2023-10-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2023-10-01,mid-market,Enterprise,Organic,18490.9,0.0,0.0,0.0,0.0,0.0,18490.9
+2023-10-01,mid-market,Enterprise,Outbound,46368.8,0.0,0.0,0.0,0.0,0.0,46368.8
+2023-10-01,mid-market,Enterprise,Partner,64003.32,0.0,0.0,0.0,0.0,0.0,64003.32
+2023-10-01,mid-market,Growth,Events,5881.55,1275.85,0.0,0.0,0.0,0.0,7157.4
+2023-10-01,mid-market,Growth,Organic,5940.8,0.0,0.0,0.0,0.0,0.0,5940.8
+2023-10-01,mid-market,Growth,Outbound,4684.7,2618.85,0.0,0.0,0.0,0.0,7303.55
+2023-10-01,mid-market,Growth,Paid Search,21519.6,2291.0,295.46,0.0,0.0,0.0,24106.06
+2023-10-01,mid-market,Growth,Partner,13809.2,3950.0,0.0,0.0,302.17,0.0,17457.03
+2023-10-01,mid-market,Starter,Events,768.3,0.0,0.0,0.0,0.0,0.0,768.3
+2023-10-01,mid-market,Starter,Organic,799.5,0.0,0.0,0.0,0.0,0.0,799.5
+2023-10-01,mid-market,Starter,Outbound,3097.91,210.6,0.0,0.0,0.0,0.0,3308.51
+2023-10-01,mid-market,Starter,Paid Search,3820.05,222.3,0.0,0.0,0.0,0.0,4042.35
+2023-10-01,mid-market,Starter,Partner,734.18,510.9,0.0,0.0,0.0,0.0,1245.08
+2023-10-01,smb,Enterprise,Events,28533.5,7375.5,0.0,0.0,0.0,0.0,35909.0
+2023-10-01,smb,Enterprise,Organic,17433.0,0.0,0.0,0.0,0.0,9387.0,8046.0
+2023-10-01,smb,Enterprise,Outbound,37428.8,13551.55,0.0,0.0,0.0,0.0,50980.35
+2023-10-01,smb,Enterprise,Paid Search,35722.75,0.0,0.0,0.0,0.0,0.0,35722.75
+2023-10-01,smb,Enterprise,Partner,34821.3,7450.0,0.0,0.0,0.0,0.0,42271.3
+2023-10-01,smb,Growth,Events,15852.33,0.0,0.0,0.0,679.89,0.0,15172.44
+2023-10-01,smb,Growth,Organic,15728.11,1501.0,412.38,0.0,0.0,0.0,17641.49
+2023-10-01,smb,Growth,Outbound,11223.93,0.0,0.0,0.0,0.0,0.0,11223.93
+2023-10-01,smb,Growth,Paid Search,23337.39,0.0,995.4,0.0,375.25,0.0,23957.54
+2023-10-01,smb,Growth,Partner,16464.19,3318.0,0.0,0.0,0.0,0.0,19782.19
+2023-10-01,smb,Starter,Events,3925.27,185.25,0.0,0.0,0.0,263.25,3847.27
+2023-10-01,smb,Starter,Organic,3496.35,273.0,116.71,0.0,68.25,0.0,3817.81
+2023-10-01,smb,Starter,Outbound,4011.15,0.0,0.0,0.0,0.0,0.0,4011.15
+2023-10-01,smb,Starter,Paid Search,3118.05,741.0,61.43,0.0,0.0,0.0,3920.48
+2023-10-01,smb,Starter,Partner,5150.57,298.35,70.2,0.0,0.0,0.0,5519.12
+2023-11-01,enterprise,Enterprise,Events,28667.6,0.0,0.0,0.0,0.0,0.0,28667.6
+2023-11-01,enterprise,Enterprise,Partner,6965.75,0.0,0.0,0.0,0.0,0.0,6965.75
+2023-11-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2023-11-01,enterprise,Growth,Organic,3491.01,0.0,0.0,0.0,0.0,0.0,3491.01
+2023-11-01,enterprise,Growth,Outbound,6000.05,0.0,0.0,0.0,0.0,0.0,6000.05
+2023-11-01,enterprise,Growth,Paid Search,1185.0,1185.0,0.0,0.0,0.0,0.0,2370.0
+2023-11-01,enterprise,Starter,Events,2208.73,0.0,46.8,0.0,0.0,0.0,2255.53
+2023-11-01,enterprise,Starter,Organic,444.6,165.75,0.0,0.0,0.0,0.0,610.35
+2023-11-01,enterprise,Starter,Outbound,1499.55,0.0,0.0,0.0,0.0,0.0,1499.55
+2023-11-01,enterprise,Starter,Paid Search,989.62,0.0,0.0,0.0,78.0,0.0,911.62
+2023-11-01,enterprise,Starter,Partner,296.4,0.0,0.0,0.0,0.0,0.0,296.4
+2023-11-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2023-11-01,mid-market,Enterprise,Organic,18490.9,0.0,0.0,0.0,0.0,0.0,18490.9
+2023-11-01,mid-market,Enterprise,Outbound,46368.8,0.0,0.0,0.0,0.0,0.0,46368.8
+2023-11-01,mid-market,Enterprise,Partner,64003.32,14453.0,2698.76,0.0,0.0,0.0,81155.08
+2023-11-01,mid-market,Growth,Events,7157.4,1137.6,0.0,0.0,0.0,0.0,8295.0
+2023-11-01,mid-market,Growth,Organic,5940.8,1343.0,0.0,0.0,0.0,0.0,7283.8
+2023-11-01,mid-market,Growth,Outbound,7303.55,3199.5,0.0,0.0,0.0,0.0,10503.05
+2023-11-01,mid-market,Growth,Paid Search,24106.06,0.0,682.96,0.0,0.0,0.0,24789.02
+2023-11-01,mid-market,Growth,Partner,17457.03,1896.0,0.0,0.0,395.0,0.0,18958.03
+2023-11-01,mid-market,Starter,Events,768.3,0.0,0.0,0.0,0.0,0.0,768.3
+2023-11-01,mid-market,Starter,Organic,799.5,0.0,0.0,0.0,0.0,0.0,799.5
+2023-11-01,mid-market,Starter,Outbound,3308.51,0.0,0.0,0.0,0.0,0.0,3308.51
+2023-11-01,mid-market,Starter,Paid Search,4042.35,0.0,0.0,0.0,0.0,0.0,4042.35
+2023-11-01,mid-market,Starter,Partner,1245.08,259.35,0.0,0.0,0.0,175.5,1328.93
+2023-11-01,smb,Enterprise,Events,35909.0,0.0,0.0,0.0,0.0,0.0,35909.0
+2023-11-01,smb,Enterprise,Organic,8046.0,0.0,0.0,0.0,0.0,0.0,8046.0
+2023-11-01,smb,Enterprise,Outbound,50980.35,0.0,0.0,0.0,0.0,0.0,50980.35
+2023-11-01,smb,Enterprise,Paid Search,35722.75,0.0,1490.0,0.0,0.0,0.0,37212.75
+2023-11-01,smb,Enterprise,Partner,42271.3,0.0,0.0,0.0,0.0,0.0,42271.3
+2023-11-01,smb,Growth,Events,15172.44,2970.4,0.0,0.0,0.0,0.0,18142.84
+2023-11-01,smb,Growth,Organic,17641.49,0.0,866.0,0.0,0.0,0.0,18507.49
+2023-11-01,smb,Growth,Outbound,11223.93,1185.0,0.0,0.0,0.0,1141.55,11267.38
+2023-11-01,smb,Growth,Paid Search,23957.54,0.0,225.15,0.0,0.0,0.0,24182.69
+2023-11-01,smb,Growth,Partner,19782.19,2054.0,251.81,0.0,0.0,0.0,22088.0
+2023-11-01,smb,Starter,Events,3847.27,0.0,171.93,0.0,0.0,0.0,4019.2
+2023-11-01,smb,Starter,Organic,3817.81,643.5,0.0,0.0,0.0,0.0,4461.31
+2023-11-01,smb,Starter,Outbound,4011.15,234.0,0.0,0.0,0.0,0.0,4245.15
+2023-11-01,smb,Starter,Paid Search,3920.48,0.0,0.0,0.0,0.0,0.0,3920.48
+2023-11-01,smb,Starter,Partner,5519.12,0.0,154.05,0.0,70.2,0.0,5602.97
+2023-12-01,enterprise,Enterprise,Events,28667.6,0.0,0.0,0.0,0.0,0.0,28667.6
+2023-12-01,enterprise,Enterprise,Partner,6965.75,0.0,0.0,0.0,0.0,0.0,6965.75
+2023-12-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2023-12-01,enterprise,Growth,Organic,3491.01,0.0,0.0,0.0,0.0,0.0,3491.01
+2023-12-01,enterprise,Growth,Outbound,6000.05,0.0,0.0,0.0,0.0,0.0,6000.05
+2023-12-01,enterprise,Growth,Paid Search,2370.0,0.0,0.0,0.0,296.25,0.0,2073.75
+2023-12-01,enterprise,Starter,Events,2255.53,0.0,0.0,0.0,0.0,0.0,2255.53
+2023-12-01,enterprise,Starter,Organic,610.35,0.0,0.0,0.0,0.0,0.0,610.35
+2023-12-01,enterprise,Starter,Outbound,1499.55,0.0,242.29,0.0,0.0,0.0,1741.84
+2023-12-01,enterprise,Starter,Paid Search,911.62,0.0,0.0,0.0,0.0,0.0,911.62
+2023-12-01,enterprise,Starter,Partner,296.4,0.0,0.0,0.0,0.0,0.0,296.4
+2023-12-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2023-12-01,mid-market,Enterprise,Organic,18490.9,0.0,0.0,0.0,0.0,0.0,18490.9
+2023-12-01,mid-market,Enterprise,Outbound,46368.8,6705.0,0.0,0.0,1810.35,0.0,51263.45
+2023-12-01,mid-market,Enterprise,Partner,81155.08,0.0,0.0,0.0,0.0,0.0,81155.08
+2023-12-01,mid-market,Growth,Events,8295.0,1876.25,0.0,0.0,0.0,0.0,10171.25
+2023-12-01,mid-market,Growth,Organic,7283.8,2923.0,0.0,0.0,0.0,0.0,10206.8
+2023-12-01,mid-market,Growth,Outbound,10503.05,2765.0,0.0,0.0,0.0,0.0,13268.05
+2023-12-01,mid-market,Growth,Paid Search,24789.02,4139.6,921.99,0.0,0.0,0.0,29850.61
+2023-12-01,mid-market,Growth,Partner,18958.03,0.0,0.0,0.0,0.0,0.0,18958.03
+2023-12-01,mid-market,Starter,Events,768.3,249.6,0.0,0.0,0.0,0.0,1017.9
+2023-12-01,mid-market,Starter,Organic,799.5,210.6,0.0,0.0,0.0,0.0,1010.1
+2023-12-01,mid-market,Starter,Outbound,3308.51,195.0,0.0,0.0,0.0,0.0,3503.51
+2023-12-01,mid-market,Starter,Paid Search,4042.35,0.0,98.28,0.0,55.57,0.0,4085.06
+2023-12-01,mid-market,Starter,Partner,1328.93,419.25,0.0,0.0,0.0,0.0,1748.18
+2023-12-01,smb,Enterprise,Events,35909.0,0.0,0.0,0.0,0.0,0.0,35909.0
+2023-12-01,smb,Enterprise,Organic,8046.0,0.0,0.0,0.0,0.0,0.0,8046.0
+2023-12-01,smb,Enterprise,Outbound,50980.35,0.0,0.0,0.0,3620.7,0.0,47359.65
+2023-12-01,smb,Enterprise,Paid Search,37212.75,0.0,0.0,0.0,0.0,0.0,37212.75
+2023-12-01,smb,Enterprise,Partner,42271.3,0.0,0.0,0.0,0.0,0.0,42271.3
+2023-12-01,smb,Growth,Events,18142.84,1738.0,0.0,0.0,0.0,1069.46,18811.38
+2023-12-01,smb,Growth,Organic,18507.49,1343.0,778.94,0.0,0.0,0.0,20629.43
+2023-12-01,smb,Growth,Outbound,11267.38,4029.0,0.0,0.0,0.0,0.0,15296.38
+2023-12-01,smb,Growth,Paid Search,24182.69,1738.0,300.2,0.0,335.75,0.0,25885.14
+2023-12-01,smb,Growth,Partner,22088.0,1007.25,0.0,0.0,0.0,0.0,23095.25
+2023-12-01,smb,Starter,Events,4019.2,0.0,0.0,0.0,71.61,0.0,3947.59
+2023-12-01,smb,Starter,Organic,4461.31,0.0,0.0,0.0,0.0,0.0,4461.31
+2023-12-01,smb,Starter,Outbound,4245.15,407.55,70.2,0.0,0.0,0.0,4722.9
+2023-12-01,smb,Starter,Paid Search,3920.48,1053.0,0.0,0.0,0.0,0.0,4973.48
+2023-12-01,smb,Starter,Partner,5602.97,458.25,0.0,0.0,63.18,0.0,5998.04
+2024-01-01,enterprise,Enterprise,Events,28667.6,0.0,4589.2,0.0,0.0,0.0,33256.8
+2024-01-01,enterprise,Enterprise,Partner,6965.75,9387.0,0.0,0.0,0.0,0.0,16352.75
+2024-01-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2024-01-01,enterprise,Growth,Organic,3491.01,0.0,0.0,0.0,0.0,0.0,3491.01
+2024-01-01,enterprise,Growth,Outbound,6000.05,0.0,0.0,0.0,0.0,0.0,6000.05
+2024-01-01,enterprise,Growth,Paid Search,2073.75,1350.9,0.0,0.0,0.0,0.0,3424.65
+2024-01-01,enterprise,Starter,Events,2255.53,195.0,163.8,0.0,111.15,0.0,2503.18
+2024-01-01,enterprise,Starter,Organic,610.35,0.0,0.0,0.0,0.0,0.0,610.35
+2024-01-01,enterprise,Starter,Outbound,1741.84,0.0,0.0,0.0,0.0,0.0,1741.84
+2024-01-01,enterprise,Starter,Paid Search,911.62,0.0,0.0,0.0,0.0,0.0,911.62
+2024-01-01,enterprise,Starter,Partner,296.4,546.0,0.0,0.0,0.0,0.0,842.4
+2024-01-01,mid-market,Enterprise,Events,29695.7,0.0,0.0,0.0,0.0,0.0,29695.7
+2024-01-01,mid-market,Enterprise,Organic,18490.9,8791.0,0.0,0.0,0.0,0.0,27281.9
+2024-01-01,mid-market,Enterprise,Outbound,51263.45,9118.8,1341.0,0.0,0.0,0.0,61723.25
+2024-01-01,mid-market,Enterprise,Partner,81155.08,0.0,0.0,0.0,0.0,0.0,81155.08
+2024-01-01,mid-market,Growth,Events,10171.25,0.0,0.0,0.0,0.0,0.0,10171.25
+2024-01-01,mid-market,Growth,Organic,10206.8,5640.6,0.0,0.0,316.0,0.0,15531.4
+2024-01-01,mid-market,Growth,Outbound,13268.05,1425.95,0.0,0.0,0.0,0.0,14694.0
+2024-01-01,mid-market,Growth,Paid Search,29850.61,1896.0,525.35,0.0,0.0,0.0,32271.96
+2024-01-01,mid-market,Growth,Partner,18958.03,0.0,0.0,0.0,0.0,0.0,18958.03
+2024-01-01,mid-market,Starter,Events,1017.9,0.0,0.0,0.0,0.0,0.0,1017.9
+2024-01-01,mid-market,Starter,Organic,1010.1,456.3,0.0,0.0,0.0,0.0,1466.4
+2024-01-01,mid-market,Starter,Outbound,3503.51,532.35,101.79,0.0,0.0,0.0,4137.65
+2024-01-01,mid-market,Starter,Paid Search,4085.06,210.6,0.0,0.0,0.0,0.0,4295.66
+2024-01-01,mid-market,Starter,Partner,1748.18,487.5,0.0,0.0,0.0,0.0,2235.68
+2024-01-01,smb,Enterprise,Events,35909.0,13708.0,1743.3,0.0,0.0,0.0,51360.3
+2024-01-01,smb,Enterprise,Organic,8046.0,0.0,0.0,0.0,0.0,0.0,8046.0
+2024-01-01,smb,Enterprise,Outbound,47359.65,10430.0,0.0,0.0,0.0,0.0,57789.65
+2024-01-01,smb,Enterprise,Paid Search,37212.75,0.0,0.0,0.0,0.0,0.0,37212.75
+2024-01-01,smb,Enterprise,Partner,42271.3,15116.05,0.0,0.0,0.0,0.0,57387.35
+2024-01-01,smb,Growth,Events,18811.38,3555.0,0.0,0.0,296.25,0.0,22070.13
+2024-01-01,smb,Growth,Organic,20629.43,0.0,0.0,0.0,0.0,0.0,20629.43
+2024-01-01,smb,Growth,Outbound,15296.38,1947.35,0.0,0.0,0.0,0.0,17243.73
+2024-01-01,smb,Growth,Paid Search,25885.14,1848.6,0.0,0.0,639.9,0.0,27093.84
+2024-01-01,smb,Growth,Partner,23095.25,4266.0,0.0,0.0,0.0,0.0,27361.25
+2024-01-01,smb,Starter,Events,3947.59,409.5,0.0,0.0,0.0,312.0,4045.09
+2024-01-01,smb,Starter,Organic,4461.31,549.9,198.51,0.0,0.0,0.0,5209.72
+2024-01-01,smb,Starter,Outbound,4722.9,877.5,0.0,0.0,0.0,0.0,5600.4
+2024-01-01,smb,Starter,Paid Search,4973.48,460.2,54.6,0.0,0.0,0.0,5488.28
+2024-01-01,smb,Starter,Partner,5998.04,195.0,70.2,0.0,0.0,0.0,6263.24
+2024-02-01,enterprise,Enterprise,Events,33256.8,0.0,0.0,0.0,0.0,0.0,33256.8
+2024-02-01,enterprise,Enterprise,Paid Search,0.0,10132.0,0.0,0.0,0.0,0.0,10132.0
+2024-02-01,enterprise,Enterprise,Partner,16352.75,0.0,3285.45,0.0,0.0,0.0,19638.2
+2024-02-01,enterprise,Growth,Events,1422.0,0.0,0.0,0.0,0.0,0.0,1422.0
+2024-02-01,enterprise,Growth,Organic,3491.01,0.0,0.0,0.0,0.0,0.0,3491.01
+2024-02-01,enterprise,Growth,Outbound,6000.05,2133.0,0.0,0.0,0.0,0.0,8133.05
+2024-02-01,enterprise,Growth,Paid Search,3424.65,0.0,0.0,0.0,0.0,0.0,3424.65
+2024-02-01,enterprise,Starter,Events,2503.18,468.0,0.0,0.0,0.0,0.0,2971.18
+2024-02-01,enterprise,Starter,Organic,610.35,0.0,0.0,0.0,0.0,0.0,610.35
+2024-02-01,enterprise,Starter,Outbound,1741.84,481.65,239.56,0.0,87.75,250.09,2125.21
+2024-02-01,enterprise,Starter,Paid Search,911.62,273.0,92.87,0.0,0.0,0.0,1277.49
+2024-02-01,enterprise,Starter,Partner,842.4,0.0,0.0,0.0,0.0,0.0,842.4
+2024-02-01,mid-market,Enterprise,Events,29695.7,11026.0,0.0,0.0,0.0,0.0,40721.7
+2024-02-01,mid-market,Enterprise,Organic,27281.9,11026.0,0.0,0.0,0.0,0.0,38307.9
+2024-02-01,mid-market,Enterprise,Outbound,61723.25,0.0,4961.7,0.0,0.0,0.0,66684.95
+2024-02-01,mid-market,Enterprise,Partner,81155.08,0.0,3158.8,0.0,0.0,7450.0,76863.88
+2024-02-01,mid-market,Growth,Events,10171.25,0.0,0.0,0.0,0.0,0.0,10171.25
+2024-02-01,mid-market,Growth,Organic,15531.4,2844.0,0.0,0.0,0.0,2449.0,15926.4
+2024-02-01,mid-market,Growth,Outbound,14694.0,0.0,0.0,0.0,0.0,0.0,14694.0
+2024-02-01,mid-market,Growth,Paid Search,32271.96,5198.2,1244.69,0.0,0.0,0.0,38714.85
+2024-02-01,mid-market,Growth,Partner,18958.03,0.0,237.0,0.0,0.0,0.0,19195.03
+2024-02-01,mid-market,Starter,Events,1017.9,0.0,56.16,0.0,0.0,0.0,1074.06
+2024-02-01,mid-market,Starter,Organic,1466.4,175.5,0.0,0.0,0.0,0.0,1641.9
+2024-02-01,mid-market,Starter,Outbound,4137.65,421.2,0.0,0.0,0.0,0.0,4558.85
+2024-02-01,mid-market,Starter,Paid Search,4295.66,351.0,0.0,0.0,41.68,0.0,4604.98
+2024-02-01,mid-market,Starter,Partner,2235.68,210.6,0.0,0.0,0.0,0.0,2446.28
+2024-02-01,smb,Enterprise,Events,51360.3,9238.0,4328.45,0.0,0.0,0.0,64926.75
+2024-02-01,smb,Enterprise,Organic,8046.0,12218.0,0.0,0.0,0.0,0.0,20264.0
+2024-02-01,smb,Enterprise,Outbound,57789.65,22469.2,0.0,0.0,0.0,0.0,80258.85
+2024-02-01,smb,Enterprise,Paid Search,37212.75,0.0,0.0,0.0,0.0,0.0,37212.75
+2024-02-01,smb,Enterprise,Partner,57387.35,10258.65,0.0,0.0,0.0,0.0,67646.0
+2024-02-01,smb,Growth,Events,22070.13,2251.5,278.08,0.0,0.0,1264.0,23335.71
+2024-02-01,smb,Growth,Organic,20629.43,1275.85,763.14,0.0,0.0,0.0,22668.42
+2024-02-01,smb,Growth,Outbound,17243.73,1279.8,0.0,0.0,0.0,0.0,18523.53
+2024-02-01,smb,Growth,Paid Search,27093.84,1185.0,0.0,0.0,940.1,0.0,27338.74
+2024-02-01,smb,Growth,Partner,27361.25,1516.8,0.0,0.0,0.0,0.0,28878.05
+2024-02-01,smb,Starter,Events,4045.09,807.3,0.0,0.0,0.0,0.0,4852.39
+2024-02-01,smb,Starter,Organic,5209.72,0.0,138.06,0.0,0.0,245.7,5102.08
+2024-02-01,smb,Starter,Outbound,5600.4,624.0,0.0,0.0,204.75,0.0,6019.65
+2024-02-01,smb,Starter,Paid Search,5488.28,0.0,119.34,0.0,0.0,0.0,5607.62
+2024-02-01,smb,Starter,Partner,6263.24,0.0,152.88,0.0,0.0,0.0,6416.12
+2024-03-01,enterprise,Enterprise,Events,33256.8,0.0,6195.42,0.0,0.0,0.0,39452.22
+2024-03-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,0.0,0.0,10132.0
+2024-03-01,enterprise,Enterprise,Partner,19638.2,0.0,0.0,0.0,0.0,0.0,19638.2
+2024-03-01,enterprise,Growth,Events,1422.0,0.0,497.7,0.0,0.0,0.0,1919.7
+2024-03-01,enterprise,Growth,Organic,3491.01,0.0,0.0,0.0,0.0,0.0,3491.01
+2024-03-01,enterprise,Growth,Outbound,8133.05,0.0,0.0,0.0,0.0,0.0,8133.05
+2024-03-01,enterprise,Growth,Paid Search,3424.65,0.0,0.0,0.0,0.0,0.0,3424.65
+2024-03-01,enterprise,Starter,Events,2971.18,0.0,0.0,0.0,0.0,0.0,2971.18
+2024-03-01,enterprise,Starter,Organic,610.35,0.0,0.0,0.0,0.0,0.0,610.35
+2024-03-01,enterprise,Starter,Outbound,2125.21,175.5,0.0,0.0,0.0,0.0,2300.71
+2024-03-01,enterprise,Starter,Paid Search,1277.49,234.0,0.0,0.0,0.0,0.0,1511.49
+2024-03-01,enterprise,Starter,Partner,842.4,0.0,0.0,0.0,0.0,0.0,842.4
+2024-03-01,mid-market,Enterprise,Events,40721.7,0.0,0.0,0.0,0.0,0.0,40721.7
+2024-03-01,mid-market,Enterprise,Organic,38307.9,0.0,0.0,0.0,0.0,0.0,38307.9
+2024-03-01,mid-market,Enterprise,Outbound,66684.95,0.0,2816.1,0.0,0.0,0.0,69501.05
+2024-03-01,mid-market,Enterprise,Partner,76863.88,12814.0,0.0,0.0,0.0,0.0,89677.88
+2024-03-01,mid-market,Growth,Events,10171.25,1185.0,0.0,0.0,0.0,0.0,11356.25
+2024-03-01,mid-market,Growth,Organic,15926.4,0.0,0.0,0.0,0.0,0.0,15926.4
+2024-03-01,mid-market,Growth,Outbound,14694.0,5561.6,0.0,0.0,0.0,0.0,20255.6
+2024-03-01,mid-market,Growth,Paid Search,38714.85,0.0,0.0,0.0,0.0,0.0,38714.85
+2024-03-01,mid-market,Growth,Partner,19195.03,0.0,0.0,0.0,0.0,0.0,19195.03
+2024-03-01,mid-market,Starter,Events,1074.06,536.25,0.0,0.0,0.0,0.0,1610.31
+2024-03-01,mid-market,Starter,Organic,1641.9,514.8,0.0,0.0,0.0,0.0,2156.7
+2024-03-01,mid-market,Starter,Outbound,4558.85,245.7,0.0,0.0,126.75,0.0,4677.8
+2024-03-01,mid-market,Starter,Paid Search,4604.98,468.0,0.0,0.0,117.0,0.0,4955.98
+2024-03-01,mid-market,Starter,Partner,2446.28,624.0,0.0,0.0,0.0,0.0,3070.28
+2024-03-01,smb,Enterprise,Events,64926.75,0.0,0.0,0.0,0.0,0.0,64926.75
+2024-03-01,smb,Enterprise,Organic,20264.0,0.0,0.0,0.0,0.0,0.0,20264.0
+2024-03-01,smb,Enterprise,Outbound,80258.85,15049.0,3650.5,0.0,0.0,0.0,98958.35
+2024-03-01,smb,Enterprise,Paid Search,37212.75,23810.2,0.0,0.0,0.0,0.0,61022.95
+2024-03-01,smb,Enterprise,Partner,67646.0,0.0,0.0,0.0,0.0,0.0,67646.0
+2024-03-01,smb,Growth,Events,23335.71,4518.8,718.9,0.0,0.0,1477.3,27096.11
+2024-03-01,smb,Growth,Organic,22668.42,1185.0,0.0,0.0,0.0,0.0,23853.42
+2024-03-01,smb,Growth,Outbound,18523.53,0.0,415.94,0.0,0.0,0.0,18939.47
+2024-03-01,smb,Growth,Paid Search,27338.74,1141.55,331.8,0.0,0.0,0.0,28812.09
+2024-03-01,smb,Growth,Partner,28878.05,0.0,635.95,0.0,493.75,0.0,29020.25
+2024-03-01,smb,Starter,Events,4852.39,507.0,0.0,0.0,58.5,0.0,5300.89
+2024-03-01,smb,Starter,Organic,5102.08,0.0,0.0,0.0,0.0,0.0,5102.08
+2024-03-01,smb,Starter,Outbound,6019.65,0.0,0.0,0.0,0.0,0.0,6019.65
+2024-03-01,smb,Starter,Paid Search,5607.62,477.75,0.0,0.0,0.0,0.0,6085.37
+2024-03-01,smb,Starter,Partner,6416.12,210.6,68.25,0.0,0.0,0.0,6694.97
+2024-04-01,enterprise,Enterprise,Events,39452.22,0.0,0.0,0.0,0.0,0.0,39452.22
+2024-04-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,0.0,0.0,10132.0
+2024-04-01,enterprise,Enterprise,Partner,19638.2,0.0,0.0,0.0,0.0,0.0,19638.2
+2024-04-01,enterprise,Growth,Events,1919.7,0.0,0.0,0.0,0.0,0.0,1919.7
+2024-04-01,enterprise,Growth,Organic,3491.01,1125.75,0.0,0.0,0.0,0.0,4616.76
+2024-04-01,enterprise,Growth,Outbound,8133.05,0.0,0.0,0.0,0.0,0.0,8133.05
+2024-04-01,enterprise,Growth,Paid Search,3424.65,3961.85,0.0,0.0,0.0,0.0,7386.5
+2024-04-01,enterprise,Starter,Events,2971.18,273.0,98.28,0.0,0.0,0.0,3342.46
+2024-04-01,enterprise,Starter,Organic,610.35,0.0,0.0,0.0,0.0,0.0,610.35
+2024-04-01,enterprise,Starter,Outbound,2300.71,0.0,0.0,0.0,0.0,0.0,2300.71
+2024-04-01,enterprise,Starter,Paid Search,1511.49,546.0,35.54,0.0,0.0,0.0,2093.03
+2024-04-01,enterprise,Starter,Partner,842.4,0.0,103.74,0.0,136.5,0.0,809.64
+2024-04-01,mid-market,Enterprise,Events,40721.7,6705.0,0.0,0.0,0.0,0.0,47426.7
+2024-04-01,mid-market,Enterprise,Organic,38307.9,0.0,2208.18,0.0,0.0,0.0,40516.08
+2024-04-01,mid-market,Enterprise,Outbound,69501.05,0.0,0.0,0.0,0.0,0.0,69501.05
+2024-04-01,mid-market,Enterprise,Partner,89677.88,0.0,0.0,0.0,0.0,10409.51,79268.37
+2024-04-01,mid-market,Growth,Events,11356.25,0.0,0.0,0.0,0.0,0.0,11356.25
+2024-04-01,mid-market,Growth,Organic,15926.4,5451.0,0.0,0.0,0.0,0.0,21377.4
+2024-04-01,mid-market,Growth,Outbound,20255.6,0.0,0.0,0.0,0.0,0.0,20255.6
+2024-04-01,mid-market,Growth,Paid Search,38714.85,6730.8,474.0,0.0,0.0,0.0,45919.65
+2024-04-01,mid-market,Growth,Partner,19195.03,1564.2,0.0,0.0,0.0,0.0,20759.23
+2024-04-01,mid-market,Starter,Events,1610.31,185.25,0.0,0.0,0.0,0.0,1795.56
+2024-04-01,mid-market,Starter,Organic,2156.7,429.0,0.0,0.0,0.0,0.0,2585.7
+2024-04-01,mid-market,Starter,Outbound,4677.8,265.2,92.14,0.0,0.0,402.77,4632.37
+2024-04-01,mid-market,Starter,Paid Search,4955.98,0.0,42.12,0.0,0.0,0.0,4998.1
+2024-04-01,mid-market,Starter,Partner,3070.28,0.0,0.0,0.0,46.31,0.0,3023.97
+2024-04-01,smb,Enterprise,Events,64926.75,0.0,0.0,0.0,0.0,0.0,64926.75
+2024-04-01,smb,Enterprise,Organic,20264.0,0.0,0.0,0.0,0.0,0.0,20264.0
+2024-04-01,smb,Enterprise,Outbound,98958.35,0.0,0.0,0.0,0.0,0.0,98958.35
+2024-04-01,smb,Enterprise,Paid Search,61022.95,0.0,0.0,0.0,0.0,0.0,61022.95
+2024-04-01,smb,Enterprise,Partner,67646.0,0.0,1490.0,0.0,0.0,0.0,69136.0
+2024-04-01,smb,Growth,Events,27096.11,0.0,177.75,0.0,0.0,0.0,27273.86
+2024-04-01,smb,Growth,Organic,23853.42,0.0,0.0,0.0,0.0,0.0,23853.42
+2024-04-01,smb,Growth,Outbound,18939.47,2844.0,300.2,0.0,0.0,0.0,22083.67
+2024-04-01,smb,Growth,Paid Search,28812.09,1896.0,0.0,0.0,0.0,0.0,30708.09
+2024-04-01,smb,Growth,Partner,29020.25,0.0,0.0,0.0,0.0,0.0,29020.25
+2024-04-01,smb,Starter,Events,5300.89,0.0,35.1,0.0,58.5,0.0,5277.49
+2024-04-01,smb,Starter,Organic,5102.08,364.65,103.19,0.0,46.31,0.0,5523.61
+2024-04-01,smb,Starter,Outbound,6019.65,195.0,115.05,0.0,0.0,0.0,6329.7
+2024-04-01,smb,Starter,Paid Search,6085.37,834.6,0.0,0.0,68.25,0.0,6851.72
+2024-04-01,smb,Starter,Partner,6694.97,565.5,150.15,0.0,0.0,0.0,7410.62
+2024-05-01,enterprise,Enterprise,Events,39452.22,0.0,0.0,0.0,0.0,0.0,39452.22
+2024-05-01,enterprise,Enterprise,Organic,0.0,7375.5,0.0,0.0,0.0,0.0,7375.5
+2024-05-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,0.0,0.0,10132.0
+2024-05-01,enterprise,Enterprise,Partner,19638.2,0.0,0.0,0.0,0.0,0.0,19638.2
+2024-05-01,enterprise,Growth,Events,1919.7,0.0,0.0,0.0,0.0,0.0,1919.7
+2024-05-01,enterprise,Growth,Organic,4616.76,0.0,0.0,0.0,0.0,0.0,4616.76
+2024-05-01,enterprise,Growth,Outbound,8133.05,1580.0,201.45,0.0,0.0,0.0,9914.5
+2024-05-01,enterprise,Growth,Paid Search,7386.5,0.0,394.01,0.0,296.25,0.0,7484.26
+2024-05-01,enterprise,Growth,Partner,0.0,1493.1,0.0,0.0,0.0,0.0,1493.1
+2024-05-01,enterprise,Starter,Events,3342.46,0.0,0.0,0.0,0.0,0.0,3342.46
+2024-05-01,enterprise,Starter,Organic,610.35,0.0,0.0,0.0,0.0,0.0,610.35
+2024-05-01,enterprise,Starter,Outbound,2300.71,195.0,0.0,0.0,0.0,0.0,2495.71
+2024-05-01,enterprise,Starter,Paid Search,2093.03,0.0,56.16,0.0,53.31,0.0,2095.88
+2024-05-01,enterprise,Starter,Partner,809.64,0.0,80.03,0.0,0.0,0.0,889.67
+2024-05-01,mid-market,Enterprise,Events,47426.7,0.0,0.0,0.0,0.0,0.0,47426.7
+2024-05-01,mid-market,Enterprise,Organic,40516.08,7450.0,2607.5,0.0,0.0,0.0,50573.58
+2024-05-01,mid-market,Enterprise,Outbound,69501.05,0.0,0.0,0.0,0.0,0.0,69501.05
+2024-05-01,mid-market,Enterprise,Paid Search,0.0,8642.0,0.0,0.0,0.0,0.0,8642.0
+2024-05-01,mid-market,Enterprise,Partner,79268.37,0.0,0.0,0.0,3613.25,0.0,75655.12
+2024-05-01,mid-market,Growth,Events,11356.25,1343.0,0.0,0.0,0.0,0.0,12699.25
+2024-05-01,mid-market,Growth,Organic,21377.4,1919.7,0.0,0.0,493.75,0.0,22803.35
+2024-05-01,mid-market,Growth,Outbound,20255.6,1141.55,840.56,0.0,444.38,0.0,21793.33
+2024-05-01,mid-market,Growth,Paid Search,45919.65,0.0,0.0,0.0,0.0,0.0,45919.65
+2024-05-01,mid-market,Growth,Partner,20759.23,0.0,1196.85,0.0,0.0,0.0,21956.08
+2024-05-01,mid-market,Starter,Events,1795.56,0.0,0.0,0.0,0.0,0.0,1795.56
+2024-05-01,mid-market,Starter,Organic,2585.7,858.0,85.8,0.0,0.0,0.0,3529.5
+2024-05-01,mid-market,Starter,Outbound,4632.37,315.9,0.0,0.0,0.0,0.0,4948.27
+2024-05-01,mid-market,Starter,Paid Search,4998.1,869.7,0.0,0.0,0.0,0.0,5867.8
+2024-05-01,mid-market,Starter,Partner,3023.97,546.0,0.0,0.0,0.0,0.0,3569.97
+2024-05-01,smb,Enterprise,Events,64926.75,7509.6,0.0,0.0,0.0,0.0,72436.35
+2024-05-01,smb,Enterprise,Organic,20264.0,7450.0,0.0,0.0,0.0,0.0,27714.0
+2024-05-01,smb,Enterprise,Outbound,98958.35,0.0,3801.74,0.0,0.0,0.0,102760.09
+2024-05-01,smb,Enterprise,Paid Search,61022.95,0.0,0.0,0.0,0.0,0.0,61022.95
+2024-05-01,smb,Enterprise,Partner,69136.0,8493.0,0.0,0.0,0.0,0.0,77629.0
+2024-05-01,smb,Growth,Events,27273.86,6181.75,0.0,0.0,0.0,0.0,33455.61
+2024-05-01,smb,Growth,Organic,23853.42,2346.3,0.0,0.0,0.0,0.0,26199.72
+2024-05-01,smb,Growth,Outbound,22083.67,5103.4,0.0,0.0,0.0,0.0,27187.07
+2024-05-01,smb,Growth,Paid Search,30708.09,2433.2,842.54,0.0,497.7,0.0,33486.13
+2024-05-01,smb,Growth,Partner,29020.25,2765.0,0.0,0.0,0.0,1692.18,30093.07
+2024-05-01,smb,Starter,Events,5277.49,702.0,44.46,0.0,52.65,0.0,5971.3
+2024-05-01,smb,Starter,Organic,5523.61,351.0,144.3,0.0,0.0,0.0,6018.91
+2024-05-01,smb,Starter,Outbound,6329.7,273.0,134.55,0.0,0.0,0.0,6737.25
+2024-05-01,smb,Starter,Paid Search,6851.72,273.0,0.0,0.0,0.0,312.0,6812.72
+2024-05-01,smb,Starter,Partner,7410.62,0.0,0.0,0.0,122.85,0.0,7287.77
+2024-06-01,enterprise,Enterprise,Events,39452.22,0.0,0.0,0.0,0.0,0.0,39452.22
+2024-06-01,enterprise,Enterprise,Organic,7375.5,0.0,0.0,0.0,0.0,0.0,7375.5
+2024-06-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,0.0,0.0,10132.0
+2024-06-01,enterprise,Enterprise,Partner,19638.2,0.0,0.0,0.0,0.0,0.0,19638.2
+2024-06-01,enterprise,Growth,Events,1919.7,0.0,383.94,0.0,0.0,0.0,2303.64
+2024-06-01,enterprise,Growth,Organic,4616.76,0.0,0.0,0.0,0.0,0.0,4616.76
+2024-06-01,enterprise,Growth,Outbound,9914.5,0.0,0.0,0.0,0.0,0.0,9914.5
+2024-06-01,enterprise,Growth,Paid Search,7484.26,0.0,472.82,0.0,0.0,0.0,7957.08
+2024-06-01,enterprise,Growth,Partner,1493.1,0.0,0.0,0.0,0.0,0.0,1493.1
+2024-06-01,enterprise,Starter,Events,3342.46,0.0,0.0,0.0,0.0,0.0,3342.46
+2024-06-01,enterprise,Starter,Organic,610.35,0.0,0.0,0.0,0.0,0.0,610.35
+2024-06-01,enterprise,Starter,Outbound,2495.71,0.0,39.0,0.0,0.0,0.0,2534.71
+2024-06-01,enterprise,Starter,Paid Search,2095.88,468.0,0.0,0.0,0.0,0.0,2563.88
+2024-06-01,enterprise,Starter,Partner,889.67,175.5,81.9,0.0,0.0,0.0,1147.07
+2024-06-01,mid-market,Enterprise,Events,47426.7,0.0,0.0,0.0,0.0,0.0,47426.7
+2024-06-01,mid-market,Enterprise,Organic,50573.58,0.0,0.0,0.0,2514.38,0.0,48059.2
+2024-06-01,mid-market,Enterprise,Outbound,69501.05,6705.0,0.0,0.0,0.0,0.0,76206.05
+2024-06-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2024-06-01,mid-market,Enterprise,Partner,75655.12,0.0,2562.8,0.0,0.0,0.0,78217.92
+2024-06-01,mid-market,Growth,Events,12699.25,1659.0,0.0,0.0,0.0,0.0,14358.25
+2024-06-01,mid-market,Growth,Organic,22803.35,0.0,268.6,0.0,0.0,0.0,23071.95
+2024-06-01,mid-market,Growth,Outbound,21793.33,1919.7,0.0,0.0,0.0,0.0,23713.03
+2024-06-01,mid-market,Growth,Paid Search,45919.65,3871.0,858.53,0.0,0.0,0.0,50649.18
+2024-06-01,mid-market,Growth,Partner,21956.08,2133.0,547.47,0.0,0.0,0.0,24636.55
+2024-06-01,mid-market,Starter,Events,1795.56,405.6,87.36,0.0,0.0,0.0,2288.52
+2024-06-01,mid-market,Starter,Organic,3529.5,234.0,0.0,0.0,0.0,0.0,3763.5
+2024-06-01,mid-market,Starter,Outbound,4948.27,390.0,0.0,0.0,0.0,0.0,5338.27
+2024-06-01,mid-market,Starter,Paid Search,5867.8,0.0,0.0,0.0,111.93,0.0,5755.87
+2024-06-01,mid-market,Starter,Partner,3569.97,195.0,0.0,0.0,0.0,0.0,3764.97
+2024-06-01,smb,Enterprise,Events,72436.35,0.0,0.0,0.0,0.0,7450.0,64986.35
+2024-06-01,smb,Enterprise,Organic,27714.0,12069.0,0.0,0.0,0.0,0.0,39783.0
+2024-06-01,smb,Enterprise,Outbound,102760.09,0.0,0.0,0.0,0.0,0.0,102760.09
+2024-06-01,smb,Enterprise,Paid Search,61022.95,0.0,5319.3,0.0,0.0,0.0,66342.25
+2024-06-01,smb,Enterprise,Partner,77629.0,0.0,0.0,0.0,0.0,0.0,77629.0
+2024-06-01,smb,Growth,Events,33455.61,0.0,0.0,0.0,0.0,1738.0,31717.61
+2024-06-01,smb,Growth,Organic,26199.72,1279.8,300.2,0.0,0.0,0.0,27779.72
+2024-06-01,smb,Growth,Outbound,27187.07,0.0,0.0,0.0,0.0,0.0,27187.07
+2024-06-01,smb,Growth,Paid Search,33486.13,1896.0,0.0,0.0,0.0,0.0,35382.13
+2024-06-01,smb,Growth,Partner,30093.07,1580.0,608.3,0.0,770.25,1580.0,29931.12
+2024-06-01,smb,Starter,Events,5971.3,312.0,142.55,0.0,0.0,527.76,5898.09
+2024-06-01,smb,Starter,Organic,6018.91,312.0,0.0,0.0,34.74,0.0,6296.17
+2024-06-01,smb,Starter,Outbound,6737.25,585.0,0.0,0.0,102.38,0.0,7219.87
+2024-06-01,smb,Starter,Paid Search,6812.72,312.0,68.25,0.0,0.0,210.6,6982.37
+2024-06-01,smb,Starter,Partner,7287.77,696.15,0.0,0.0,94.77,0.0,7889.15
+2024-07-01,enterprise,Enterprise,Events,39452.22,0.0,0.0,0.0,0.0,0.0,39452.22
+2024-07-01,enterprise,Enterprise,Organic,7375.5,0.0,0.0,0.0,0.0,0.0,7375.5
+2024-07-01,enterprise,Enterprise,Outbound,0.0,9252.9,0.0,0.0,0.0,0.0,9252.9
+2024-07-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,0.0,0.0,10132.0
+2024-07-01,enterprise,Enterprise,Partner,19638.2,0.0,0.0,0.0,0.0,0.0,19638.2
+2024-07-01,enterprise,Growth,Events,2303.64,0.0,0.0,0.0,0.0,0.0,2303.64
+2024-07-01,enterprise,Growth,Organic,4616.76,0.0,0.0,0.0,0.0,0.0,4616.76
+2024-07-01,enterprise,Growth,Outbound,9914.5,0.0,0.0,0.0,0.0,0.0,9914.5
+2024-07-01,enterprise,Growth,Paid Search,7957.08,0.0,0.0,0.0,0.0,0.0,7957.08
+2024-07-01,enterprise,Growth,Partner,1493.1,0.0,0.0,0.0,0.0,0.0,1493.1
+2024-07-01,enterprise,Starter,Events,3342.46,312.0,0.0,0.0,0.0,195.0,3459.46
+2024-07-01,enterprise,Starter,Organic,610.35,468.0,0.0,0.0,0.0,0.0,1078.35
+2024-07-01,enterprise,Starter,Outbound,2534.71,234.0,0.0,0.0,0.0,0.0,2768.71
+2024-07-01,enterprise,Starter,Paid Search,2563.88,0.0,0.0,0.0,0.0,0.0,2563.88
+2024-07-01,enterprise,Starter,Partner,1147.07,0.0,0.0,0.0,0.0,0.0,1147.07
+2024-07-01,mid-market,Enterprise,Events,47426.7,0.0,1849.09,0.0,0.0,0.0,49275.79
+2024-07-01,mid-market,Enterprise,Organic,48059.2,0.0,2649.82,0.0,0.0,0.0,50709.02
+2024-07-01,mid-market,Enterprise,Outbound,76206.05,0.0,2124.14,0.0,0.0,0.0,78330.19
+2024-07-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2024-07-01,mid-market,Enterprise,Partner,78217.92,8351.45,0.0,0.0,0.0,0.0,86569.37
+2024-07-01,mid-market,Growth,Events,14358.25,0.0,470.05,0.0,0.0,0.0,14828.3
+2024-07-01,mid-market,Growth,Organic,23071.95,4029.0,1011.2,0.0,0.0,0.0,28112.15
+2024-07-01,mid-market,Growth,Outbound,23713.03,0.0,0.0,0.0,0.0,0.0,23713.03
+2024-07-01,mid-market,Growth,Paid Search,50649.18,0.0,0.0,0.0,391.05,0.0,50258.13
+2024-07-01,mid-market,Growth,Partner,24636.55,3444.4,0.0,0.0,469.26,0.0,27611.69
+2024-07-01,mid-market,Starter,Events,2288.52,390.0,0.0,0.0,0.0,0.0,2678.52
+2024-07-01,mid-market,Starter,Organic,3763.5,949.65,0.0,0.0,0.0,0.0,4713.15
+2024-07-01,mid-market,Starter,Outbound,5338.27,982.8,68.25,0.0,78.98,0.0,6310.34
+2024-07-01,mid-market,Starter,Paid Search,5755.87,0.0,70.2,0.0,187.2,0.0,5638.87
+2024-07-01,mid-market,Starter,Partner,3764.97,234.0,0.0,0.0,0.0,0.0,3998.97
+2024-07-01,smb,Enterprise,Events,64986.35,0.0,6889.76,0.0,0.0,0.0,71876.11
+2024-07-01,smb,Enterprise,Organic,39783.0,0.0,0.0,0.0,0.0,0.0,39783.0
+2024-07-01,smb,Enterprise,Outbound,102760.09,0.0,0.0,0.0,0.0,0.0,102760.09
+2024-07-01,smb,Enterprise,Paid Search,66342.25,8642.0,0.0,0.0,0.0,0.0,74984.25
+2024-07-01,smb,Enterprise,Partner,77629.0,0.0,0.0,0.0,0.0,0.0,77629.0
+2024-07-01,smb,Growth,Events,31717.61,2792.65,0.0,0.0,0.0,0.0,34510.26
+2024-07-01,smb,Growth,Organic,27779.72,1066.5,543.36,0.0,0.0,3340.28,26049.3
+2024-07-01,smb,Growth,Outbound,27187.07,3792.0,1172.36,0.0,0.0,0.0,32151.43
+2024-07-01,smb,Growth,Paid Search,35382.13,0.0,228.31,0.0,0.0,0.0,35610.44
+2024-07-01,smb,Growth,Partner,29931.12,4621.5,0.0,0.0,0.0,0.0,34552.62
+2024-07-01,smb,Starter,Events,5898.09,780.0,0.0,0.0,0.0,0.0,6678.09
+2024-07-01,smb,Starter,Organic,6296.17,351.0,0.0,0.0,0.0,0.0,6647.17
+2024-07-01,smb,Starter,Outbound,7219.87,967.2,0.0,0.0,0.0,0.0,8187.07
+2024-07-01,smb,Starter,Paid Search,6982.37,185.25,187.2,0.0,0.0,0.0,7354.82
+2024-07-01,smb,Starter,Partner,7889.15,421.2,148.24,0.0,0.0,0.0,8458.59
+2024-08-01,enterprise,Enterprise,Events,39452.22,0.0,0.0,0.0,0.0,0.0,39452.22
+2024-08-01,enterprise,Enterprise,Organic,7375.5,0.0,0.0,0.0,0.0,0.0,7375.5
+2024-08-01,enterprise,Enterprise,Outbound,9252.9,0.0,0.0,0.0,0.0,0.0,9252.9
+2024-08-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,0.0,0.0,10132.0
+2024-08-01,enterprise,Enterprise,Partner,19638.2,10579.0,0.0,0.0,0.0,0.0,30217.2
+2024-08-01,enterprise,Growth,Events,2303.64,1185.0,0.0,0.0,0.0,0.0,3488.64
+2024-08-01,enterprise,Growth,Organic,4616.76,1580.0,0.0,0.0,0.0,0.0,6196.76
+2024-08-01,enterprise,Growth,Outbound,9914.5,0.0,0.0,0.0,0.0,0.0,9914.5
+2024-08-01,enterprise,Growth,Paid Search,7957.08,0.0,0.0,0.0,0.0,0.0,7957.08
+2024-08-01,enterprise,Growth,Partner,1493.1,0.0,0.0,0.0,0.0,0.0,1493.1
+2024-08-01,enterprise,Starter,Events,3459.46,0.0,0.0,0.0,0.0,0.0,3459.46
+2024-08-01,enterprise,Starter,Organic,1078.35,429.0,0.0,0.0,0.0,210.6,1296.75
+2024-08-01,enterprise,Starter,Outbound,2768.71,0.0,0.0,0.0,0.0,0.0,2768.71
+2024-08-01,enterprise,Starter,Paid Search,2563.88,0.0,67.39,0.0,0.0,0.0,2631.27
+2024-08-01,enterprise,Starter,Partner,1147.07,195.0,98.28,0.0,0.0,0.0,1440.35
+2024-08-01,mid-market,Enterprise,Events,49275.79,0.0,2218.91,0.0,0.0,0.0,51494.7
+2024-08-01,mid-market,Enterprise,Organic,50709.02,6705.0,0.0,0.0,0.0,0.0,57414.02
+2024-08-01,mid-market,Enterprise,Outbound,78330.19,0.0,5798.63,0.0,2726.7,0.0,81402.12
+2024-08-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2024-08-01,mid-market,Enterprise,Partner,86569.37,0.0,0.0,0.0,0.0,0.0,86569.37
+2024-08-01,mid-market,Growth,Events,14828.3,0.0,634.57,0.0,0.0,0.0,15462.87
+2024-08-01,mid-market,Growth,Organic,28112.15,1185.0,0.0,0.0,0.0,0.0,29297.15
+2024-08-01,mid-market,Growth,Outbound,23713.03,3713.0,0.0,0.0,0.0,0.0,27426.03
+2024-08-01,mid-market,Growth,Paid Search,50258.13,1564.2,255.96,0.0,0.0,0.0,52078.29
+2024-08-01,mid-market,Growth,Partner,27611.69,2820.3,1196.85,0.0,355.5,0.0,31273.34
+2024-08-01,mid-market,Starter,Events,2678.52,0.0,0.0,0.0,0.0,0.0,2678.52
+2024-08-01,mid-market,Starter,Organic,4713.15,663.0,46.8,0.0,0.0,0.0,5422.95
+2024-08-01,mid-market,Starter,Outbound,6310.34,0.0,65.52,0.0,0.0,0.0,6375.86
+2024-08-01,mid-market,Starter,Paid Search,5638.87,780.0,0.0,0.0,0.0,0.0,6418.87
+2024-08-01,mid-market,Starter,Partner,3998.97,0.0,0.0,0.0,0.0,0.0,3998.97
+2024-08-01,smb,Enterprise,Events,71876.11,0.0,0.0,0.0,0.0,0.0,71876.11
+2024-08-01,smb,Enterprise,Organic,39783.0,0.0,0.0,0.0,0.0,0.0,39783.0
+2024-08-01,smb,Enterprise,Outbound,102760.09,0.0,2205.2,0.0,0.0,0.0,104965.29
+2024-08-01,smb,Enterprise,Paid Search,74984.25,16732.7,0.0,0.0,0.0,0.0,91716.95
+2024-08-01,smb,Enterprise,Partner,77629.0,0.0,0.0,0.0,0.0,0.0,77629.0
+2024-08-01,smb,Growth,Events,34510.26,5727.5,0.0,0.0,0.0,1185.0,39052.76
+2024-08-01,smb,Growth,Organic,26049.3,2607.0,0.0,0.0,0.0,0.0,28656.3
+2024-08-01,smb,Growth,Outbound,32151.43,0.0,0.0,0.0,0.0,0.0,32151.43
+2024-08-01,smb,Growth,Paid Search,35610.44,0.0,0.0,0.0,0.0,1823.72,33786.72
+2024-08-01,smb,Growth,Partner,34552.62,2749.2,0.0,0.0,0.0,0.0,37301.82
+2024-08-01,smb,Starter,Events,6678.09,507.0,0.0,0.0,0.0,252.72,6932.37
+2024-08-01,smb,Starter,Organic,6647.17,195.0,195.88,0.0,0.0,0.0,7038.05
+2024-08-01,smb,Starter,Outbound,8187.07,468.0,154.05,0.0,148.2,0.0,8660.92
+2024-08-01,smb,Starter,Paid Search,7354.82,0.0,222.5,0.0,0.0,0.0,7577.32
+2024-08-01,smb,Starter,Partner,8458.59,0.0,131.98,0.0,0.0,0.0,8590.57
+2024-09-01,enterprise,Enterprise,Events,39452.22,0.0,0.0,0.0,0.0,0.0,39452.22
+2024-09-01,enterprise,Enterprise,Organic,7375.5,0.0,0.0,0.0,0.0,0.0,7375.5
+2024-09-01,enterprise,Enterprise,Outbound,9252.9,17135.0,0.0,0.0,0.0,0.0,26387.9
+2024-09-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,0.0,0.0,10132.0
+2024-09-01,enterprise,Enterprise,Partner,30217.2,0.0,0.0,0.0,0.0,0.0,30217.2
+2024-09-01,enterprise,Growth,Events,3488.64,1185.0,0.0,0.0,0.0,0.0,4673.64
+2024-09-01,enterprise,Growth,Organic,6196.76,1350.9,0.0,0.0,0.0,0.0,7547.66
+2024-09-01,enterprise,Growth,Outbound,9914.5,0.0,0.0,0.0,0.0,0.0,9914.5
+2024-09-01,enterprise,Growth,Paid Search,7957.08,1185.0,0.0,0.0,0.0,0.0,9142.08
+2024-09-01,enterprise,Growth,Partner,1493.1,3476.0,0.0,0.0,0.0,0.0,4969.1
+2024-09-01,enterprise,Starter,Events,3459.46,0.0,0.0,0.0,0.0,0.0,3459.46
+2024-09-01,enterprise,Starter,Organic,1296.75,273.0,81.9,0.0,0.0,0.0,1651.65
+2024-09-01,enterprise,Starter,Outbound,2768.71,0.0,0.0,0.0,0.0,0.0,2768.71
+2024-09-01,enterprise,Starter,Paid Search,2631.27,0.0,0.0,0.0,0.0,0.0,2631.27
+2024-09-01,enterprise,Starter,Partner,1440.35,0.0,0.0,0.0,0.0,0.0,1440.35
+2024-09-01,mid-market,Enterprise,Events,51494.7,0.0,0.0,0.0,0.0,0.0,51494.7
+2024-09-01,mid-market,Enterprise,Organic,57414.02,0.0,0.0,0.0,0.0,0.0,57414.02
+2024-09-01,mid-market,Enterprise,Outbound,81402.12,6705.0,0.0,0.0,0.0,0.0,88107.12
+2024-09-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2024-09-01,mid-market,Enterprise,Partner,86569.37,0.0,3075.36,0.0,0.0,0.0,89644.73
+2024-09-01,mid-market,Growth,Events,15462.87,1975.0,0.0,0.0,0.0,0.0,17437.87
+2024-09-01,mid-market,Growth,Organic,29297.15,0.0,0.0,0.0,0.0,0.0,29297.15
+2024-09-01,mid-market,Growth,Outbound,27426.03,0.0,553.0,0.0,0.0,0.0,27979.03
+2024-09-01,mid-market,Growth,Paid Search,52078.29,0.0,0.0,0.0,296.25,0.0,51782.04
+2024-09-01,mid-market,Growth,Partner,31273.34,0.0,0.0,0.0,0.0,0.0,31273.34
+2024-09-01,mid-market,Starter,Events,2678.52,296.4,0.0,0.0,84.24,0.0,2890.68
+2024-09-01,mid-market,Starter,Organic,5422.95,429.0,198.9,0.0,0.0,0.0,6050.85
+2024-09-01,mid-market,Starter,Outbound,6375.86,975.0,82.92,0.0,120.02,0.0,7313.76
+2024-09-01,mid-market,Starter,Paid Search,6418.87,380.25,68.25,0.0,47.38,0.0,6819.99
+2024-09-01,mid-market,Starter,Partner,3998.97,0.0,0.0,0.0,0.0,0.0,3998.97
+2024-09-01,smb,Enterprise,Events,71876.11,7241.4,0.0,0.0,0.0,0.0,79117.51
+2024-09-01,smb,Enterprise,Organic,39783.0,0.0,4306.1,0.0,0.0,0.0,44089.1
+2024-09-01,smb,Enterprise,Outbound,104965.29,0.0,0.0,0.0,0.0,15049.0,89916.29
+2024-09-01,smb,Enterprise,Paid Search,91716.95,16241.0,0.0,0.0,0.0,0.0,107957.95
+2024-09-01,smb,Enterprise,Partner,77629.0,36803.0,0.0,0.0,0.0,0.0,114432.0
+2024-09-01,smb,Growth,Events,39052.76,0.0,414.75,0.0,0.0,0.0,39467.51
+2024-09-01,smb,Growth,Organic,28656.3,1208.7,447.93,0.0,0.0,0.0,30312.93
+2024-09-01,smb,Growth,Outbound,32151.43,0.0,0.0,0.0,0.0,0.0,32151.43
+2024-09-01,smb,Growth,Paid Search,33786.72,0.0,270.18,0.0,0.0,0.0,34056.9
+2024-09-01,smb,Growth,Partner,37301.82,0.0,303.36,0.0,296.25,1659.0,35649.93
+2024-09-01,smb,Starter,Events,6932.37,0.0,196.95,0.0,0.0,0.0,7129.32
+2024-09-01,smb,Starter,Organic,7038.05,487.5,44.46,0.0,0.0,273.0,7297.01
+2024-09-01,smb,Starter,Outbound,8660.92,312.0,53.04,0.0,43.88,0.0,8982.08
+2024-09-01,smb,Starter,Paid Search,7577.32,0.0,52.65,0.0,0.0,0.0,7629.97
+2024-09-01,smb,Starter,Partner,8590.57,612.3,0.0,0.0,0.0,0.0,9202.87
+2024-10-01,enterprise,Enterprise,Events,39452.22,0.0,0.0,0.0,0.0,0.0,39452.22
+2024-10-01,enterprise,Enterprise,Organic,7375.5,0.0,0.0,0.0,0.0,0.0,7375.5
+2024-10-01,enterprise,Enterprise,Outbound,26387.9,0.0,0.0,0.0,0.0,0.0,26387.9
+2024-10-01,enterprise,Enterprise,Paid Search,10132.0,0.0,0.0,0.0,2533.0,0.0,7599.0
+2024-10-01,enterprise,Enterprise,Partner,30217.2,0.0,0.0,0.0,1741.44,0.0,28475.76
+2024-10-01,enterprise,Growth,Events,4673.64,3033.6,0.0,0.0,0.0,0.0,7707.24
+2024-10-01,enterprise,Growth,Organic,7547.66,0.0,701.16,0.0,0.0,0.0,8248.82
+2024-10-01,enterprise,Growth,Outbound,9914.5,0.0,0.0,0.0,0.0,1185.0,8729.5
+2024-10-01,enterprise,Growth,Paid Search,9142.08,0.0,0.0,0.0,0.0,0.0,9142.08
+2024-10-01,enterprise,Growth,Partner,4969.1,0.0,0.0,0.0,0.0,0.0,4969.1
+2024-10-01,enterprise,Starter,Events,3459.46,0.0,109.2,0.0,0.0,0.0,3568.66
+2024-10-01,enterprise,Starter,Organic,1651.65,0.0,0.0,0.0,0.0,0.0,1651.65
+2024-10-01,enterprise,Starter,Outbound,2768.71,0.0,0.0,0.0,0.0,0.0,2768.71
+2024-10-01,enterprise,Starter,Paid Search,2631.27,0.0,61.43,0.0,0.0,0.0,2692.7
+2024-10-01,enterprise,Starter,Partner,1440.35,0.0,0.0,0.0,0.0,0.0,1440.35
+2024-10-01,mid-market,Enterprise,Events,51494.7,0.0,0.0,0.0,0.0,0.0,51494.7
+2024-10-01,mid-market,Enterprise,Organic,57414.02,0.0,0.0,0.0,0.0,8791.0,48623.02
+2024-10-01,mid-market,Enterprise,Outbound,88107.12,8344.0,0.0,0.0,0.0,0.0,96451.12
+2024-10-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2024-10-01,mid-market,Enterprise,Partner,89644.73,7450.0,0.0,0.0,0.0,0.0,97094.73
+2024-10-01,mid-market,Growth,Events,17437.87,1564.2,398.16,0.0,0.0,0.0,19400.23
+2024-10-01,mid-market,Growth,Organic,29297.15,3002.0,0.0,0.0,0.0,0.0,32299.15
+2024-10-01,mid-market,Growth,Outbound,27979.03,0.0,266.62,0.0,0.0,0.0,28245.65
+2024-10-01,mid-market,Growth,Paid Search,51782.04,0.0,1016.37,0.0,0.0,0.0,52798.41
+2024-10-01,mid-market,Growth,Partner,31273.34,4819.0,1015.94,0.0,479.92,0.0,36628.36
+2024-10-01,mid-market,Starter,Events,2890.68,583.05,0.0,0.0,0.0,0.0,3473.73
+2024-10-01,mid-market,Starter,Organic,6050.85,0.0,137.87,0.0,0.0,0.0,6188.72
+2024-10-01,mid-market,Starter,Outbound,7313.76,195.0,0.0,0.0,48.75,0.0,7460.01
+2024-10-01,mid-market,Starter,Paid Search,6819.99,0.0,0.0,0.0,0.0,0.0,6819.99
+2024-10-01,mid-market,Starter,Partner,3998.97,0.0,0.0,0.0,48.75,195.0,3755.22
+2024-10-01,smb,Enterprise,Events,79117.51,0.0,0.0,0.0,0.0,0.0,79117.51
+2024-10-01,smb,Enterprise,Organic,44089.1,8642.0,0.0,0.0,0.0,0.0,52731.1
+2024-10-01,smb,Enterprise,Outbound,89916.29,0.0,0.0,0.0,0.0,0.0,89916.29
+2024-10-01,smb,Enterprise,Paid Search,107957.95,0.0,0.0,0.0,0.0,0.0,107957.95
+2024-10-01,smb,Enterprise,Partner,114432.0,0.0,0.0,0.0,4369.42,0.0,110062.58
+2024-10-01,smb,Growth,Events,39467.51,1185.0,1106.0,0.0,0.0,0.0,41758.51
+2024-10-01,smb,Growth,Organic,30312.93,1564.2,604.71,0.0,0.0,0.0,32481.84
+2024-10-01,smb,Growth,Outbound,32151.43,7907.9,0.0,0.0,319.95,0.0,39739.38
+2024-10-01,smb,Growth,Paid Search,34056.9,6880.9,842.85,0.0,367.35,0.0,41413.3
+2024-10-01,smb,Growth,Partner,35649.93,0.0,0.0,0.0,0.0,0.0,35649.93
+2024-10-01,smb,Starter,Events,7129.32,195.0,0.0,0.0,0.0,234.0,7090.32
+2024-10-01,smb,Starter,Organic,7297.01,663.0,0.0,0.0,0.0,0.0,7960.01
+2024-10-01,smb,Starter,Outbound,8982.08,185.25,0.0,0.0,0.0,259.35,8907.98
+2024-10-01,smb,Starter,Paid Search,7629.97,741.0,0.0,0.0,0.0,265.2,8105.77
+2024-10-01,smb,Starter,Partner,9202.87,1353.3,0.0,0.0,0.0,0.0,10556.17
+2024-11-01,enterprise,Enterprise,Events,39452.22,8344.0,0.0,0.0,0.0,0.0,47796.22
+2024-11-01,enterprise,Enterprise,Organic,7375.5,0.0,0.0,0.0,0.0,0.0,7375.5
+2024-11-01,enterprise,Enterprise,Outbound,26387.9,0.0,0.0,0.0,0.0,0.0,26387.9
+2024-11-01,enterprise,Enterprise,Paid Search,7599.0,0.0,0.0,0.0,0.0,0.0,7599.0
+2024-11-01,enterprise,Enterprise,Partner,28475.76,0.0,0.0,0.0,0.0,0.0,28475.76
+2024-11-01,enterprise,Growth,Events,7707.24,0.0,0.0,0.0,575.91,0.0,7131.33
+2024-11-01,enterprise,Growth,Organic,8248.82,2923.0,0.0,0.0,0.0,1842.91,9328.91
+2024-11-01,enterprise,Growth,Outbound,8729.5,0.0,0.0,0.0,0.0,0.0,8729.5
+2024-11-01,enterprise,Growth,Paid Search,9142.08,0.0,0.0,0.0,296.25,0.0,8845.83
+2024-11-01,enterprise,Growth,Partner,4969.1,0.0,0.0,0.0,0.0,0.0,4969.1
+2024-11-01,enterprise,Starter,Events,3568.66,0.0,0.0,0.0,0.0,0.0,3568.66
+2024-11-01,enterprise,Starter,Organic,1651.65,0.0,0.0,0.0,0.0,0.0,1651.65
+2024-11-01,enterprise,Starter,Outbound,2768.71,468.0,0.0,0.0,0.0,0.0,3236.71
+2024-11-01,enterprise,Starter,Paid Search,2692.7,0.0,0.0,0.0,0.0,0.0,2692.7
+2024-11-01,enterprise,Starter,Partner,1440.35,0.0,0.0,0.0,0.0,0.0,1440.35
+2024-11-01,mid-market,Enterprise,Events,51494.7,15645.0,0.0,0.0,0.0,0.0,67139.7
+2024-11-01,mid-market,Enterprise,Organic,48623.02,0.0,0.0,0.0,3974.73,0.0,44648.29
+2024-11-01,mid-market,Enterprise,Outbound,96451.12,0.0,4460.7,0.0,0.0,5431.05,95480.77
+2024-11-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2024-11-01,mid-market,Enterprise,Partner,97094.73,0.0,0.0,0.0,0.0,0.0,97094.73
+2024-11-01,mid-market,Growth,Events,19400.23,0.0,0.0,0.0,0.0,0.0,19400.23
+2024-11-01,mid-market,Growth,Organic,32299.15,2559.6,0.0,0.0,375.25,0.0,34483.5
+2024-11-01,mid-market,Growth,Outbound,28245.65,0.0,0.0,0.0,0.0,0.0,28245.65
+2024-11-01,mid-market,Growth,Paid Search,52798.41,0.0,2346.86,0.0,460.73,0.0,54684.54
+2024-11-01,mid-market,Growth,Partner,36628.36,0.0,317.29,0.0,0.0,0.0,36945.65
+2024-11-01,mid-market,Starter,Events,3473.73,195.0,0.0,0.0,0.0,0.0,3668.73
+2024-11-01,mid-market,Starter,Organic,6188.72,0.0,138.06,0.0,68.25,0.0,6258.53
+2024-11-01,mid-market,Starter,Outbound,7460.01,0.0,91.65,0.0,68.25,466.83,7016.58
+2024-11-01,mid-market,Starter,Paid Search,6819.99,165.75,0.0,0.0,0.0,351.0,6634.74
+2024-11-01,mid-market,Starter,Partner,3755.22,185.25,93.99,0.0,0.0,0.0,4034.46
+2024-11-01,smb,Enterprise,Events,79117.51,0.0,0.0,0.0,0.0,0.0,79117.51
+2024-11-01,smb,Enterprise,Organic,52731.1,8493.0,0.0,0.0,0.0,0.0,61224.1
+2024-11-01,smb,Enterprise,Outbound,89916.29,0.0,0.0,0.0,0.0,0.0,89916.29
+2024-11-01,smb,Enterprise,Paid Search,107957.95,7450.0,0.0,0.0,0.0,8612.2,106795.75
+2024-11-01,smb,Enterprise,Partner,110062.58,20711.0,3129.0,0.0,3327.82,0.0,130574.76
+2024-11-01,smb,Growth,Events,41758.51,4187.0,0.0,0.0,0.0,0.0,45945.51
+2024-11-01,smb,Growth,Organic,32481.84,1501.0,0.0,0.0,0.0,0.0,33982.84
+2024-11-01,smb,Growth,Outbound,39739.38,0.0,521.4,0.0,0.0,0.0,40260.78
+2024-11-01,smb,Growth,Paid Search,41413.3,1141.55,567.38,0.0,0.0,0.0,43122.23
+2024-11-01,smb,Growth,Partner,35649.93,6944.1,999.98,0.0,0.0,0.0,43594.01
+2024-11-01,smb,Starter,Events,7090.32,0.0,200.85,0.0,0.0,0.0,7291.17
+2024-11-01,smb,Starter,Organic,7960.01,333.45,0.0,0.0,66.69,0.0,8226.77
+2024-11-01,smb,Starter,Outbound,8907.98,1054.95,230.88,0.0,0.0,0.0,10193.81
+2024-11-01,smb,Starter,Paid Search,8105.77,0.0,68.25,0.0,0.0,589.68,7584.34
+2024-11-01,smb,Starter,Partner,10556.17,604.5,137.48,0.0,0.0,0.0,11298.15
+2024-12-01,enterprise,Enterprise,Events,47796.22,0.0,2920.4,0.0,0.0,0.0,50716.62
+2024-12-01,enterprise,Enterprise,Organic,7375.5,27341.5,0.0,0.0,0.0,0.0,34717.0
+2024-12-01,enterprise,Enterprise,Outbound,26387.9,0.0,3427.0,0.0,0.0,0.0,29814.9
+2024-12-01,enterprise,Enterprise,Paid Search,7599.0,0.0,0.0,0.0,0.0,0.0,7599.0
+2024-12-01,enterprise,Enterprise,Partner,28475.76,0.0,0.0,0.0,0.0,0.0,28475.76
+2024-12-01,enterprise,Growth,Events,7131.33,0.0,0.0,0.0,0.0,0.0,7131.33
+2024-12-01,enterprise,Growth,Organic,9328.91,0.0,0.0,0.0,0.0,0.0,9328.91
+2024-12-01,enterprise,Growth,Outbound,8729.5,0.0,0.0,0.0,0.0,0.0,8729.5
+2024-12-01,enterprise,Growth,Paid Search,8845.83,0.0,0.0,0.0,0.0,0.0,8845.83
+2024-12-01,enterprise,Growth,Partner,4969.1,1185.0,0.0,0.0,0.0,0.0,6154.1
+2024-12-01,enterprise,Starter,Events,3568.66,0.0,66.69,0.0,0.0,0.0,3635.35
+2024-12-01,enterprise,Starter,Organic,1651.65,0.0,110.56,0.0,0.0,0.0,1762.21
+2024-12-01,enterprise,Starter,Outbound,3236.71,0.0,52.65,0.0,0.0,0.0,3289.36
+2024-12-01,enterprise,Starter,Paid Search,2692.7,581.1,0.0,0.0,0.0,0.0,3273.8
+2024-12-01,enterprise,Starter,Partner,1440.35,185.25,0.0,0.0,0.0,0.0,1625.6
+2024-12-01,mid-market,Enterprise,Events,67139.7,0.0,0.0,0.0,0.0,0.0,67139.7
+2024-12-01,mid-market,Enterprise,Organic,44648.29,0.0,0.0,0.0,0.0,0.0,44648.29
+2024-12-01,mid-market,Enterprise,Outbound,95480.77,8642.0,0.0,0.0,0.0,0.0,104122.77
+2024-12-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2024-12-01,mid-market,Enterprise,Partner,97094.73,9685.0,0.0,0.0,0.0,0.0,106779.73
+2024-12-01,mid-market,Growth,Events,19400.23,3294.3,0.0,0.0,391.05,0.0,22303.48
+2024-12-01,mid-market,Growth,Organic,34483.5,0.0,470.05,0.0,0.0,0.0,34953.55
+2024-12-01,mid-market,Growth,Outbound,28245.65,1066.5,237.0,0.0,0.0,0.0,29549.15
+2024-12-01,mid-market,Growth,Paid Search,54684.54,7275.9,0.0,0.0,0.0,0.0,61960.44
+2024-12-01,mid-market,Growth,Partner,36945.65,2061.9,912.45,0.0,0.0,0.0,39920.0
+2024-12-01,mid-market,Starter,Events,3668.73,0.0,0.0,0.0,0.0,0.0,3668.73
+2024-12-01,mid-market,Starter,Organic,6258.53,507.0,68.25,0.0,0.0,0.0,6833.78
+2024-12-01,mid-market,Starter,Outbound,7016.58,0.0,0.0,0.0,93.24,0.0,6923.34
+2024-12-01,mid-market,Starter,Paid Search,6634.74,0.0,0.0,0.0,0.0,0.0,6634.74
+2024-12-01,mid-market,Starter,Partner,4034.46,259.35,122.85,0.0,81.05,0.0,4335.61
+2024-12-01,smb,Enterprise,Events,79117.51,0.0,0.0,0.0,0.0,0.0,79117.51
+2024-12-01,smb,Enterprise,Organic,61224.1,11607.1,0.0,0.0,0.0,0.0,72831.2
+2024-12-01,smb,Enterprise,Outbound,89916.29,0.0,4630.92,0.0,0.0,0.0,94547.21
+2024-12-01,smb,Enterprise,Paid Search,106795.75,0.0,0.0,0.0,4060.25,20517.3,82218.2
+2024-12-01,smb,Enterprise,Partner,130574.76,0.0,0.0,0.0,0.0,0.0,130574.76
+2024-12-01,smb,Growth,Events,45945.51,0.0,2315.69,0.0,0.0,4266.0,43995.2
+2024-12-01,smb,Growth,Organic,33982.84,0.0,237.0,0.0,0.0,0.0,34219.84
+2024-12-01,smb,Growth,Outbound,40260.78,1200.8,432.29,0.0,0.0,0.0,41893.87
+2024-12-01,smb,Growth,Paid Search,43122.23,4309.45,0.0,0.0,296.25,0.0,47135.43
+2024-12-01,smb,Growth,Partner,43594.01,0.0,0.0,0.0,586.57,0.0,43007.44
+2024-12-01,smb,Starter,Events,7291.17,0.0,0.0,0.0,0.0,482.63,6808.54
+2024-12-01,smb,Starter,Organic,8226.77,0.0,77.81,0.0,123.07,0.0,8181.51
+2024-12-01,smb,Starter,Outbound,10193.81,0.0,49.14,0.0,58.5,0.0,10184.45
+2024-12-01,smb,Starter,Paid Search,7584.34,573.3,0.0,0.0,97.5,0.0,8060.14
+2024-12-01,smb,Starter,Partner,11298.15,776.1,322.36,0.0,87.75,0.0,12308.86
+2025-01-01,enterprise,Enterprise,Events,50716.62,8776.1,0.0,0.0,0.0,0.0,59492.72
+2025-01-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-01-01,enterprise,Enterprise,Outbound,29814.9,0.0,0.0,0.0,0.0,0.0,29814.9
+2025-01-01,enterprise,Enterprise,Paid Search,7599.0,10877.0,0.0,0.0,0.0,0.0,18476.0
+2025-01-01,enterprise,Enterprise,Partner,28475.76,8634.55,0.0,0.0,0.0,0.0,37110.31
+2025-01-01,enterprise,Growth,Events,7131.33,0.0,0.0,0.0,0.0,0.0,7131.33
+2025-01-01,enterprise,Growth,Organic,9328.91,0.0,0.0,0.0,0.0,0.0,9328.91
+2025-01-01,enterprise,Growth,Outbound,8729.5,0.0,0.0,0.0,0.0,0.0,8729.5
+2025-01-01,enterprise,Growth,Paid Search,8845.83,1880.2,622.12,0.0,0.0,0.0,11348.15
+2025-01-01,enterprise,Growth,Partner,6154.1,2571.45,0.0,0.0,0.0,0.0,8725.55
+2025-01-01,enterprise,Starter,Events,3635.35,0.0,80.03,0.0,0.0,0.0,3715.38
+2025-01-01,enterprise,Starter,Organic,1762.21,0.0,0.0,0.0,0.0,0.0,1762.21
+2025-01-01,enterprise,Starter,Outbound,3289.36,390.0,0.0,0.0,0.0,0.0,3679.36
+2025-01-01,enterprise,Starter,Paid Search,3273.8,0.0,94.97,0.0,0.0,0.0,3368.77
+2025-01-01,enterprise,Starter,Partner,1625.6,0.0,0.0,0.0,0.0,480.17,1145.43
+2025-01-01,mid-market,Enterprise,Events,67139.7,0.0,0.0,0.0,0.0,0.0,67139.7
+2025-01-01,mid-market,Enterprise,Organic,44648.29,0.0,0.0,0.0,0.0,0.0,44648.29
+2025-01-01,mid-market,Enterprise,Outbound,104122.77,0.0,0.0,0.0,0.0,0.0,104122.77
+2025-01-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-01-01,mid-market,Enterprise,Partner,106779.73,0.0,0.0,0.0,0.0,0.0,106779.73
+2025-01-01,mid-market,Growth,Events,22303.48,0.0,1251.67,0.0,0.0,0.0,23555.15
+2025-01-01,mid-market,Growth,Organic,34953.55,1007.25,0.0,0.0,474.0,0.0,35486.8
+2025-01-01,mid-market,Growth,Outbound,29549.15,0.0,237.0,0.0,0.0,0.0,29786.15
+2025-01-01,mid-market,Growth,Paid Search,61960.44,1880.2,726.8,0.0,0.0,0.0,64567.44
+2025-01-01,mid-market,Growth,Partner,39920.0,0.0,426.6,0.0,0.0,0.0,40346.6
+2025-01-01,mid-market,Starter,Events,3668.73,296.4,0.0,0.0,87.75,0.0,3877.38
+2025-01-01,mid-market,Starter,Organic,6833.78,195.0,0.0,0.0,0.0,0.0,7028.78
+2025-01-01,mid-market,Starter,Outbound,6923.34,222.3,88.45,0.0,0.0,234.0,7000.09
+2025-01-01,mid-market,Starter,Paid Search,6634.74,596.7,85.99,0.0,46.31,0.0,7271.12
+2025-01-01,mid-market,Starter,Partner,4335.61,819.0,0.0,0.0,0.0,0.0,5154.61
+2025-01-01,smb,Enterprise,Events,79117.51,10757.8,2628.36,0.0,4173.86,0.0,88329.81
+2025-01-01,smb,Enterprise,Organic,72831.2,0.0,0.0,0.0,0.0,0.0,72831.2
+2025-01-01,smb,Enterprise,Outbound,94547.21,0.0,0.0,0.0,0.0,0.0,94547.21
+2025-01-01,smb,Enterprise,Paid Search,82218.2,0.0,1931.04,0.0,0.0,0.0,84149.24
+2025-01-01,smb,Enterprise,Partner,130574.76,0.0,4297.16,0.0,0.0,0.0,134871.92
+2025-01-01,smb,Growth,Events,43995.2,2026.35,763.73,0.0,0.0,0.0,46785.28
+2025-01-01,smb,Growth,Organic,34219.84,3397.0,1555.59,0.0,1751.52,2251.5,35169.41
+2025-01-01,smb,Growth,Outbound,41893.87,1264.0,0.0,0.0,0.0,0.0,43157.87
+2025-01-01,smb,Growth,Paid Search,47135.43,0.0,0.0,0.0,0.0,0.0,47135.43
+2025-01-01,smb,Growth,Partner,43007.44,0.0,0.0,0.0,0.0,2184.19,40823.25
+2025-01-01,smb,Starter,Events,6808.54,0.0,54.6,0.0,0.0,0.0,6863.14
+2025-01-01,smb,Starter,Organic,8181.51,0.0,84.24,0.0,75.03,0.0,8190.72
+2025-01-01,smb,Starter,Outbound,10184.45,195.0,152.49,0.0,0.0,298.35,10233.59
+2025-01-01,smb,Starter,Paid Search,8060.14,393.9,0.0,0.0,0.0,0.0,8454.04
+2025-01-01,smb,Starter,Partner,12308.86,156.0,81.22,0.0,71.08,210.6,12264.4
+2025-02-01,enterprise,Enterprise,Events,59492.72,0.0,0.0,0.0,0.0,0.0,59492.72
+2025-02-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-02-01,enterprise,Enterprise,Outbound,29814.9,0.0,0.0,0.0,0.0,0.0,29814.9
+2025-02-01,enterprise,Enterprise,Paid Search,18476.0,0.0,0.0,0.0,0.0,0.0,18476.0
+2025-02-01,enterprise,Enterprise,Partner,37110.31,0.0,0.0,0.0,0.0,0.0,37110.31
+2025-02-01,enterprise,Growth,Events,7131.33,1975.0,0.0,0.0,0.0,0.0,9106.33
+2025-02-01,enterprise,Growth,Organic,9328.91,0.0,0.0,0.0,379.94,0.0,8948.97
+2025-02-01,enterprise,Growth,Outbound,8729.5,0.0,0.0,0.0,0.0,0.0,8729.5
+2025-02-01,enterprise,Growth,Paid Search,11348.15,0.0,311.06,0.0,470.05,0.0,11189.16
+2025-02-01,enterprise,Growth,Partner,8725.55,1580.0,414.75,0.0,0.0,0.0,10720.3
+2025-02-01,enterprise,Starter,Events,3715.38,0.0,0.0,0.0,0.0,0.0,3715.38
+2025-02-01,enterprise,Starter,Organic,1762.21,0.0,0.0,0.0,0.0,0.0,1762.21
+2025-02-01,enterprise,Starter,Outbound,3679.36,312.0,174.33,0.0,0.0,0.0,4165.69
+2025-02-01,enterprise,Starter,Paid Search,3368.77,0.0,0.0,0.0,0.0,0.0,3368.77
+2025-02-01,enterprise,Starter,Partner,1145.43,0.0,0.0,0.0,0.0,0.0,1145.43
+2025-02-01,mid-market,Enterprise,Events,67139.7,0.0,0.0,0.0,0.0,0.0,67139.7
+2025-02-01,mid-market,Enterprise,Organic,44648.29,0.0,0.0,0.0,0.0,0.0,44648.29
+2025-02-01,mid-market,Enterprise,Outbound,104122.77,0.0,0.0,0.0,2045.02,0.0,102077.75
+2025-02-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-02-01,mid-market,Enterprise,Partner,106779.73,10877.0,0.0,0.0,0.0,0.0,117656.73
+2025-02-01,mid-market,Growth,Events,23555.15,0.0,0.0,0.0,0.0,0.0,23555.15
+2025-02-01,mid-market,Growth,Organic,35486.8,0.0,0.0,0.0,0.0,1481.25,34005.55
+2025-02-01,mid-market,Growth,Outbound,29786.15,0.0,0.0,0.0,0.0,0.0,29786.15
+2025-02-01,mid-market,Growth,Paid Search,64567.44,3397.0,0.0,0.0,923.26,0.0,67041.18
+2025-02-01,mid-market,Growth,Partner,40346.6,0.0,237.0,0.0,0.0,0.0,40583.6
+2025-02-01,mid-market,Starter,Events,3877.38,0.0,68.25,0.0,0.0,0.0,3945.63
+2025-02-01,mid-market,Starter,Organic,7028.78,0.0,143.91,0.0,52.65,0.0,7120.04
+2025-02-01,mid-market,Starter,Outbound,7000.09,0.0,39.0,0.0,0.0,0.0,7039.09
+2025-02-01,mid-market,Starter,Paid Search,7271.12,0.0,0.0,0.0,129.19,0.0,7141.93
+2025-02-01,mid-market,Starter,Partner,5154.61,0.0,42.12,0.0,78.98,0.0,5117.75
+2025-02-01,smb,Enterprise,Events,88329.81,0.0,0.0,0.0,0.0,0.0,88329.81
+2025-02-01,smb,Enterprise,Organic,72831.2,0.0,4276.3,0.0,0.0,0.0,77107.5
+2025-02-01,smb,Enterprise,Outbound,94547.21,0.0,4743.04,0.0,0.0,0.0,99290.25
+2025-02-01,smb,Enterprise,Paid Search,84149.24,9118.8,0.0,0.0,0.0,0.0,93268.04
+2025-02-01,smb,Enterprise,Partner,134871.92,0.0,2831.0,0.0,2618.67,0.0,135084.25
+2025-02-01,smb,Growth,Events,46785.28,0.0,1315.0,0.0,0.0,0.0,48100.28
+2025-02-01,smb,Growth,Organic,35169.41,0.0,582.83,0.0,0.0,0.0,35752.24
+2025-02-01,smb,Growth,Outbound,43157.87,3752.5,525.35,0.0,0.0,0.0,47435.72
+2025-02-01,smb,Growth,Paid Search,47135.43,1185.0,553.0,0.0,0.0,0.0,48873.43
+2025-02-01,smb,Growth,Partner,40823.25,1501.0,1291.65,0.0,0.0,0.0,43615.9
+2025-02-01,smb,Starter,Events,6863.14,165.75,0.0,0.0,92.14,0.0,6936.75
+2025-02-01,smb,Starter,Organic,8190.72,390.0,122.85,0.0,87.75,870.09,7745.73
+2025-02-01,smb,Starter,Outbound,10233.59,351.0,0.0,0.0,0.0,0.0,10584.59
+2025-02-01,smb,Starter,Paid Search,8454.04,351.0,215.67,0.0,73.12,0.0,8947.59
+2025-02-01,smb,Starter,Partner,12264.4,0.0,366.01,0.0,0.0,210.6,12419.81
+2025-03-01,enterprise,Enterprise,Events,59492.72,0.0,2252.88,0.0,0.0,0.0,61745.6
+2025-03-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-03-01,enterprise,Enterprise,Outbound,29814.9,8046.0,0.0,0.0,0.0,0.0,37860.9
+2025-03-01,enterprise,Enterprise,Paid Search,18476.0,0.0,2175.4,0.0,0.0,0.0,20651.4
+2025-03-01,enterprise,Enterprise,Partner,37110.31,0.0,0.0,0.0,0.0,0.0,37110.31
+2025-03-01,enterprise,Growth,Events,9106.33,0.0,237.0,0.0,0.0,0.0,9343.33
+2025-03-01,enterprise,Growth,Organic,8948.97,0.0,0.0,0.0,0.0,0.0,8948.97
+2025-03-01,enterprise,Growth,Outbound,8729.5,0.0,0.0,0.0,0.0,0.0,8729.5
+2025-03-01,enterprise,Growth,Paid Search,11189.16,0.0,0.0,0.0,0.0,0.0,11189.16
+2025-03-01,enterprise,Growth,Partner,10720.3,0.0,312.84,0.0,0.0,0.0,11033.14
+2025-03-01,enterprise,Starter,Events,3715.38,351.0,130.65,0.0,0.0,0.0,4197.03
+2025-03-01,enterprise,Starter,Organic,1762.21,0.0,0.0,0.0,0.0,0.0,1762.21
+2025-03-01,enterprise,Starter,Outbound,4165.69,0.0,46.8,0.0,0.0,0.0,4212.49
+2025-03-01,enterprise,Starter,Paid Search,3368.77,195.0,39.0,0.0,0.0,273.0,3329.77
+2025-03-01,enterprise,Starter,Partner,1145.43,0.0,0.0,0.0,0.0,0.0,1145.43
+2025-03-01,mid-market,Enterprise,Events,67139.7,0.0,2205.2,0.0,0.0,0.0,69344.9
+2025-03-01,mid-market,Enterprise,Organic,44648.29,6332.5,0.0,0.0,0.0,0.0,50980.79
+2025-03-01,mid-market,Enterprise,Outbound,102077.75,0.0,0.0,0.0,0.0,0.0,102077.75
+2025-03-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-03-01,mid-market,Enterprise,Partner,117656.73,0.0,0.0,0.0,0.0,0.0,117656.73
+2025-03-01,mid-market,Growth,Events,23555.15,0.0,0.0,0.0,0.0,2370.0,21185.15
+2025-03-01,mid-market,Growth,Organic,34005.55,2081.65,530.88,0.0,0.0,2559.6,34058.48
+2025-03-01,mid-market,Growth,Outbound,29786.15,0.0,0.0,0.0,0.0,0.0,29786.15
+2025-03-01,mid-market,Growth,Paid Search,67041.18,0.0,568.8,0.0,0.0,0.0,67609.98
+2025-03-01,mid-market,Growth,Partner,40583.6,2765.0,0.0,0.0,0.0,0.0,43348.6
+2025-03-01,mid-market,Starter,Events,3945.63,0.0,35.1,0.0,0.0,0.0,3980.73
+2025-03-01,mid-market,Starter,Organic,7120.04,0.0,0.0,0.0,0.0,0.0,7120.04
+2025-03-01,mid-market,Starter,Outbound,7039.09,0.0,0.0,0.0,48.75,0.0,6990.34
+2025-03-01,mid-market,Starter,Paid Search,7141.93,0.0,0.0,0.0,0.0,0.0,7141.93
+2025-03-01,mid-market,Starter,Partner,5117.75,1053.0,0.0,0.0,170.43,0.0,6000.32
+2025-03-01,smb,Enterprise,Events,88329.81,16315.5,0.0,0.0,0.0,0.0,104645.31
+2025-03-01,smb,Enterprise,Organic,77107.5,6317.6,2413.8,0.0,0.0,0.0,85838.9
+2025-03-01,smb,Enterprise,Outbound,99290.25,13447.25,5495.57,0.0,0.0,0.0,118233.07
+2025-03-01,smb,Enterprise,Paid Search,93268.04,0.0,0.0,0.0,0.0,0.0,93268.04
+2025-03-01,smb,Enterprise,Partner,135084.25,0.0,0.0,0.0,0.0,0.0,135084.25
+2025-03-01,smb,Growth,Events,48100.28,3839.4,863.08,0.0,0.0,0.0,52802.76
+2025-03-01,smb,Growth,Organic,35752.24,0.0,0.0,0.0,0.0,0.0,35752.24
+2025-03-01,smb,Growth,Outbound,47435.72,0.0,2477.44,0.0,0.0,0.0,49913.16
+2025-03-01,smb,Growth,Paid Search,48873.43,0.0,1496.46,0.0,0.0,1185.0,49184.89
+2025-03-01,smb,Growth,Partner,43615.9,2176.45,490.59,0.0,0.0,0.0,46282.94
+2025-03-01,smb,Starter,Events,6936.75,561.6,72.93,0.0,0.0,0.0,7571.28
+2025-03-01,smb,Starter,Organic,7745.73,0.0,134.55,0.0,92.3,0.0,7787.98
+2025-03-01,smb,Starter,Outbound,10584.59,351.0,37.05,0.0,0.0,0.0,10972.64
+2025-03-01,smb,Starter,Paid Search,8947.59,990.6,0.0,0.0,78.0,219.38,9640.81
+2025-03-01,smb,Starter,Partner,12419.81,185.25,0.0,0.0,0.0,1023.75,11581.31
+2025-04-01,enterprise,Enterprise,Events,61745.6,0.0,0.0,0.0,0.0,0.0,61745.6
+2025-04-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-04-01,enterprise,Enterprise,Outbound,37860.9,0.0,0.0,0.0,0.0,0.0,37860.9
+2025-04-01,enterprise,Enterprise,Paid Search,20651.4,0.0,0.0,0.0,0.0,0.0,20651.4
+2025-04-01,enterprise,Enterprise,Partner,37110.31,0.0,0.0,0.0,0.0,0.0,37110.31
+2025-04-01,enterprise,Growth,Events,9343.33,2212.0,0.0,0.0,0.0,0.0,11555.33
+2025-04-01,enterprise,Growth,Organic,8948.97,1659.0,0.0,0.0,0.0,0.0,10607.97
+2025-04-01,enterprise,Growth,Outbound,8729.5,0.0,0.0,0.0,0.0,0.0,8729.5
+2025-04-01,enterprise,Growth,Paid Search,11189.16,0.0,0.0,0.0,0.0,0.0,11189.16
+2025-04-01,enterprise,Growth,Partner,11033.14,0.0,237.0,0.0,0.0,0.0,11270.14
+2025-04-01,enterprise,Starter,Events,4197.03,0.0,0.0,0.0,0.0,0.0,4197.03
+2025-04-01,enterprise,Starter,Organic,1762.21,0.0,0.0,0.0,0.0,0.0,1762.21
+2025-04-01,enterprise,Starter,Outbound,4212.49,0.0,0.0,0.0,0.0,0.0,4212.49
+2025-04-01,enterprise,Starter,Paid Search,3329.77,0.0,0.0,0.0,0.0,0.0,3329.77
+2025-04-01,enterprise,Starter,Partner,1145.43,0.0,0.0,0.0,0.0,0.0,1145.43
+2025-04-01,mid-market,Enterprise,Events,69344.9,0.0,0.0,0.0,5112.56,0.0,64232.34
+2025-04-01,mid-market,Enterprise,Organic,50980.79,0.0,0.0,0.0,0.0,0.0,50980.79
+2025-04-01,mid-market,Enterprise,Outbound,102077.75,11026.0,0.0,0.0,0.0,0.0,113103.75
+2025-04-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-04-01,mid-market,Enterprise,Partner,117656.73,0.0,0.0,0.0,4738.2,0.0,112918.53
+2025-04-01,mid-market,Growth,Events,21185.15,0.0,0.0,0.0,0.0,0.0,21185.15
+2025-04-01,mid-market,Growth,Organic,34058.48,1990.8,0.0,0.0,0.0,0.0,36049.28
+2025-04-01,mid-market,Growth,Outbound,29786.15,0.0,0.0,0.0,0.0,0.0,29786.15
+2025-04-01,mid-market,Growth,Paid Search,67609.98,0.0,1384.17,0.0,2290.44,0.0,66703.71
+2025-04-01,mid-market,Growth,Partner,43348.6,0.0,739.08,0.0,0.0,0.0,44087.68
+2025-04-01,mid-market,Starter,Events,3980.73,0.0,136.5,0.0,48.75,0.0,4068.48
+2025-04-01,mid-market,Starter,Organic,7120.04,390.0,0.0,0.0,58.5,0.0,7451.54
+2025-04-01,mid-market,Starter,Outbound,6990.34,0.0,177.43,0.0,0.0,0.0,7167.77
+2025-04-01,mid-market,Starter,Paid Search,7141.93,526.5,43.68,0.0,0.0,0.0,7712.11
+2025-04-01,mid-market,Starter,Partner,6000.32,364.65,0.0,0.0,58.5,0.0,6306.47
+2025-04-01,smb,Enterprise,Events,104645.31,0.0,4393.12,0.0,0.0,0.0,109038.43
+2025-04-01,smb,Enterprise,Organic,85838.9,0.0,0.0,0.0,0.0,0.0,85838.9
+2025-04-01,smb,Enterprise,Outbound,118233.07,0.0,0.0,0.0,0.0,0.0,118233.07
+2025-04-01,smb,Enterprise,Paid Search,93268.04,25032.0,2279.7,0.0,0.0,0.0,120579.74
+2025-04-01,smb,Enterprise,Partner,135084.25,0.0,2692.9,0.0,0.0,0.0,137777.15
+2025-04-01,smb,Growth,Events,52802.76,2725.5,1042.52,0.0,506.59,0.0,56064.19
+2025-04-01,smb,Growth,Organic,35752.24,0.0,0.0,0.0,382.76,1279.8,34089.68
+2025-04-01,smb,Growth,Outbound,49913.16,1185.0,284.4,0.0,486.84,0.0,50895.72
+2025-04-01,smb,Growth,Paid Search,49184.89,1659.0,0.0,0.0,0.0,0.0,50843.89
+2025-04-01,smb,Growth,Partner,46282.94,1185.0,300.2,0.0,1054.85,888.75,45824.54
+2025-04-01,smb,Starter,Events,7571.28,427.05,0.0,0.0,0.0,351.0,7647.33
+2025-04-01,smb,Starter,Organic,7787.98,0.0,54.6,0.0,0.0,200.07,7642.51
+2025-04-01,smb,Starter,Outbound,10972.64,245.7,85.99,0.0,0.0,990.6,10313.73
+2025-04-01,smb,Starter,Paid Search,9640.81,405.6,136.5,0.0,58.5,0.0,10124.41
+2025-04-01,smb,Starter,Partner,11581.31,195.0,0.0,0.0,48.75,0.0,11727.56
+2025-05-01,enterprise,Enterprise,Events,61745.6,0.0,0.0,0.0,2194.02,0.0,59551.58
+2025-05-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-05-01,enterprise,Enterprise,Outbound,37860.9,8046.0,0.0,0.0,0.0,0.0,45906.9
+2025-05-01,enterprise,Enterprise,Paid Search,20651.4,0.0,0.0,0.0,0.0,0.0,20651.4
+2025-05-01,enterprise,Enterprise,Partner,37110.31,0.0,0.0,0.0,0.0,0.0,37110.31
+2025-05-01,enterprise,Growth,Events,11555.33,0.0,0.0,0.0,0.0,0.0,11555.33
+2025-05-01,enterprise,Growth,Organic,10607.97,0.0,0.0,0.0,0.0,0.0,10607.97
+2025-05-01,enterprise,Growth,Outbound,8729.5,2607.0,0.0,0.0,0.0,0.0,11336.5
+2025-05-01,enterprise,Growth,Paid Search,11189.16,0.0,0.0,0.0,0.0,0.0,11189.16
+2025-05-01,enterprise,Growth,Partner,11270.14,1185.0,0.0,0.0,0.0,0.0,12455.14
+2025-05-01,enterprise,Starter,Events,4197.03,0.0,92.14,0.0,0.0,0.0,4289.17
+2025-05-01,enterprise,Starter,Organic,1762.21,0.0,58.01,0.0,0.0,0.0,1820.22
+2025-05-01,enterprise,Starter,Outbound,4212.49,222.3,0.0,0.0,0.0,0.0,4434.79
+2025-05-01,enterprise,Starter,Paid Search,3329.77,0.0,81.9,0.0,0.0,215.89,3195.78
+2025-05-01,enterprise,Starter,Partner,1145.43,195.0,0.0,0.0,0.0,0.0,1340.43
+2025-05-01,mid-market,Enterprise,Events,64232.34,0.0,0.0,0.0,0.0,0.0,64232.34
+2025-05-01,mid-market,Enterprise,Organic,50980.79,0.0,0.0,0.0,0.0,0.0,50980.79
+2025-05-01,mid-market,Enterprise,Outbound,113103.75,25330.0,0.0,0.0,0.0,0.0,138433.75
+2025-05-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-05-01,mid-market,Enterprise,Partner,112918.53,0.0,0.0,0.0,0.0,0.0,112918.53
+2025-05-01,mid-market,Growth,Events,21185.15,3357.5,0.0,0.0,0.0,0.0,24542.65
+2025-05-01,mid-market,Growth,Organic,36049.28,6150.15,213.3,0.0,0.0,1919.7,40493.03
+2025-05-01,mid-market,Growth,Outbound,29786.15,0.0,228.31,0.0,0.0,0.0,30014.46
+2025-05-01,mid-market,Growth,Paid Search,66703.71,0.0,1409.36,0.0,0.0,0.0,68113.07
+2025-05-01,mid-market,Growth,Partner,44087.68,2283.1,0.0,0.0,0.0,0.0,46370.78
+2025-05-01,mid-market,Starter,Events,4068.48,546.0,0.0,0.0,0.0,0.0,4614.48
+2025-05-01,mid-market,Starter,Organic,7451.54,744.9,0.0,0.0,0.0,0.0,8196.44
+2025-05-01,mid-market,Starter,Outbound,7167.77,234.0,0.0,0.0,87.75,104.2,7209.82
+2025-05-01,mid-market,Starter,Paid Search,7712.11,0.0,0.0,0.0,94.77,142.16,7475.18
+2025-05-01,mid-market,Starter,Partner,6306.47,0.0,61.43,0.0,0.0,0.0,6367.9
+2025-05-01,smb,Enterprise,Events,109038.43,0.0,0.0,0.0,0.0,0.0,109038.43
+2025-05-01,smb,Enterprise,Organic,85838.9,10616.25,0.0,0.0,0.0,0.0,96455.15
+2025-05-01,smb,Enterprise,Outbound,118233.07,0.0,3658.92,0.0,0.0,0.0,121891.99
+2025-05-01,smb,Enterprise,Paid Search,120579.74,7748.0,4263.26,0.0,0.0,0.0,132591.0
+2025-05-01,smb,Enterprise,Partner,137777.15,0.0,0.0,0.0,0.0,0.0,137777.15
+2025-05-01,smb,Growth,Events,56064.19,2938.8,580.65,0.0,874.66,1659.0,57049.98
+2025-05-01,smb,Growth,Organic,34089.68,6079.05,470.05,0.0,0.0,0.0,40638.78
+2025-05-01,smb,Growth,Outbound,50895.72,4032.95,0.0,0.0,620.15,0.0,54308.52
+2025-05-01,smb,Growth,Paid Search,50843.89,2891.4,237.0,0.0,0.0,0.0,53972.29
+2025-05-01,smb,Growth,Partner,45824.54,2844.0,0.0,0.0,535.47,0.0,48133.07
+2025-05-01,smb,Starter,Events,7647.33,585.0,0.0,0.0,0.0,0.0,8232.33
+2025-05-01,smb,Starter,Organic,7642.51,596.7,145.67,0.0,65.81,276.91,8042.16
+2025-05-01,smb,Starter,Outbound,10313.73,990.6,145.08,0.0,0.0,156.0,11293.41
+2025-05-01,smb,Starter,Paid Search,10124.41,0.0,54.6,0.0,62.4,0.0,10116.61
+2025-05-01,smb,Starter,Partner,11727.56,380.25,88.92,0.0,188.67,0.0,12008.06
+2025-06-01,enterprise,Enterprise,Events,59551.58,0.0,0.0,0.0,0.0,0.0,59551.58
+2025-06-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-06-01,enterprise,Enterprise,Outbound,45906.9,0.0,0.0,0.0,0.0,0.0,45906.9
+2025-06-01,enterprise,Enterprise,Paid Search,20651.4,7450.0,2610.48,0.0,0.0,0.0,30711.88
+2025-06-01,enterprise,Enterprise,Partner,37110.31,0.0,0.0,0.0,0.0,0.0,37110.31
+2025-06-01,enterprise,Growth,Events,11555.33,0.0,0.0,0.0,493.75,0.0,11061.58
+2025-06-01,enterprise,Growth,Organic,10607.97,0.0,0.0,0.0,0.0,0.0,10607.97
+2025-06-01,enterprise,Growth,Outbound,11336.5,1007.25,0.0,0.0,0.0,0.0,12343.75
+2025-06-01,enterprise,Growth,Paid Search,11189.16,0.0,0.0,0.0,0.0,0.0,11189.16
+2025-06-01,enterprise,Growth,Partner,12455.14,1975.0,0.0,0.0,0.0,0.0,14430.14
+2025-06-01,enterprise,Starter,Events,4289.17,234.0,0.0,0.0,0.0,0.0,4523.17
+2025-06-01,enterprise,Starter,Organic,1820.22,0.0,0.0,0.0,0.0,0.0,1820.22
+2025-06-01,enterprise,Starter,Outbound,4434.79,0.0,35.1,0.0,0.0,0.0,4469.89
+2025-06-01,enterprise,Starter,Paid Search,3195.78,234.0,0.0,0.0,0.0,0.0,3429.78
+2025-06-01,enterprise,Starter,Partner,1340.43,195.0,0.0,0.0,0.0,0.0,1535.43
+2025-06-01,mid-market,Enterprise,Events,64232.34,0.0,3067.54,0.0,0.0,0.0,67299.88
+2025-06-01,mid-market,Enterprise,Organic,50980.79,0.0,0.0,0.0,0.0,0.0,50980.79
+2025-06-01,mid-market,Enterprise,Outbound,138433.75,0.0,0.0,0.0,0.0,0.0,138433.75
+2025-06-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-06-01,mid-market,Enterprise,Partner,112918.53,0.0,0.0,0.0,0.0,0.0,112918.53
+2025-06-01,mid-market,Growth,Events,24542.65,1880.2,0.0,0.0,0.0,0.0,26422.85
+2025-06-01,mid-market,Growth,Organic,40493.03,1453.6,1050.7,0.0,663.6,0.0,42333.73
+2025-06-01,mid-market,Growth,Outbound,30014.46,2528.0,0.0,0.0,0.0,0.0,32542.46
+2025-06-01,mid-market,Growth,Paid Search,68113.07,0.0,683.15,0.0,752.47,0.0,68043.75
+2025-06-01,mid-market,Growth,Partner,46370.78,0.0,873.46,0.0,0.0,0.0,47244.24
+2025-06-01,mid-market,Starter,Events,4614.48,497.25,0.0,0.0,84.24,0.0,5027.49
+2025-06-01,mid-market,Starter,Organic,8196.44,0.0,164.11,0.0,0.0,312.0,8048.55
+2025-06-01,mid-market,Starter,Outbound,7209.82,195.0,62.4,0.0,0.0,0.0,7467.22
+2025-06-01,mid-market,Starter,Paid Search,7475.18,0.0,84.24,0.0,68.25,0.0,7491.17
+2025-06-01,mid-market,Starter,Partner,6367.9,0.0,109.2,0.0,0.0,0.0,6477.1
+2025-06-01,smb,Enterprise,Events,109038.43,17433.0,0.0,0.0,0.0,18505.8,107965.63
+2025-06-01,smb,Enterprise,Organic,96455.15,13447.25,0.0,0.0,0.0,8642.0,101260.4
+2025-06-01,smb,Enterprise,Outbound,121891.99,0.0,0.0,0.0,0.0,0.0,121891.99
+2025-06-01,smb,Enterprise,Paid Search,132591.0,7450.0,0.0,0.0,0.0,7107.3,132933.7
+2025-06-01,smb,Enterprise,Partner,137777.15,11920.0,2920.4,0.0,0.0,0.0,152617.55
+2025-06-01,smb,Growth,Events,57049.98,0.0,373.28,0.0,0.0,0.0,57423.26
+2025-06-01,smb,Growth,Organic,40638.78,2567.5,0.0,0.0,0.0,0.0,43206.28
+2025-06-01,smb,Growth,Outbound,54308.52,6983.6,0.0,0.0,0.0,2026.35,59265.77
+2025-06-01,smb,Growth,Paid Search,53972.29,1580.0,656.96,0.0,0.0,3578.7,52630.55
+2025-06-01,smb,Growth,Partner,48133.07,0.0,0.0,0.0,0.0,0.0,48133.07
+2025-06-01,smb,Starter,Events,8232.33,737.1,79.17,0.0,58.5,0.0,8990.1
+2025-06-01,smb,Starter,Organic,8042.16,0.0,323.31,0.0,0.0,0.0,8365.47
+2025-06-01,smb,Starter,Outbound,11293.41,234.0,61.43,0.0,0.0,468.0,11120.84
+2025-06-01,smb,Starter,Paid Search,10116.61,772.2,94.77,0.0,58.01,0.0,10925.57
+2025-06-01,smb,Starter,Partner,12008.06,0.0,222.79,0.0,0.0,222.3,12008.55
+2025-07-01,enterprise,Enterprise,Events,59551.58,12203.1,0.0,0.0,0.0,0.0,71754.68
+2025-07-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-07-01,enterprise,Enterprise,Outbound,45906.9,0.0,0.0,0.0,0.0,0.0,45906.9
+2025-07-01,enterprise,Enterprise,Paid Search,30711.88,0.0,0.0,0.0,0.0,0.0,30711.88
+2025-07-01,enterprise,Enterprise,Partner,37110.31,6705.0,0.0,0.0,0.0,0.0,43815.31
+2025-07-01,enterprise,Growth,Events,11061.58,0.0,0.0,0.0,0.0,0.0,11061.58
+2025-07-01,enterprise,Growth,Organic,10607.97,0.0,0.0,0.0,0.0,0.0,10607.97
+2025-07-01,enterprise,Growth,Outbound,12343.75,0.0,0.0,0.0,0.0,0.0,12343.75
+2025-07-01,enterprise,Growth,Paid Search,11189.16,2686.0,414.75,0.0,0.0,0.0,14289.91
+2025-07-01,enterprise,Growth,Partner,14430.14,4269.95,0.0,0.0,0.0,0.0,18700.09
+2025-07-01,enterprise,Starter,Events,4523.17,351.0,96.03,0.0,0.0,0.0,4970.2
+2025-07-01,enterprise,Starter,Organic,1820.22,0.0,0.0,0.0,55.94,0.0,1764.28
+2025-07-01,enterprise,Starter,Outbound,4469.89,0.0,0.0,0.0,0.0,0.0,4469.89
+2025-07-01,enterprise,Starter,Paid Search,3429.78,0.0,77.22,0.0,0.0,0.0,3507.0
+2025-07-01,enterprise,Starter,Partner,1535.43,185.25,0.0,0.0,0.0,0.0,1720.68
+2025-07-01,mid-market,Enterprise,Events,67299.88,0.0,0.0,0.0,0.0,0.0,67299.88
+2025-07-01,mid-market,Enterprise,Organic,50980.79,7450.0,1508.62,0.0,0.0,0.0,59939.41
+2025-07-01,mid-market,Enterprise,Outbound,138433.75,0.0,0.0,0.0,4301.39,0.0,134132.36
+2025-07-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-07-01,mid-market,Enterprise,Partner,112918.53,10057.5,0.0,0.0,0.0,0.0,122976.03
+2025-07-01,mid-market,Growth,Events,26422.85,3634.0,568.8,0.0,0.0,0.0,30625.65
+2025-07-01,mid-market,Growth,Organic,42333.73,3981.6,0.0,0.0,0.0,0.0,46315.33
+2025-07-01,mid-market,Growth,Outbound,32542.46,0.0,0.0,0.0,479.92,0.0,32062.54
+2025-07-01,mid-market,Growth,Paid Search,68043.75,0.0,765.51,0.0,0.0,0.0,68809.26
+2025-07-01,mid-market,Growth,Partner,47244.24,1580.0,0.0,0.0,0.0,0.0,48824.24
+2025-07-01,mid-market,Starter,Events,5027.49,222.3,0.0,0.0,0.0,0.0,5249.79
+2025-07-01,mid-market,Starter,Organic,8048.55,0.0,120.9,0.0,0.0,0.0,8169.45
+2025-07-01,mid-market,Starter,Outbound,7467.22,789.75,0.0,0.0,0.0,0.0,8256.97
+2025-07-01,mid-market,Starter,Paid Search,7491.17,0.0,0.0,0.0,0.0,0.0,7491.17
+2025-07-01,mid-market,Starter,Partner,6477.1,315.9,52.21,0.0,0.0,0.0,6845.21
+2025-07-01,smb,Enterprise,Events,107965.63,0.0,0.0,0.0,0.0,0.0,107965.63
+2025-07-01,smb,Enterprise,Organic,101260.4,0.0,2962.12,0.0,0.0,0.0,104222.52
+2025-07-01,smb,Enterprise,Outbound,121891.99,11026.0,0.0,0.0,0.0,0.0,132917.99
+2025-07-01,smb,Enterprise,Paid Search,132933.7,0.0,4055.18,0.0,0.0,0.0,136988.88
+2025-07-01,smb,Enterprise,Partner,152617.55,9238.0,0.0,0.0,0.0,0.0,161855.55
+2025-07-01,smb,Growth,Events,57423.26,3602.4,0.0,0.0,0.0,0.0,61025.66
+2025-07-01,smb,Growth,Organic,43206.28,2370.0,0.0,0.0,0.0,0.0,45576.28
+2025-07-01,smb,Growth,Outbound,59265.77,3950.0,0.0,0.0,639.9,0.0,62575.87
+2025-07-01,smb,Growth,Paid Search,52630.55,6474.05,647.26,0.0,0.0,2188.46,57563.4
+2025-07-01,smb,Growth,Partner,48133.07,0.0,1224.5,0.0,0.0,0.0,49357.57
+2025-07-01,smb,Starter,Events,8990.1,273.0,0.0,0.0,0.0,0.0,9263.1
+2025-07-01,smb,Starter,Organic,8365.47,0.0,0.0,0.0,0.0,533.52,7831.95
+2025-07-01,smb,Starter,Outbound,11120.84,0.0,117.0,0.0,46.31,0.0,11191.53
+2025-07-01,smb,Starter,Paid Search,10925.57,175.5,81.9,0.0,0.0,0.0,11182.97
+2025-07-01,smb,Starter,Partner,12008.55,259.35,296.37,0.0,183.79,808.76,11571.72
+2025-08-01,enterprise,Enterprise,Events,71754.68,0.0,0.0,0.0,0.0,0.0,71754.68
+2025-08-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-08-01,enterprise,Enterprise,Outbound,45906.9,8046.0,0.0,0.0,0.0,0.0,53952.9
+2025-08-01,enterprise,Enterprise,Paid Search,30711.88,7077.5,0.0,0.0,0.0,0.0,37789.38
+2025-08-01,enterprise,Enterprise,Partner,43815.31,0.0,0.0,0.0,0.0,0.0,43815.31
+2025-08-01,enterprise,Growth,Events,11061.58,1185.0,0.0,0.0,0.0,0.0,12246.58
+2025-08-01,enterprise,Growth,Organic,10607.97,0.0,0.0,0.0,0.0,0.0,10607.97
+2025-08-01,enterprise,Growth,Outbound,12343.75,0.0,0.0,0.0,0.0,0.0,12343.75
+2025-08-01,enterprise,Growth,Paid Search,14289.91,0.0,0.0,0.0,0.0,0.0,14289.91
+2025-08-01,enterprise,Growth,Partner,18700.09,1817.0,0.0,0.0,0.0,0.0,20517.09
+2025-08-01,enterprise,Starter,Events,4970.2,351.0,44.46,0.0,0.0,0.0,5365.66
+2025-08-01,enterprise,Starter,Organic,1764.28,0.0,0.0,0.0,0.0,0.0,1764.28
+2025-08-01,enterprise,Starter,Outbound,4469.89,0.0,63.18,0.0,0.0,0.0,4533.07
+2025-08-01,enterprise,Starter,Paid Search,3507.0,0.0,0.0,0.0,0.0,0.0,3507.0
+2025-08-01,enterprise,Starter,Partner,1720.68,0.0,0.0,0.0,0.0,0.0,1720.68
+2025-08-01,mid-market,Enterprise,Events,67299.88,13007.7,0.0,0.0,0.0,0.0,80307.58
+2025-08-01,mid-market,Enterprise,Organic,59939.41,0.0,0.0,0.0,0.0,0.0,59939.41
+2025-08-01,mid-market,Enterprise,Outbound,134132.36,0.0,0.0,0.0,2086.0,0.0,132046.36
+2025-08-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-08-01,mid-market,Enterprise,Partner,122976.03,0.0,0.0,0.0,0.0,0.0,122976.03
+2025-08-01,mid-market,Growth,Events,30625.65,0.0,0.0,0.0,0.0,0.0,30625.65
+2025-08-01,mid-market,Growth,Organic,46315.33,2251.5,533.25,0.0,520.41,0.0,48579.67
+2025-08-01,mid-market,Growth,Outbound,32062.54,0.0,0.0,0.0,0.0,0.0,32062.54
+2025-08-01,mid-market,Growth,Paid Search,68809.26,0.0,0.0,0.0,0.0,0.0,68809.26
+2025-08-01,mid-market,Growth,Partner,48824.24,0.0,0.0,0.0,0.0,0.0,48824.24
+2025-08-01,mid-market,Starter,Events,5249.79,0.0,0.0,0.0,0.0,0.0,5249.79
+2025-08-01,mid-market,Starter,Organic,8169.45,195.0,0.0,0.0,0.0,0.0,8364.45
+2025-08-01,mid-market,Starter,Outbound,8256.97,434.85,188.1,0.0,0.0,0.0,8879.92
+2025-08-01,mid-market,Starter,Paid Search,7491.17,210.6,122.85,0.0,70.2,0.0,7754.42
+2025-08-01,mid-market,Starter,Partner,6845.21,0.0,201.14,0.0,0.0,0.0,7046.35
+2025-08-01,smb,Enterprise,Events,107965.63,8493.0,0.0,0.0,0.0,0.0,116458.63
+2025-08-01,smb,Enterprise,Organic,104222.52,0.0,5773.01,0.0,0.0,0.0,109995.53
+2025-08-01,smb,Enterprise,Outbound,132917.99,0.0,3859.1,0.0,0.0,0.0,136777.09
+2025-08-01,smb,Enterprise,Paid Search,136988.88,0.0,4023.0,0.0,0.0,0.0,141011.88
+2025-08-01,smb,Enterprise,Partner,161855.55,0.0,0.0,0.0,0.0,0.0,161855.55
+2025-08-01,smb,Growth,Events,61025.66,0.0,0.0,0.0,0.0,0.0,61025.66
+2025-08-01,smb,Growth,Organic,45576.28,1200.8,0.0,0.0,0.0,0.0,46777.08
+2025-08-01,smb,Growth,Outbound,62575.87,3827.55,2069.8,0.0,0.0,0.0,68473.22
+2025-08-01,smb,Growth,Paid Search,57563.4,1275.85,0.0,0.0,1394.35,1350.9,56094.0
+2025-08-01,smb,Growth,Partner,49357.57,2595.15,825.55,0.0,592.5,0.0,52185.77
+2025-08-01,smb,Starter,Events,9263.1,222.3,0.0,0.0,0.0,0.0,9485.4
+2025-08-01,smb,Starter,Organic,7831.95,963.3,210.21,0.0,0.0,156.0,8849.46
+2025-08-01,smb,Starter,Outbound,11191.53,479.7,0.0,0.0,0.0,0.0,11671.23
+2025-08-01,smb,Starter,Paid Search,11182.97,507.0,245.31,0.0,61.43,0.0,11873.85
+2025-08-01,smb,Starter,Partner,11571.72,585.0,53.04,0.0,0.0,0.0,12209.76
+2025-09-01,enterprise,Enterprise,Events,71754.68,0.0,0.0,0.0,0.0,0.0,71754.68
+2025-09-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-09-01,enterprise,Enterprise,Outbound,53952.9,0.0,2816.1,0.0,0.0,0.0,56769.0
+2025-09-01,enterprise,Enterprise,Paid Search,37789.38,0.0,0.0,0.0,0.0,0.0,37789.38
+2025-09-01,enterprise,Enterprise,Partner,43815.31,10132.0,0.0,0.0,0.0,0.0,53947.31
+2025-09-01,enterprise,Growth,Events,12246.58,0.0,497.7,0.0,0.0,0.0,12744.28
+2025-09-01,enterprise,Growth,Organic,10607.97,0.0,0.0,0.0,0.0,0.0,10607.97
+2025-09-01,enterprise,Growth,Outbound,12343.75,2401.6,0.0,0.0,0.0,0.0,14745.35
+2025-09-01,enterprise,Growth,Paid Search,14289.91,1343.0,0.0,0.0,0.0,0.0,15632.91
+2025-09-01,enterprise,Growth,Partner,20517.09,0.0,0.0,0.0,0.0,0.0,20517.09
+2025-09-01,enterprise,Starter,Events,5365.66,0.0,53.35,0.0,0.0,374.4,5044.61
+2025-09-01,enterprise,Starter,Organic,1764.28,407.55,0.0,0.0,0.0,0.0,2171.83
+2025-09-01,enterprise,Starter,Outbound,4533.07,0.0,42.12,0.0,0.0,0.0,4575.19
+2025-09-01,enterprise,Starter,Paid Search,3507.0,0.0,141.52,0.0,0.0,0.0,3648.52
+2025-09-01,enterprise,Starter,Partner,1720.68,0.0,0.0,0.0,0.0,0.0,1720.68
+2025-09-01,mid-market,Enterprise,Events,80307.58,0.0,0.0,0.0,0.0,0.0,80307.58
+2025-09-01,mid-market,Enterprise,Organic,59939.41,0.0,0.0,0.0,0.0,0.0,59939.41
+2025-09-01,mid-market,Enterprise,Outbound,132046.36,7450.0,0.0,0.0,0.0,0.0,139496.36
+2025-09-01,mid-market,Enterprise,Paid Search,8642.0,0.0,0.0,0.0,0.0,0.0,8642.0
+2025-09-01,mid-market,Enterprise,Partner,122976.03,0.0,2607.5,0.0,0.0,0.0,125583.53
+2025-09-01,mid-market,Growth,Events,30625.65,0.0,395.0,0.0,469.06,0.0,30551.59
+2025-09-01,mid-market,Growth,Organic,48579.67,0.0,0.0,0.0,0.0,0.0,48579.67
+2025-09-01,mid-market,Growth,Outbound,32062.54,0.0,273.97,0.0,497.7,0.0,31838.81
+2025-09-01,mid-market,Growth,Paid Search,68809.26,0.0,0.0,0.0,572.75,888.75,67347.76
+2025-09-01,mid-market,Growth,Partner,48824.24,2449.0,244.76,0.0,842.27,0.0,50675.73
+2025-09-01,mid-market,Starter,Events,5249.79,195.0,145.96,0.0,78.0,0.0,5512.75
+2025-09-01,mid-market,Starter,Organic,8364.45,234.0,0.0,0.0,58.5,0.0,8539.95
+2025-09-01,mid-market,Starter,Outbound,8879.92,312.0,0.0,0.0,0.0,0.0,9191.92
+2025-09-01,mid-market,Starter,Paid Search,7754.42,232.05,107.25,0.0,0.0,0.0,8093.72
+2025-09-01,mid-market,Starter,Partner,7046.35,364.65,199.68,0.0,77.8,0.0,7532.88
+2025-09-01,smb,Enterprise,Events,116458.63,0.0,3548.29,0.0,0.0,0.0,120006.92
+2025-09-01,smb,Enterprise,Organic,109995.53,0.0,0.0,0.0,0.0,0.0,109995.53
+2025-09-01,smb,Enterprise,Outbound,136777.09,0.0,0.0,0.0,0.0,0.0,136777.09
+2025-09-01,smb,Enterprise,Paid Search,141011.88,10281.0,0.0,0.0,3419.55,0.0,147873.33
+2025-09-01,smb,Enterprise,Partner,161855.55,0.0,0.0,0.0,0.0,0.0,161855.55
+2025-09-01,smb,Growth,Events,61025.66,4115.9,287.96,0.0,300.2,1990.8,63138.52
+2025-09-01,smb,Growth,Organic,46777.08,1185.0,362.61,0.0,0.0,0.0,48324.69
+2025-09-01,smb,Growth,Outbound,68473.22,0.0,472.82,0.0,536.21,0.0,68409.83
+2025-09-01,smb,Growth,Paid Search,56094.0,0.0,0.0,0.0,325.88,0.0,55768.12
+2025-09-01,smb,Growth,Partner,52185.77,1896.0,1602.12,0.0,0.0,0.0,55683.89
+2025-09-01,smb,Starter,Events,9485.4,0.0,0.0,0.0,156.0,0.0,9329.4
+2025-09-01,smb,Starter,Organic,8849.46,0.0,0.0,0.0,0.0,0.0,8849.46
+2025-09-01,smb,Starter,Outbound,11671.23,165.75,132.68,0.0,0.0,0.0,11969.66
+2025-09-01,smb,Starter,Paid Search,11873.85,280.8,295.23,0.0,174.04,421.2,11854.64
+2025-09-01,smb,Starter,Partner,12209.76,491.4,288.29,0.0,53.31,485.36,12450.78
+2025-10-01,enterprise,Enterprise,Events,71754.68,0.0,4271.09,0.0,0.0,0.0,76025.77
+2025-10-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-10-01,enterprise,Enterprise,Outbound,56769.0,0.0,0.0,0.0,0.0,0.0,56769.0
+2025-10-01,enterprise,Enterprise,Paid Search,37789.38,0.0,2659.65,0.0,1769.38,0.0,38679.65
+2025-10-01,enterprise,Enterprise,Partner,53947.31,0.0,0.0,0.0,0.0,0.0,53947.31
+2025-10-01,enterprise,Growth,Events,12744.28,0.0,0.0,0.0,0.0,0.0,12744.28
+2025-10-01,enterprise,Growth,Organic,10607.97,0.0,0.0,0.0,0.0,0.0,10607.97
+2025-10-01,enterprise,Growth,Outbound,14745.35,0.0,0.0,0.0,0.0,0.0,14745.35
+2025-10-01,enterprise,Growth,Paid Search,15632.91,0.0,0.0,0.0,0.0,0.0,15632.91
+2025-10-01,enterprise,Growth,Partner,20517.09,0.0,0.0,0.0,0.0,0.0,20517.09
+2025-10-01,enterprise,Starter,Events,5044.61,232.05,0.0,0.0,0.0,0.0,5276.66
+2025-10-01,enterprise,Starter,Organic,2171.83,0.0,0.0,0.0,0.0,234.0,1937.83
+2025-10-01,enterprise,Starter,Outbound,4575.19,0.0,163.8,0.0,61.43,0.0,4677.56
+2025-10-01,enterprise,Starter,Paid Search,3648.52,0.0,70.2,0.0,0.0,0.0,3718.72
+2025-10-01,enterprise,Starter,Partner,1720.68,0.0,0.0,0.0,0.0,0.0,1720.68
+2025-10-01,mid-market,Enterprise,Events,80307.58,0.0,0.0,0.0,0.0,0.0,80307.58
+2025-10-01,mid-market,Enterprise,Organic,59939.41,8984.7,0.0,0.0,1862.5,0.0,67061.61
+2025-10-01,mid-market,Enterprise,Outbound,139496.36,0.0,2580.83,0.0,0.0,0.0,142077.19
+2025-10-01,mid-market,Enterprise,Paid Search,8642.0,8046.0,0.0,0.0,0.0,0.0,16688.0
+2025-10-01,mid-market,Enterprise,Partner,125583.53,0.0,0.0,0.0,0.0,0.0,125583.53
+2025-10-01,mid-market,Growth,Events,30551.59,1200.8,0.0,0.0,708.04,1975.0,29069.35
+2025-10-01,mid-market,Growth,Organic,48579.67,0.0,312.25,0.0,0.0,0.0,48891.92
+2025-10-01,mid-market,Growth,Outbound,31838.81,0.0,0.0,0.0,355.5,0.0,31483.31
+2025-10-01,mid-market,Growth,Paid Search,67347.76,1493.1,1036.88,0.0,0.0,0.0,69877.74
+2025-10-01,mid-market,Growth,Partner,50675.73,2133.0,287.96,0.0,0.0,3839.4,49257.29
+2025-10-01,mid-market,Starter,Events,5512.75,663.0,35.1,0.0,0.0,312.0,5898.85
+2025-10-01,mid-market,Starter,Organic,8539.95,195.0,0.0,0.0,0.0,0.0,8734.95
+2025-10-01,mid-market,Starter,Outbound,9191.92,643.5,51.87,0.0,0.0,0.0,9887.29
+2025-10-01,mid-market,Starter,Paid Search,8093.72,867.75,115.83,0.0,0.0,0.0,9077.3
+2025-10-01,mid-market,Starter,Partner,7532.88,195.0,0.0,0.0,0.0,175.5,7552.38
+2025-10-01,smb,Enterprise,Events,120006.92,17954.5,3388.98,0.0,3421.56,0.0,137928.84
+2025-10-01,smb,Enterprise,Organic,109995.53,7077.5,0.0,0.0,0.0,0.0,117073.03
+2025-10-01,smb,Enterprise,Outbound,136777.09,0.0,3379.32,0.0,0.0,0.0,140156.41
+2025-10-01,smb,Enterprise,Paid Search,147873.33,0.0,3129.0,0.0,0.0,0.0,151002.33
+2025-10-01,smb,Enterprise,Partner,161855.55,0.0,0.0,0.0,0.0,0.0,161855.55
+2025-10-01,smb,Growth,Events,63138.52,0.0,846.09,0.0,1215.91,0.0,62768.7
+2025-10-01,smb,Growth,Organic,48324.69,3977.65,1691.43,0.0,0.0,0.0,53993.77
+2025-10-01,smb,Growth,Outbound,68409.83,3397.0,414.75,0.0,0.0,0.0,72221.58
+2025-10-01,smb,Growth,Paid Search,55768.12,0.0,1731.36,0.0,0.0,0.0,57499.48
+2025-10-01,smb,Growth,Partner,55683.89,3799.9,657.68,0.0,853.2,0.0,59288.27
+2025-10-01,smb,Starter,Events,9329.4,528.45,278.55,0.0,0.0,222.3,9914.1
+2025-10-01,smb,Starter,Organic,8849.46,429.0,94.77,0.0,0.0,0.0,9373.23
+2025-10-01,smb,Starter,Outbound,11969.66,195.0,47.39,0.0,233.51,331.69,11646.85
+2025-10-01,smb,Starter,Paid Search,11854.64,175.5,104.42,0.0,0.0,0.0,12134.56
+2025-10-01,smb,Starter,Partner,12450.78,653.25,0.0,0.0,0.0,511.75,12592.28
+2025-11-01,enterprise,Enterprise,Events,76025.77,0.0,0.0,0.0,0.0,0.0,76025.77
+2025-11-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-11-01,enterprise,Enterprise,Outbound,56769.0,0.0,0.0,0.0,0.0,0.0,56769.0
+2025-11-01,enterprise,Enterprise,Paid Search,38679.65,0.0,2051.73,0.0,0.0,0.0,40731.38
+2025-11-01,enterprise,Enterprise,Partner,53947.31,0.0,0.0,0.0,0.0,0.0,53947.31
+2025-11-01,enterprise,Growth,Events,12744.28,0.0,0.0,0.0,0.0,0.0,12744.28
+2025-11-01,enterprise,Growth,Organic,10607.97,0.0,0.0,0.0,0.0,0.0,10607.97
+2025-11-01,enterprise,Growth,Outbound,14745.35,0.0,0.0,0.0,0.0,0.0,14745.35
+2025-11-01,enterprise,Growth,Paid Search,15632.91,0.0,0.0,0.0,0.0,0.0,15632.91
+2025-11-01,enterprise,Growth,Partner,20517.09,0.0,0.0,0.0,0.0,0.0,20517.09
+2025-11-01,enterprise,Starter,Events,5276.66,0.0,112.04,0.0,0.0,0.0,5388.7
+2025-11-01,enterprise,Starter,Organic,1937.83,624.0,0.0,0.0,0.0,0.0,2561.83
+2025-11-01,enterprise,Starter,Outbound,4677.56,0.0,0.0,0.0,0.0,0.0,4677.56
+2025-11-01,enterprise,Starter,Paid Search,3718.72,259.35,0.0,0.0,0.0,0.0,3978.07
+2025-11-01,enterprise,Starter,Partner,1720.68,195.0,0.0,0.0,0.0,0.0,1915.68
+2025-11-01,mid-market,Enterprise,Events,80307.58,0.0,2646.24,0.0,0.0,0.0,82953.82
+2025-11-01,mid-market,Enterprise,Organic,67061.61,0.0,0.0,0.0,0.0,0.0,67061.61
+2025-11-01,mid-market,Enterprise,Outbound,142077.19,0.0,5840.8,0.0,3871.25,0.0,144046.74
+2025-11-01,mid-market,Enterprise,Paid Search,16688.0,0.0,1728.4,0.0,0.0,0.0,18416.4
+2025-11-01,mid-market,Enterprise,Partner,125583.53,0.0,0.0,0.0,0.0,0.0,125583.53
+2025-11-01,mid-market,Growth,Events,29069.35,0.0,352.54,0.0,1060.58,0.0,28361.31
+2025-11-01,mid-market,Growth,Organic,48891.92,0.0,237.0,0.0,355.5,0.0,48773.42
+2025-11-01,mid-market,Growth,Outbound,31483.31,0.0,395.0,0.0,266.62,0.0,31611.69
+2025-11-01,mid-market,Growth,Paid Search,69877.74,0.0,0.0,0.0,402.9,0.0,69474.84
+2025-11-01,mid-market,Growth,Partner,49257.29,1066.5,0.0,0.0,0.0,0.0,50323.79
+2025-11-01,mid-market,Starter,Events,5898.85,0.0,52.65,0.0,36.56,0.0,5914.94
+2025-11-01,mid-market,Starter,Organic,8734.95,0.0,93.6,0.0,48.75,0.0,8779.8
+2025-11-01,mid-market,Starter,Outbound,9887.29,273.0,0.0,0.0,0.0,0.0,10160.29
+2025-11-01,mid-market,Starter,Paid Search,9077.3,195.0,37.05,0.0,0.0,390.0,8919.35
+2025-11-01,mid-market,Starter,Partner,7552.38,507.0,39.0,0.0,58.5,312.0,7727.88
+2025-11-01,smb,Enterprise,Events,137928.84,0.0,0.0,0.0,0.0,0.0,137928.84
+2025-11-01,smb,Enterprise,Organic,117073.03,9983.0,0.0,0.0,0.0,0.0,127056.03
+2025-11-01,smb,Enterprise,Outbound,140156.41,0.0,0.0,0.0,0.0,0.0,140156.41
+2025-11-01,smb,Enterprise,Paid Search,151002.33,0.0,2711.8,0.0,0.0,0.0,153714.13
+2025-11-01,smb,Enterprise,Partner,161855.55,16688.0,2252.88,0.0,0.0,0.0,180796.43
+2025-11-01,smb,Growth,Events,62768.7,3160.0,426.6,0.0,0.0,0.0,66355.3
+2025-11-01,smb,Growth,Organic,53993.77,3057.3,360.24,0.0,0.0,0.0,57411.31
+2025-11-01,smb,Growth,Outbound,72221.58,2528.0,315.21,0.0,928.25,0.0,74136.54
+2025-11-01,smb,Growth,Paid Search,57499.48,1074.4,0.0,0.0,0.0,0.0,58573.88
+2025-11-01,smb,Growth,Partner,59288.27,0.0,1629.96,0.0,450.3,1564.2,58903.73
+2025-11-01,smb,Starter,Events,9914.1,0.0,110.9,0.0,0.0,331.69,9693.31
+2025-11-01,smb,Starter,Organic,9373.23,312.0,171.7,0.0,48.75,0.0,9808.18
+2025-11-01,smb,Starter,Outbound,11646.85,0.0,0.0,0.0,0.0,0.0,11646.85
+2025-11-01,smb,Starter,Paid Search,12134.56,0.0,214.24,0.0,0.0,0.0,12348.8
+2025-11-01,smb,Starter,Partner,12592.28,0.0,125.31,0.0,0.0,0.0,12717.59
+2025-12-01,enterprise,Enterprise,Events,76025.77,0.0,0.0,0.0,0.0,16474.19,59551.58
+2025-12-01,enterprise,Enterprise,Organic,34717.0,0.0,0.0,0.0,0.0,0.0,34717.0
+2025-12-01,enterprise,Enterprise,Outbound,56769.0,0.0,2172.42,0.0,0.0,0.0,58941.42
+2025-12-01,enterprise,Enterprise,Paid Search,40731.38,0.0,0.0,0.0,0.0,0.0,40731.38
+2025-12-01,enterprise,Enterprise,Partner,53947.31,0.0,0.0,0.0,0.0,10579.0,43368.31
+2025-12-01,enterprise,Growth,Events,12744.28,948.0,0.0,0.0,0.0,0.0,13692.28
+2025-12-01,enterprise,Growth,Organic,10607.97,1501.0,584.6,0.0,0.0,0.0,12693.57
+2025-12-01,enterprise,Growth,Outbound,14745.35,0.0,0.0,0.0,0.0,1007.25,13738.1
+2025-12-01,enterprise,Growth,Paid Search,15632.91,0.0,0.0,0.0,0.0,0.0,15632.91
+2025-12-01,enterprise,Growth,Partner,20517.09,0.0,414.75,0.0,0.0,1877.04,19054.8
+2025-12-01,enterprise,Starter,Events,5388.7,273.0,459.28,0.0,0.0,0.0,6120.98
+2025-12-01,enterprise,Starter,Organic,2561.83,0.0,0.0,0.0,41.96,624.0,1895.87
+2025-12-01,enterprise,Starter,Outbound,4677.56,0.0,0.0,0.0,0.0,577.98,4099.58
+2025-12-01,enterprise,Starter,Paid Search,3978.07,0.0,0.0,0.0,0.0,468.0,3510.07
+2025-12-01,enterprise,Starter,Partner,1915.68,468.0,0.0,0.0,0.0,195.0,2188.68
+2025-12-01,mid-market,Enterprise,Events,82953.82,0.0,0.0,0.0,0.0,28652.7,54301.12
+2025-12-01,mid-market,Enterprise,Organic,67061.61,25181.0,0.0,0.0,0.0,5587.5,86655.11
+2025-12-01,mid-market,Enterprise,Outbound,144046.74,0.0,0.0,0.0,0.0,6705.0,137341.74
+2025-12-01,mid-market,Enterprise,Paid Search,18416.4,0.0,0.0,0.0,0.0,0.0,18416.4
+2025-12-01,mid-market,Enterprise,Partner,125583.53,0.0,2175.4,0.0,0.0,9403.76,118355.17
+2025-12-01,mid-market,Growth,Events,28361.31,0.0,0.0,0.0,0.0,7316.39,21044.92
+2025-12-01,mid-market,Growth,Organic,48773.42,1919.7,0.0,0.0,0.0,2251.5,48441.62
+2025-12-01,mid-market,Growth,Outbound,31611.69,0.0,0.0,0.0,0.0,6586.63,25025.06
+2025-12-01,mid-market,Growth,Paid Search,69474.84,0.0,0.0,0.0,0.0,5079.7,64395.14
+2025-12-01,mid-market,Growth,Partner,50323.79,3634.0,0.0,0.0,0.0,7253.78,46704.01
+2025-12-01,mid-market,Starter,Events,5914.94,187.2,0.0,0.0,0.0,1275.3,4826.84
+2025-12-01,mid-market,Starter,Organic,8779.8,351.0,0.0,0.0,97.5,579.15,8454.15
+2025-12-01,mid-market,Starter,Outbound,10160.29,0.0,112.71,0.0,0.0,1234.84,9038.16
+2025-12-01,mid-market,Starter,Paid Search,8919.35,0.0,0.0,0.0,0.0,1683.78,7235.57
+2025-12-01,mid-market,Starter,Partner,7727.88,273.0,81.9,0.0,0.0,2066.42,6016.36
+2025-12-01,smb,Enterprise,Events,137928.84,0.0,0.0,0.0,2011.5,42448.69,93468.65
+2025-12-01,smb,Enterprise,Organic,127056.03,0.0,7793.56,0.0,0.0,20174.6,114674.99
+2025-12-01,smb,Enterprise,Outbound,140156.41,13007.7,0.0,0.0,0.0,15376.8,137787.31
+2025-12-01,smb,Enterprise,Paid Search,153714.13,0.0,0.0,0.0,0.0,19399.8,134314.33
+2025-12-01,smb,Enterprise,Partner,180796.43,0.0,812.14,0.0,0.0,54087.0,127521.57
+2025-12-01,smb,Growth,Events,66355.3,1200.8,589.66,0.0,0.0,10554.4,57591.36
+2025-12-01,smb,Growth,Organic,57411.31,2508.25,213.3,0.0,355.5,8903.3,50874.06
+2025-12-01,smb,Growth,Outbound,74136.54,1817.0,1028.58,0.0,0.0,18615.17,58366.95
+2025-12-01,smb,Growth,Paid Search,58573.88,2686.0,805.8,0.0,0.0,9069.2,52996.48
+2025-12-01,smb,Growth,Partner,58903.73,4036.9,0.0,0.0,423.05,8969.22,53548.36
+2025-12-01,smb,Starter,Events,9693.31,195.0,0.0,0.0,0.0,2480.01,7408.3
+2025-12-01,smb,Starter,Organic,9808.18,0.0,0.0,0.0,0.0,1720.78,8087.4
+2025-12-01,smb,Starter,Outbound,11646.85,195.0,27.79,0.0,0.0,1907.59,9962.05
+2025-12-01,smb,Starter,Paid Search,12348.8,507.0,0.0,0.0,0.0,473.85,12381.95
+2025-12-01,smb,Starter,Partner,12717.59,234.0,70.2,0.0,0.0,3440.83,9580.96
