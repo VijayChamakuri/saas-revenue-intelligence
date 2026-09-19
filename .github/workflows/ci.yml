@@ -31,7 +31,7 @@ jobs:
           mkdir -p ci-artifacts
           cp -r dashboard/validation_evidence.csv artifacts/verification_summary.json ci-artifacts/ || true
           cp dbt/target/manifest.json dbt/target/catalog.json dbt/target/run_results.json ci-artifacts/ || true
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: validation-python-${{ matrix.python-version }}
