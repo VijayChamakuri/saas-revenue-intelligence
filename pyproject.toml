@@ -1,5 +1,5 @@
 [project]
-name = "subscription-revenue-intelligence"
+name = "saas-revenue-intelligence"
 version = "0.1.0"
 description = "Reproducible B2B SaaS subscription revenue and customer growth analytics platform"
 requires-python = ">=3.11,<3.14"

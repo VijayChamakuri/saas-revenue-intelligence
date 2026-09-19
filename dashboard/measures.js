@@ -1,4 +1,4 @@
-/* Pure measure library for the Subscription Revenue Analytics dashboard.
+/* Pure measure library for the SaaS Revenue Intelligence dashboard.
  *
  * Runs unchanged in the browser (inlined into index.html) and in Node
  * (src/dashboard/validate.py evaluates it against warehouse SQL).

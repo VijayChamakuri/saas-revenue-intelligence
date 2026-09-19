@@ -1,6 +1,6 @@
-# Subscription Revenue Analytics | SQL, dbt, Python & BI Dashboard
+# SaaS Revenue Intelligence: MRR, Churn & Billing Leakage
 
-[![validation](https://github.com/VijayChamakuri/subscription-revenue-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/VijayChamakuri/subscription-revenue-intelligence/actions/workflows/ci.yml)
+[![validation](https://github.com/VijayChamakuri/saas-revenue-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/VijayChamakuri/saas-revenue-intelligence/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 > Built a tested SaaS revenue analytics system that reconciles MRR, detects billing leakage and data-quality defects, scores churn risk, and serves a four-page dashboard where every number ties back to the warehouse.
@@ -105,7 +105,7 @@ CI runs the same commands and uploads dbt docs and validation files as artifacts
 ## Quick start
 
 ```bash
-git clone https://github.com/VijayChamakuri/subscription-revenue-intelligence.git && cd subscription-revenue-intelligence
+git clone https://github.com/VijayChamakuri/saas-revenue-intelligence.git && cd saas-revenue-intelligence
 uv sync --extra dev
 make pipeline
 ```
