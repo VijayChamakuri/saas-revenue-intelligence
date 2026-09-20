@@ -1,0 +1,5 @@
+check,status,detail
+MRR bridge rolls forward,PASS,0 months with a bridge difference above half a cent
+Invoice tie-out (billed = paid + failed exposure),PASS,0 months with a variance
+Finance exception queue,REVIEW,969 invoice-rule pairs queued for review
+Data freshness,INFO,latest invoice date 2025-12-01; static seeded dataset

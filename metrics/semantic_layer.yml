@@ -1,0 +1,348 @@
+# Portable metric contract for SaaS Revenue Intelligence.
+# Shaped like a dbt Semantic Layer spec (semantic models, entities, dimensions, measures, metrics), but it is NOT
+# executed by MetricFlow: the pinned dbt version has no MetricFlow install in this project. It is validated instead
+# by src/validation/semantic_layer.py, which computes every metric from its source model in DuckDB and ties it to
+# the marts, the Excel workbook and tableau/expected_kpis.csv. Synthetic data only.
+contract_version: 1
+
+semantic_models:
+  - name: customer_month_revenue
+    model: analytics_revenue.fct_mrr_movement
+    description: One row per month, customer, product and plan with MRR movement components.
+    time_dimension: month_start
+    entities:
+      - {name: customer, type: foreign, expr: customer_id}
+      - {name: product, type: foreign, expr: product_id}
+      - {name: plan, type: foreign, expr: plan_id}
+      - {name: month, type: primary, expr: month_start}
+    dimensions:
+      - {name: movement_type, type: categorical}
+      - {name: segment, type: categorical, via: "customer -> analytics_core.dim_customer.segment"}
+      - {name: acquisition_channel, type: categorical, via: "customer -> analytics_core.dim_customer.acquisition_channel"}
+      - {name: plan_name, type: categorical, via: "plan -> analytics_core.dim_plan.plan_name"}
+    measures:
+      - {name: ending_mrr, agg: sum, expr: closing_mrr}
+      - {name: opening_mrr, agg: sum, expr: opening_mrr}
+      - {name: new_mrr, agg: sum, expr: new_mrr}
+      - {name: expansion_mrr, agg: sum, expr: expansion_mrr}
+      - {name: contraction_mrr, agg: sum, expr: contraction_mrr}
+      - {name: churned_mrr, agg: sum, expr: churned_mrr}
+      - {name: reactivation_mrr, agg: sum, expr: reactivation_mrr}
+      - {name: active_customers, agg: count_distinct, expr: "case when closing_mrr > 0 then customer_id end"}
+  - name: mrr_movement
+    model: analytics_revenue.mart_mrr_bridge
+    description: One row per month; the MRR bridge must roll forward to the cent.
+    time_dimension: month_start
+    entities:
+      - {name: month, type: primary, expr: month_start}
+    dimensions: []
+    measures:
+      - {name: bridge_reconciliation_difference, agg: sum, expr: reconciliation_difference}
+  - name: billing_reconciliation
+    model: analytics_finance.fct_billing_reconciliation
+    description: One row per invoice comparing billed, paid, failed, refunded, recognized and deferred amounts.
+    time_dimension: invoice_date
+    entities:
+      - {name: invoice, type: primary, expr: invoice_id}
+      - {name: subscription, type: foreign, expr: subscription_id}
+      - {name: customer, type: foreign, expr: customer_id}
+    dimensions:
+      - {name: status, type: categorical}
+      - {name: currency, type: categorical}
+    measures:
+      - {name: billed_amount, agg: sum, expr: total_amount}
+      - {name: paid_amount, agg: sum, expr: successful_payments}
+      - {name: refund_amount, agg: sum, expr: refunded_amount}
+      - {name: failed_payment_exposure, agg: sum, expr: failed_payment_exposure}
+      - {name: recognized_amount, agg: sum, expr: recognized_amount}
+      - {name: deferred_amount, agg: sum, expr: deferred_amount}
+      - {name: invoice_count, agg: count, expr: invoice_id}
+  - name: finance_exceptions
+    model: analytics_finance.mart_finance_exceptions
+    description: One row per invoice and broken rule.
+    time_dimension: null
+    entities:
+      - {name: invoice, type: foreign, expr: invoice_id}
+    dimensions:
+      - {name: exception_type, type: categorical}
+      - {name: severity, type: categorical}
+    measures:
+      - {name: exception_count, agg: count, expr: invoice_id}
+  - name: customer_risk
+    model: artifacts/modeling/churn_scores.csv
+    description: Model output (not a dbt model). One row per synthetic account and score date with churn risk.
+    time_dimension: as_of_date
+    entities:
+      - {name: account, type: primary, expr: account_id}
+    dimensions: []
+    measures:
+      - {name: accounts_scored, agg: count, expr: account_id}
+
+metrics:
+  - id: ending_mrr
+    name: Ending MRR
+    version: 1
+    headline: true
+    type: simple
+    business_question: How much recurring revenue is active at the end of the month?
+    owner_role: Revenue Operations
+    description: Monthly recurring revenue active at month end.
+    grain: month
+    semantic_model: customer_month_revenue
+    source_model: fct_mrr_movement
+    calculation: sum(closing_mrr)
+    sql: sum(closing_mrr)
+    numerator: sum of closing MRR
+    denominator: none
+    inclusions: active recurring subscription lines
+    exclusions: one-time fees, taxes, refunds
+    valid_dimensions: [month, segment, plan_name, acquisition_channel]
+    time_basis: calendar month of the MRR snapshot
+    refresh_expectation: rebuilt from the seeded generator on every pipeline run
+    quality_checks: [assert_mrr_bridge_rolls_forward, mart_mrr_bridge cents_close]
+    known_limits: Contract value can differ from billed timing.
+    reference: {model: analytics_revenue.mart_revenue_kpis, column: closing_mrr}
+    tableau_field: closing_mrr
+  - id: arr
+    name: ARR
+    version: 1
+    headline: false
+    type: derived
+    business_question: What is the annualized recurring run rate?
+    owner_role: Finance
+    description: Ending MRR times 12.
+    grain: month
+    semantic_model: customer_month_revenue
+    source_model: fct_mrr_movement
+    calculation: ending_mrr * 12
+    sql: sum(closing_mrr) * 12
+    numerator: ending MRR times 12
+    denominator: none
+    inclusions: same as ending MRR
+    exclusions: same as ending MRR
+    valid_dimensions: [month, segment, plan_name]
+    time_basis: calendar month
+    refresh_expectation: every pipeline run
+    quality_checks: [mart_revenue_kpis arr non_negative]
+    known_limits: A run rate, not GAAP revenue or contracted backlog.
+    reference: {model: analytics_revenue.mart_revenue_kpis, column: arr}
+    tableau_field: arr
+  - id: net_new_mrr
+    name: Net new MRR
+    version: 1
+    headline: true
+    type: derived
+    business_question: Did recurring revenue grow or shrink this month, and why?
+    owner_role: Finance
+    description: New plus expansion plus reactivation, less contraction and churned MRR.
+    grain: month
+    semantic_model: customer_month_revenue
+    source_model: fct_mrr_movement
+    calculation: new_mrr + expansion_mrr + reactivation_mrr - contraction_mrr - churned_mrr
+    sql: sum(new_mrr) + sum(expansion_mrr) + sum(reactivation_mrr) - sum(contraction_mrr) - sum(churned_mrr)
+    numerator: movement components
+    denominator: none
+    inclusions: every customer-product-plan movement in the month
+    exclusions: one-time fees
+    valid_dimensions: [month, segment, plan_name, acquisition_channel]
+    time_basis: calendar month
+    refresh_expectation: every pipeline run
+    quality_checks: [assert_mrr_bridge_rolls_forward, mart_mrr_bridge cents_close]
+    known_limits: A movement metric, not recognized revenue.
+    reference: {model: analytics_revenue.mart_revenue_kpis, column: net_new_mrr}
+    tableau_field: net_new_mrr
+  - id: gross_revenue_retention
+    name: Gross revenue retention
+    version: 1
+    headline: true
+    type: ratio
+    business_question: How much of last month's recurring revenue did we keep before expansion?
+    owner_role: Customer Success
+    description: Opening MRR less contraction and churned MRR, divided by opening MRR.
+    grain: month
+    semantic_model: customer_month_revenue
+    source_model: fct_mrr_movement
+    calculation: (opening_mrr - contraction_mrr - churned_mrr) / opening_mrr
+    sql: (sum(opening_mrr) - sum(contraction_mrr) - sum(churned_mrr)) / nullif(sum(opening_mrr), 0)
+    numerator: opening MRR less contraction and churned MRR
+    denominator: opening MRR (null when zero)
+    inclusions: customers with opening MRR
+    exclusions: new, expansion and reactivation MRR
+    valid_dimensions: [month, segment, plan_name]
+    time_basis: calendar month
+    refresh_expectation: every pipeline run
+    quality_checks: [mart_revenue_kpis accepted_range 0 to 1]
+    known_limits: Undefined when opening MRR is zero; mix changes affect comparisons.
+    bounds: [0, 1]
+    reference: {model: analytics_revenue.mart_revenue_kpis, column: gross_revenue_retention}
+    tableau_field: gross_revenue_retention
+  - id: net_revenue_retention
+    name: Net revenue retention
+    version: 1
+    headline: true
+    type: ratio
+    business_question: Including expansion, how much of last month's recurring revenue do we have now?
+    owner_role: Revenue Operations
+    description: Opening MRR plus expansion and reactivation, less contraction and churned MRR, divided by opening MRR.
+    grain: month
+    semantic_model: customer_month_revenue
+    source_model: fct_mrr_movement
+    calculation: (opening_mrr + expansion_mrr + reactivation_mrr - contraction_mrr - churned_mrr) / opening_mrr
+    sql: (sum(opening_mrr) + sum(expansion_mrr) + sum(reactivation_mrr) - sum(contraction_mrr) - sum(churned_mrr)) / nullif(sum(opening_mrr), 0)
+    numerator: opening MRR plus expansion and reactivation, less contraction and churn
+    denominator: opening MRR (null when zero)
+    inclusions: customers with opening MRR
+    exclusions: new MRR
+    valid_dimensions: [month, segment, plan_name]
+    time_basis: calendar month
+    refresh_expectation: every pipeline run
+    quality_checks: [mart_revenue_kpis accepted_range 0 to 2]
+    known_limits: Can exceed 100 percent; small bases are volatile.
+    bounds: [0, 2]
+    reference: {model: analytics_revenue.mart_revenue_kpis, column: net_revenue_retention}
+    tableau_field: net_revenue_retention
+  - id: active_customers
+    name: Active customers
+    version: 1
+    headline: true
+    type: simple
+    business_question: How many customers pay recurring revenue at month end?
+    owner_role: Revenue Operations
+    description: Distinct customers with closing MRR above zero.
+    grain: month
+    semantic_model: customer_month_revenue
+    source_model: fct_mrr_movement
+    calculation: count distinct customer_id where closing_mrr > 0
+    sql: count(distinct case when closing_mrr > 0 then customer_id end)
+    numerator: customers with positive closing MRR
+    denominator: none
+    inclusions: customers with positive closing MRR on any product
+    exclusions: zero-MRR customers
+    valid_dimensions: [month, segment, plan_name, acquisition_channel]
+    time_basis: calendar month
+    refresh_expectation: every pipeline run
+    quality_checks: [mart_revenue_kpis active_customers not_null]
+    known_limits: Counts customers, not accounts; product-level churn can leave the customer active.
+    reference: {model: analytics_revenue.mart_revenue_kpis, column: active_customers}
+    tableau_field: active_customers
+  - id: logo_churn
+    name: Churned customers
+    version: 1
+    headline: false
+    type: simple
+    business_question: How many customers moved from positive MRR to zero this month?
+    owner_role: Customer Success
+    description: Distinct customers with a churn movement in the month.
+    grain: month
+    semantic_model: customer_month_revenue
+    source_model: fct_mrr_movement
+    calculation: count distinct customer_id where movement_type = 'churn'
+    sql: count(distinct case when movement_type = 'churn' then customer_id end)
+    numerator: customers with a churn movement
+    denominator: none
+    inclusions: product-level churn rows
+    exclusions: partial contraction
+    valid_dimensions: [month, segment, plan_name]
+    time_basis: calendar month
+    refresh_expectation: every pipeline run
+    quality_checks: [fct_mrr_movement movement_type accepted_values]
+    known_limits: 120 of 132 December 2025 cancellations are dated on the last day of the data window.
+    reference: null
+    tableau_field: churned_customers
+  - id: failed_payment_exposure
+    name: Failed-payment exposure
+    version: 1
+    headline: true
+    type: simple
+    business_question: How much billed revenue is sitting on failed payment attempts?
+    owner_role: Billing Operations
+    description: Invoice total on invoices whose payment attempts failed.
+    grain: invoice month
+    semantic_model: billing_reconciliation
+    source_model: fct_billing_reconciliation
+    calculation: sum(failed_payment_exposure)
+    sql: sum(failed_payment_exposure)
+    numerator: failed-payment exposure
+    denominator: none
+    inclusions: invoices with a failed attempt and no successful payment
+    exclusions: successful attempts
+    valid_dimensions: [month, status, currency]
+    time_basis: invoice date month
+    refresh_expectation: every pipeline run
+    quality_checks: [assert_failed_payment_exposure_quantified, fct_billing_reconciliation non_negative]
+    known_limits: Exposure is not certain loss; attempts can later recover.
+    reference: null
+    tableau_field: failed_payment_exposure
+  - id: reconciliation_variance
+    name: Billing reconciliation variance
+    version: 1
+    headline: true
+    type: derived
+    business_question: Do invoices equal successful payments plus unpaid failed exposure?
+    owner_role: Finance
+    description: Billed amount less successful payments less failed-payment exposure. Must be zero.
+    grain: invoice month
+    semantic_model: billing_reconciliation
+    source_model: fct_billing_reconciliation
+    calculation: billed_amount - paid_amount - failed_payment_exposure
+    sql: round(sum(total_amount) - sum(successful_payments) - sum(failed_payment_exposure), 2)
+    numerator: billed less paid less unpaid exposure
+    denominator: none
+    inclusions: all invoices
+    exclusions: none
+    valid_dimensions: [month]
+    time_basis: invoice date month
+    refresh_expectation: every pipeline run
+    quality_checks: [assert_invoice_arithmetic, Excel Billing Reconciliation tie-out]
+    known_limits: Partial payments are not modeled.
+    bounds: [0, 0]
+    reference: null
+    tableau_field: reconciliation_variance
+  - id: billed_amount
+    name: Billed amount
+    version: 1
+    headline: false
+    type: simple
+    business_question: How much did we invoice?
+    owner_role: Finance
+    description: Invoice totals including tax.
+    grain: invoice month
+    semantic_model: billing_reconciliation
+    source_model: fct_billing_reconciliation
+    calculation: sum(total_amount)
+    sql: sum(total_amount)
+    numerator: invoice totals
+    denominator: none
+    inclusions: all invoices
+    exclusions: none
+    valid_dimensions: [month, status, currency]
+    time_basis: invoice date month
+    refresh_expectation: every pipeline run
+    quality_checks: [assert_invoice_arithmetic]
+    known_limits: Mixed-currency rows are exceptions until converted.
+    reference: null
+    tableau_field: billed_amount
+  - id: exception_count
+    name: Billing exceptions requiring review
+    version: 1
+    headline: true
+    type: simple
+    business_question: How many invoice-rule violations are waiting for review?
+    owner_role: Finance
+    description: Invoice and rule pairs in the finance exception queue.
+    grain: invoice and rule
+    semantic_model: finance_exceptions
+    source_model: mart_finance_exceptions
+    calculation: count(*)
+    sql: count(*)
+    numerator: exception rows
+    denominator: none
+    inclusions: every rule violation
+    exclusions: none
+    valid_dimensions: [exception_type, severity]
+    time_basis: not time-bound (queue at refresh)
+    refresh_expectation: every pipeline run
+    quality_checks: [mart_finance_exceptions not_null]
+    known_limits: All 969 current exceptions trace to invoice dating in the generator.
+    reference: null
+    tableau_field: exception_count

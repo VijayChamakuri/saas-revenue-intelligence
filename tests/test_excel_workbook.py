@@ -60,7 +60,7 @@ def test_bridge_formulas_and_tie_out_checks_exist(workbook) -> None:
     billing = workbook["Billing Reconciliation"]
     assert billing["J5"].value == "=ROUND(C5-D5-E5,2)"
     assert billing["M5"].value == "=ROUND(C5-H5-I5,2)"
-    assert "ALL CHECKS PASS" in workbook["Control"]["B8"].value
+    assert "ALL CHECKS PASS" in workbook["Control"]["B12"].value
 
 
 def test_only_scenario_inputs_are_editable(workbook) -> None:
@@ -72,4 +72,29 @@ def test_only_scenario_inputs_are_editable(workbook) -> None:
 
 def test_scenario_output_reads_inputs(workbook) -> None:
     assert "'Scenario Inputs'!$B$5" in workbook["Scenario Output"]["C5"].value
-    assert workbook["Control"]["B4"].value  # run id recorded
+    assert workbook["Control"]["B7"].value  # run id recorded
+
+
+def test_every_tabular_sheet_is_a_named_table_with_filters(workbook) -> None:
+    names = {name for ws in workbook.worksheets for name in ws.tables}
+    assert {"MrrBridge", "BillingReconciliation", "ExceptionSummary", "ExceptionDetail", "ScenarioInputs",
+            "ScenarioOutput", "MetricDefinitions", "ControlItems", "ExportHashes"} <= names
+    for ws in workbook.worksheets:
+        assert ws.tables, ws.title
+        assert ws.protection.sheet and not ws.protection.autoFilter and not ws.protection.sort, ws.title
+
+
+def test_control_records_refresh_commit_status_and_caveat(workbook) -> None:
+    control = {workbook["Control"].cell(r, 1).value: workbook["Control"].cell(r, 2).value for r in range(5, 20)}
+    assert control["Refreshed (UTC)"] and control["Source commit"]
+    assert "ALL CHECKS PASS" in control["Reconciliation status"]
+    assert "Synthetic data" in workbook["Control"]["A2"].value
+
+
+def test_print_setup_keeps_control_on_one_page(workbook) -> None:
+    control = workbook["Control"]
+    assert control.page_setup.orientation == "landscape"
+    assert control.page_setup.fitToWidth == 1 and control.page_setup.fitToHeight == 1
+    assert control.oddFooter.right.text == "Page &P of &N"
+    for ws in workbook.worksheets:
+        assert ws.print_area and ws.page_setup.fitToWidth == 1, ws.title

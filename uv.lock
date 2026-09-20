@@ -3500,6 +3500,7 @@ dev = [
     { name = "pytest" },
     { name = "pytest-cov" },
     { name = "ruff" },
+    { name = "tableauhyperapi" },
     { name = "types-openpyxl" },
     { name = "types-pyyaml" },
 ]
@@ -3531,6 +3532,7 @@ requires-dist = [
     { name = "scipy", specifier = ">=1.10,<2" },
     { name = "seaborn", specifier = ">=0.13,<1" },
     { name = "statsmodels", specifier = ">=0.14,<1" },
+    { name = "tableauhyperapi", marker = "extra == 'dev'", specifier = ">=0.0.24000,<0.0.26500" },
     { name = "types-openpyxl", marker = "extra == 'dev'", specifier = ">=3.1,<4" },
     { name = "types-pyyaml", marker = "extra == 'dev'", specifier = ">=6,<7" },
 ]
@@ -3847,6 +3849,20 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/28/f5/386c6cfda27c47df81643dc9466b3e28dc2a82152e524131977275a88e0c/statsmodels-0.15.0-cp313-cp313-pyemscripten_2025_0_wasm32.whl", hash = "sha256:ac9bce461d0c8f529f8ed331a469eaa5dd7c3213c06b62623a2e5438a6383093", size = 9809418, upload-time = "2026-08-27T10:36:50.646Z" },
     { url = "https://files.pythonhosted.org/packages/15/b4/a8a4d89918599309bebfc09a2f793a910279f3900671bc959ac8c810edd1/statsmodels-0.15.0-cp313-cp313-win_amd64.whl", hash = "sha256:081adf7e5f2da63f63cbd90491447de5d4c4c2921f19814f235bcf3e736edd3c", size = 11312877, upload-time = "2026-08-27T10:37:08.325Z" },
     { url = "https://files.pythonhosted.org/packages/7a/79/66b57afdcbf9a8b21b1a8e4414ddb006e819b2a81243cd74c12f3301eca3/statsmodels-0.15.0-cp313-cp313-win_arm64.whl", hash = "sha256:3e5f870037ca154a4d177aeac68704a784b24cf2c45d86b046fc28e37a2a5584", size = 10812282, upload-time = "2026-08-27T10:37:26.708Z" },
+]
+
+[[package]]
+name = "tableauhyperapi"
+version = "0.0.26479"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "cffi" },
+]
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a6/c5/883497e5aea1815d470163ddc30f915e3741e008a468ecdb7d4dade3461b/tableauhyperapi-0.0.26479-py3-none-macosx_10_11_x86_64.whl", hash = "sha256:960e276028137847a3870695d9c2d5a1392c173b1e119ff1146d24a75deca71a", size = 87593601, upload-time = "2026-09-03T17:45:55.837Z" },
+    { url = "https://files.pythonhosted.org/packages/ce/9a/cb288441dc58831de6a2e3d1eef6aad60c0da244b4c77276e9ebeb3e262e/tableauhyperapi-0.0.26479-py3-none-macosx_13_0_arm64.whl", hash = "sha256:e80e4dac6d8437ad8c20f36add7e523b18bc06d90d4c605a256c57df8df2c118", size = 80316638, upload-time = "2026-09-03T17:46:52.896Z" },
+    { url = "https://files.pythonhosted.org/packages/0a/19/576c16e7de218809b8e7ec5be3caee0ade89097a9b13ed06d58848fb2404/tableauhyperapi-0.0.26479-py3-none-manylinux2014_x86_64.whl", hash = "sha256:9f5ff04c0dc3c17224b7a3f36f297775f2f49aae084da84614003cd6508213bc", size = 89743672, upload-time = "2026-09-03T17:46:21.974Z" },
+    { url = "https://files.pythonhosted.org/packages/e9/be/2dc0d08c8d9a133eaadea24082747b966fd68d8eda40afba7a14203ee604/tableauhyperapi-0.0.26479-py3-none-win_amd64.whl", hash = "sha256:7a4f96d2a22351e944fea6db5d03ab5272ad4c0577acc987bfcb3739ed639502", size = 72013271, upload-time = "2026-09-03T17:47:25.169Z" },
 ]
 
 [[package]]

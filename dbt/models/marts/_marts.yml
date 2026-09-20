@@ -74,6 +74,13 @@ models:
               arguments: {min_value: 0, max_value: 1, inclusive: true}
               config:
                 where: gross_revenue_retention is not null
+      - name: net_revenue_retention
+        tests:
+          - dbt_utils.accepted_range:
+              arguments: {min_value: 0, max_value: 2, inclusive: true}
+              config:
+                where: net_revenue_retention is not null
+      - {name: active_customers, tests: [not_null, non_negative]}
   - name: fct_billing_reconciliation
     meta: {owner: Finance, grain: "one row per invoice", primary_key: "invoice_id", status: certified, freshness: "rebuilt from raw._loaded_at on every run"}
     description: Invoice grain comparison of billed, paid, failed, refunded, recognized, deferred, and collected amounts.

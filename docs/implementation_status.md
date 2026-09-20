@@ -79,7 +79,7 @@ make airflow-test
 
 | Check | Result |
 |---|---|
-| dbt build | 111 of 111 resources passed (34 models, 77 tests) |
+| dbt build | 114 of 114 resources passed (34 models, 80 tests) |
 | Dashboard measures tied to the warehouse | 128 of 128 |
 | MRR bridge maximum variance | $0.00 |
 | Source contracts | 23 of 23 tables passed |
@@ -98,3 +98,13 @@ make airflow-test
 - BigQuery and native Power BI behavior were not validated on this host.
 
 See [limitations and ethics](docs/limitations_and_ethics.md) and the [technical report](reports/technical_report.md) for the complete disclosure.
+
+## BI upgrade (2026-09-19)
+
+| Item | Status | Evidence |
+|---|---|---|
+| Canonical metric contract with mart tie-outs | Met (portable contract, not MetricFlow) | `metrics/semantic_layer.yml`; 361 of 361 metric-months tie; `tests/test_semantic_layer.py` |
+| MRR bridge variance exactly $0 every month | Met | `test_mrr_bridge_variance_is_exactly_zero_every_month` |
+| Excel tables, filters, protection, input styling, Control, PDF | Met | `tests/test_excel_workbook.py`; `reports/finance_control_summary.pdf` |
+| Real Tableau workbook with four checked dashboards and a Tableau Public URL | Met | Generated `.twbx` opens with no errors; 288 of 288 KPI tie-outs; all four dashboards inspected and fixed; screenshots in `tableau/screenshots/`; published at https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview. |
+| Cloud-warehouse portability (P1) | Not done | No BigQuery or Snowflake profile; nothing is claimed. |

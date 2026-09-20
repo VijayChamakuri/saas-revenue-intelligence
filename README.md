@@ -1,4 +1,4 @@
-# SaaS Revenue Intelligence: MRR, Churn & Billing Leakage
+# SaaS Revenue Intelligence | MRR, Retention & Billing Controls
 
 [![validation](https://github.com/VijayChamakuri/saas-revenue-intelligence/actions/workflows/ci.yml/badge.svg)](https://github.com/VijayChamakuri/saas-revenue-intelligence/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -9,7 +9,9 @@
 
 ![Executive Overview page of the dashboard with MRR trend, December movement waterfall and three findings](dashboard/screenshots/01_executive.png)
 
-**Open the dashboard:** clone the repo and open [`dashboard/index.html`](dashboard/index.html) in a browser (single offline file). Pages: [Executive](dashboard/screenshots/01_executive.png), [Revenue & Retention](dashboard/screenshots/02_revenue_retention.png), [Customer Risk](dashboard/screenshots/03_customer_risk.png), [Finance Controls](dashboard/screenshots/04_finance_controls.png). A Power BI report is not included; see [why](docs/dashboard.md#power-bi).
+The screenshot above is the offline HTML dashboard. **Open it:** clone the repo and open [`dashboard/index.html`](dashboard/index.html) in a browser (single offline file). Pages: [Executive](dashboard/screenshots/01_executive.png), [Revenue & Retention](dashboard/screenshots/02_revenue_retention.png), [Customer Risk](dashboard/screenshots/03_customer_risk.png), [Finance Controls](dashboard/screenshots/04_finance_controls.png). A Power BI report is not included; see [why](docs/dashboard.md#power-bi).
+
+**Tableau Public:** [SaaS Revenue Intelligence | MRR, Retention & Billing Controls](https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview) (four dashboards: Executive overview, Revenue and retention, Customer risk, Finance controls). The workbook is generated from code with Hyper extracts from the governed marts, all 288 KPI values in its extract tie to the marts, and every dashboard was checked in Tableau. Screenshots: [executive](tableau/screenshots/01_executive_overview.png), [revenue and retention](tableau/screenshots/02_revenue_retention.png), [customer risk](tableau/screenshots/03_customer_risk.png), [finance controls](tableau/screenshots/04_finance_controls.png). See [`tableau/README.md`](tableau/README.md).
 
 ## Three things the data says
 
@@ -25,10 +27,11 @@ The first and third are data-quality diagnoses, not business problems: both trac
 
 | Core analyst stack | Extended implementation (optional) |
 |---|---|
-| SQL and dbt (34 models, 77 tests), DuckDB | PySpark and a Hive-compatible table for the 600K usage events |
+| SQL and dbt (34 models, 80 tests), DuckDB | PySpark and a Hive-compatible table for the 600K usage events |
 | Python: pandas, scikit-learn, statsmodels | R survival analysis as an independent cross-check |
-| Offline HTML dashboard with a Node-run measure library | Airflow DAG for orchestration |
-| Excel reconciliation workbook (live formulas) | |
+| Tableau workbook generated from code (Hyper extracts), offline HTML dashboard | Airflow DAG for orchestration |
+| Portable metric contract (`metrics/semantic_layer.yml`) tied to the marts | |
+| Excel reconciliation workbook (live formulas, named tables, filters, one-page control PDF) | |
 | GitHub Actions on Python 3.11 and 3.12 | |
 
 The core path needs only `uv` and Node. [Extended stack details](docs/implementation_status.md).
@@ -95,10 +98,12 @@ from movement_base;
 | Check | Result |
 |---|---|
 | Dashboard measures tied to warehouse SQL | 128 of 128, [evidence](dashboard/validation_evidence.csv) |
-| dbt build | 111 of 111 (34 models, 77 tests) |
+| dbt build | 114 of 114 (34 models, 80 tests) |
 | Adversarial source tests | Duplicates, refund over payment, currency mismatch, overlapping contracts, early payment, missing dimensions, bad dates |
 | Python | Ruff and mypy clean; tests pass with coverage report |
-| Finance workbook | Formulas evaluated with an independent engine: all checks pass |
+| Finance workbook | 854 formulas evaluated with an independent engine: all checks pass; one-page [control PDF](reports/finance_control_summary.pdf) |
+| Metric contract | Every governed metric recomputed from its source model ties to its mart for every month (361 metric-months) and stays in bounds |
+| Tableau package | Manifest integrity, disclaimers, no personal fields, and a tie-out against the packaged Hyper extract (288 of 288) |
 
 CI runs the same commands and uploads dbt docs and validation files as artifacts. Full table: [implementation status](docs/implementation_status.md). Dashboard checks: [QA checklist](dashboard/qa_checklist.md).
 
@@ -114,7 +119,7 @@ Requires Python 3.11 or 3.12, `uv` and Node 18 or newer. `make pipeline` generat
 
 ## 90-second review path
 
-[This README](#three-things-the-data-says), then the [dashboard](dashboard/index.html), then one model ([`fct_mrr_movement.sql`](dbt/models/marts/revenue/fct_mrr_movement.sql)), one test ([`assert_mrr_bridge_rolls_forward.sql`](dbt/tests/assert_mrr_bridge_rolls_forward.sql)), then the [decision log](docs/decision_log.md).
+[This README](#three-things-the-data-says), then the [metric dictionary](docs/metric_dictionary.md), the [Tableau workbook](tableau/README.md) or the [dashboard](dashboard/index.html), then one model ([`fct_mrr_movement.sql`](dbt/models/marts/revenue/fct_mrr_movement.sql)), one test ([`assert_mrr_bridge_rolls_forward.sql`](dbt/tests/assert_mrr_bridge_rolls_forward.sql)), then the [decision log](docs/decision_log.md).
 
 ## Repository map
 
@@ -132,6 +137,6 @@ tests/       Python and dashboard tests
 
 ## Limits
 
-Synthetic data cannot show real impact, and no result here should be read as such. Logo retention appears only as cohorts; LTV, CAC payback, renewal rate, ARPA and marketing return are roadmap definitions with no mart and are never displayed. BigQuery and Power BI were not run. See [limitations](docs/limitations_and_ethics.md) and [analytical design](docs/analytical_design.md).
+Synthetic data cannot show real impact, and no result here should be read as such. Logo retention appears only as cohorts; LTV, CAC payback, renewal rate, ARPA and marketing return are roadmap definitions with no mart and are never displayed. BigQuery and Power BI were not run, and no cloud warehouse compilation is claimed. The metric contract is validated by this project, not executed by the dbt Semantic Layer. See [limitations](docs/limitations_and_ethics.md) and [analytical design](docs/analytical_design.md).
 
 MIT licensed. See [CONTRIBUTING](CONTRIBUTING.md).
