@@ -51,7 +51,7 @@ SCORE = "logistic_regression_risk"
 CAPTIONS: dict[str, tuple[str, str | None]] = {
     "month_start": ("Period", None), "expansion_mrr": ("Expansion MRR", MONEY), "churned_mrr": ("Churned MRR", MONEY),
     "new_mrr": ("New MRR", MONEY), "contraction_mrr": ("Contraction MRR", MONEY), "reactivation_mrr": ("Reactivation MRR", MONEY),
-    "opening_mrr": ("Opening MRR", MONEY), "billed_amount": ("Billed amount", MONEY), "month_label": ("Month label", None), "closing_mrr": ("Ending MRR", MONEY), "arr": ("ARR", MONEY),
+    "opening_mrr": ("Opening MRR", MONEY), "month_label": ("Month label", None), "closing_mrr": ("Ending MRR", MONEY), "arr": ("ARR", MONEY),
     "net_new_mrr": ("Net new MRR", MONEY), "gross_revenue_retention": ("Gross revenue retention", PCT),
     "net_revenue_retention": ("Net revenue retention", PCT), "active_customers": ("Active customers", NUM),
     "churned_customers": ("Churned customers", NUM), "failed_payment_exposure": ("Failed-payment exposure", MONEY),
