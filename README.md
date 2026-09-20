@@ -40,6 +40,18 @@ The core path needs only `uv` and Node. [Extended stack details](docs/implementa
 
 Why did MRR change (Finance, RevOps)? Do invoices, payments, refunds and revenue tie out (Finance)? Which accounts need contact first (Customer Success)? Which numbers can be trusted (data owners)? [Stakeholder map](docs/stakeholder_question_map.md) and [decision log](docs/decision_log.md).
 
+## Business analysis artifacts
+
+| Document | What it holds |
+|---|---|
+| [User stories](docs/user_stories.md) | 14 stories for the documented personas, each with Gherkin acceptance criteria and the test or evidence file that proves it |
+| [Process map](docs/process_map.md) | As-is manual close and the to-be automated order-to-cash flow, with each step mapped to the file that implements it |
+| [UAT plan](docs/uat_plan.md) | 12 acceptance scenarios with actor, steps, expected result and the automated evidence for each |
+| [Requirements traceability](docs/requirements_traceability.md) | All 14 functional requirements traced to stories, artifacts and verification |
+| [Gap analysis](docs/gap_analysis.md) | Measured differences between the manual close and this one, with "not measured" where nothing was measured |
+
+Also: [business requirements](docs/business_requirements.md), [stakeholder question map](docs/stakeholder_question_map.md), [decision log](docs/decision_log.md), [metric governance](docs/metric_governance.md).
+
 ## Data model
 
 ```mermaid

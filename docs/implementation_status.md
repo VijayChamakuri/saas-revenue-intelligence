@@ -108,3 +108,16 @@ See [limitations and ethics](docs/limitations_and_ethics.md) and the [technical 
 | Excel tables, filters, protection, input styling, Control, PDF | Met | `tests/test_excel_workbook.py`; `reports/finance_control_summary.pdf` |
 | Real Tableau workbook with four checked dashboards and a Tableau Public URL | Met | Generated `.twbx` opens with no errors; 288 of 288 KPI tie-outs; all four dashboards inspected and fixed; screenshots in `tableau/screenshots/`; published at https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview. |
 | Cloud-warehouse portability (P1) | Not done | No BigQuery or Snowflake profile; nothing is claimed. |
+
+## Business analysis artifacts (2026-09-19)
+
+| Artifact | Status | Evidence |
+|---|---|---|
+| `docs/user_stories.md` | Added | 14 stories with Gherkin criteria, each naming an existing pytest or dbt check; `tests/test_ba_artifacts.py` |
+| `docs/process_map.md` | Added | As-is and to-be order-to-cash maps with a step-to-implementation table |
+| `docs/uat_plan.md` | Added | 12 scenarios mapped to existing automated evidence |
+| `docs/requirements_traceability.md` | Added | 14 of 14 functional requirements traced; FR-13 recorded as partially met (no Power BI artifact) |
+| `docs/gap_analysis.md` | Added | Deltas drawn from committed artifacts; "not measured" where nothing was measured |
+
+Documentation and tests only: no pipeline logic, metric definition, dbt model, Excel workbook or Tableau package changed.
+
