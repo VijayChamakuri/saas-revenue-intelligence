@@ -7,11 +7,16 @@
 
 **Synthetic data.** Confidential SaaS billing data is not available, so a seeded generator encodes documented business rules, planted defects, drift, missing values and label noise. Findings describe this dataset only. [Why synthetic and what is planted](docs/data_generation_rules.md).
 
+**View the dashboard:** [SaaS Revenue Intelligence | MRR, Retention & Billing Controls](https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview) (four dashboards: Executive overview, Revenue and retention, Customer risk, Finance controls). The workbook is generated from code with Hyper extracts from the governed marts, all 288 KPI values in its extract tie to the marts, and every dashboard was checked in Tableau. Screenshots: [executive](tableau/screenshots/01_executive_overview.png), [revenue and retention](tableau/screenshots/02_revenue_retention.png), [customer risk](tableau/screenshots/03_customer_risk.png), [finance controls](tableau/screenshots/04_finance_controls.png). See [`tableau/README.md`](tableau/README.md).
+
+![Tableau Executive overview: ending MRR, net new MRR, gross and net revenue retention, active customers, billing exceptions, the monthly MRR bridge and ending MRR by month](tableau/screenshots/01_executive_overview.png)
+
+Every KPI on that page is a governed metric defined in [`metrics/semantic_layer.yml`](metrics/semantic_layer.yml), the MRR bridge reconciles to zero variance in every month, and the workbook's extract values are checked against the dbt marts before publication ([validation evidence](tableau/validation_evidence.csv)).
+
 ![Executive Overview page of the dashboard with MRR trend, December movement waterfall and three findings](dashboard/screenshots/01_executive.png)
 
 The screenshot above is the offline HTML dashboard. **Open it:** clone the repo and open [`dashboard/index.html`](dashboard/index.html) in a browser (single offline file). Pages: [Executive](dashboard/screenshots/01_executive.png), [Revenue & Retention](dashboard/screenshots/02_revenue_retention.png), [Customer Risk](dashboard/screenshots/03_customer_risk.png), [Finance Controls](dashboard/screenshots/04_finance_controls.png). A Power BI report is not included; see [why](docs/dashboard.md#power-bi).
 
-**Tableau Public:** [SaaS Revenue Intelligence | MRR, Retention & Billing Controls](https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview) (four dashboards: Executive overview, Revenue and retention, Customer risk, Finance controls). The workbook is generated from code with Hyper extracts from the governed marts, all 288 KPI values in its extract tie to the marts, and every dashboard was checked in Tableau. Screenshots: [executive](tableau/screenshots/01_executive_overview.png), [revenue and retention](tableau/screenshots/02_revenue_retention.png), [customer risk](tableau/screenshots/03_customer_risk.png), [finance controls](tableau/screenshots/04_finance_controls.png). See [`tableau/README.md`](tableau/README.md).
 
 ## Three things the data says
 
