@@ -509,20 +509,24 @@ class Dashboard:
             counter[0] += 1
             return counter[0]
 
-        def zone(n: object, x: int, y: int, w: int, h: int) -> str:
-            geo = f"h='{h}' id='{nid()}' w='{w}' x='{x}' y='{y}'"
+        def zone(n: object, x: int, y: int, w: int, h: int, fixed: int | None = None) -> str:
+            # fixed: pixel size along the parent container's direction; Tableau honors it only with is-fixed.
+            pin = f"fixed-size='{fixed}' is-fixed='true' " if fixed is not None else ""
+            geo = f"{pin}h='{h}' id='{nid()}' w='{w}' x='{x}' y='{y}'"
             if isinstance(n, Box):
                 weights = n.weights or [1.0] * len(n.children)
                 total = sum(weights)
                 parts = []
                 pos = x if n.direction == "horz" else y
                 span = w if n.direction == "horz" else h
+                pixels = (self.width if n.direction == "horz" else self.height) * span / 100000
                 for i, (c, wt) in enumerate(zip(n.children, weights, strict=True)):
                     size = span - (pos - (x if n.direction == "horz" else y)) if i == len(n.children) - 1 else int(round(span * wt / total))
+                    px = int(round(pixels * wt / total))
                     if n.direction == "horz":
-                        parts.append(zone(c, pos, y, size, h))
+                        parts.append(zone(c, pos, y, size, h, px))
                     else:
-                        parts.append(zone(c, x, pos, w, size))
+                        parts.append(zone(c, x, pos, w, size, px))
                     pos += size
                 bg = (f"<zone-style><format attr='background-color' value={a(n.background)} /></zone-style>" if n.background else "")
                 return f"<zone {geo} param={a(n.direction)} type-v2='layout-flow'>{''.join(parts)}{bg}</zone>"

@@ -49,7 +49,9 @@ THRESHOLDS = [round(x / 100, 2) for x in range(1, 21)]  # 0.01 to 0.20; model sc
 DEFAULT_THRESHOLD = 0.04  # the threshold selected on the calibration split (artifacts/modeling/churn_metrics.json)
 SCORE = "logistic_regression_risk"
 CAPTIONS: dict[str, tuple[str, str | None]] = {
-    "month_start": ("Month", None), "month_label": ("Month label", None), "closing_mrr": ("Ending MRR", MONEY), "arr": ("ARR", MONEY),
+    "month_start": ("Period", None), "expansion_mrr": ("Expansion MRR", MONEY), "churned_mrr": ("Churned MRR", MONEY),
+    "new_mrr": ("New MRR", MONEY), "contraction_mrr": ("Contraction MRR", MONEY), "reactivation_mrr": ("Reactivation MRR", MONEY),
+    "opening_mrr": ("Opening MRR", MONEY), "billed_amount": ("Billed amount", MONEY), "month_label": ("Month label", None), "closing_mrr": ("Ending MRR", MONEY), "arr": ("ARR", MONEY),
     "net_new_mrr": ("Net new MRR", MONEY), "gross_revenue_retention": ("Gross revenue retention", PCT),
     "net_revenue_retention": ("Net revenue retention", PCT), "active_customers": ("Active customers", NUM),
     "churned_customers": ("Churned customers", NUM), "failed_payment_exposure": ("Failed-payment exposure", MONEY),
@@ -68,6 +70,8 @@ CAPTIONS: dict[str, tuple[str, str | None]] = {
     "severity": ("Severity", None), "invoice_id": ("Invoice (synthetic ID)", None), "customer_id": ("Customer (synthetic ID)", None),
     "invoice_date": ("Invoice date", None), "check": ("Control", None), "status": ("Status", None), "detail": ("Detail", None),
 }
+COMPONENT_LABELS = {"opening_mrr": "Opening", "new_mrr": "New", "expansion_mrr": "Expansion", "reactivation_mrr": "Reactivation",
+                    "contraction_mrr": "Contraction", "churned_mrr": "Churned", "closing_mrr": "Ending"}
 DISALLOWED = {"customer_name", "account_name", "email", "phone"}
 
 
@@ -95,6 +99,7 @@ def extracts(con: duckdb.DuckDBPyConnection, scores: pd.DataFrame) -> dict[str, 
                      ('contraction_mrr', 5), ('churned_mrr', 6), ('closing_mrr', 7)) o(component, component_order)
         using (component) order by month_start, component_order""")
     out["mrr_bridge_long"]["value"] = out["mrr_bridge_long"]["value"].astype(float)
+    out["mrr_bridge_long"]["component"] = out["mrr_bridge_long"]["component"].map(COMPONENT_LABELS)
     out["mrr_bridge_long"].insert(1, "month_label", out["mrr_bridge_long"]["month_start"].str[:7])
     out["mrr_by_segment"] = q("""
         select m.month_start::varchar as month_start, c.segment, p.plan_name, c.acquisition_channel,
@@ -257,7 +262,8 @@ def build_workbook(frames: dict[str, pd.DataFrame], refresh: str) -> Workbook:
     s = [tile("closing_mrr", "Ending MRR"), tile("net_new_mrr", "Net new MRR"),
          tile("gross_revenue_retention", "Gross revenue retention"), tile("net_revenue_retention", "Net revenue retention"),
          tile("active_customers", "Active customers"), tile("exception_count", "Billing exceptions to review"),
-         tile("failed_payment_exposure", "Failed-payment exposure"), tile("reconciliation_variance", "Reconciliation variance")]
+         tile("failed_payment_exposure", "Failed-payment exposure, selected month"),
+         tile("reconciliation_variance", "Reconciliation variance, selected month")]
     s.append(Sheet("MRR bridge", bridge, "Bar", cols=[Pill("component")], rows=[Pill("value", "Sum")],
                    color=Pill("component"), label=[Pill("value", "Sum")], filters=[sel],
                    sort=(Pill("component"), Pill("component_order", "Sum"), "ASC"),
@@ -265,8 +271,8 @@ def build_workbook(frames: dict[str, pd.DataFrame], refresh: str) -> Workbook:
     s.append(Sheet("Ending MRR trend", kpi, "Line", cols=[Pill("month_start", "Month-Trunc")], rows=[Pill("closing_mrr", "Sum")],
                    mark_color="#1f3a5f", title="Ending MRR by month"))
     s.append(Sheet("MRR movement by month", bridge, "Bar", cols=[Pill("month_start", "Month-Trunc")], rows=[Pill("value", "Sum")],
-                   color=Pill("component"), filters=[Filter("component", ["new_mrr", "expansion_mrr", "reactivation_mrr",
-                                                                          "contraction_mrr", "churned_mrr"])],
+                   color=Pill("component"), filters=[Filter("component", ["New", "Expansion", "Reactivation",
+                                                                          "Contraction", "Churned"])],
                    title="MRR movement by month (contraction and churn shown below zero)"))
     s.append(Sheet("Retention trend", kpi, "Line", cols=[Pill("month_start", "Month-Trunc")],
                    rows=[Pill("gross_revenue_retention", "Sum"), Pill("net_revenue_retention", "Sum")],
@@ -277,7 +283,7 @@ def build_workbook(frames: dict[str, pd.DataFrame], refresh: str) -> Workbook:
                             Filter("month_start", derivation="Year", group=43)],
                    title="Expansion and churned MRR by segment (filters: plan, channel, year)"))
     s.append(Sheet("Cohort logo retention", cohort, "Square", rows=[Pill("cohort_month")], cols=[Pill("months_since_start")],
-                   color=Pill("logo_retention", "Avg"), label=[Pill("logo_retention", "Avg")],
+                   color=Pill("logo_retention", "Avg"),
                    title="Logo retention by acquisition cohort and months since start"))
     s.append(Sheet("Risk distribution", dist, "Bar", cols=[Pill("risk_bucket")], rows=[Pill("accounts", "Sum")],
                    label=[Pill("accounts", "Sum")], mark_color="#1f3a5f", title="Accounts by churn risk score band (test rows)"))
@@ -292,7 +298,7 @@ def build_workbook(frames: dict[str, pd.DataFrame], refresh: str) -> Workbook:
                 title="Accounts in queue (test rows)", label_text="{v}", font_size=20)]
     s.append(Sheet("Risk action queue", queue, "Text", rows=[Pill("account_id"), Pill("segment")], text=[Pill("risk", "Sum")],
                    filters=[Filter("above_threshold", ["true"])], sort=(Pill("account_id"), Pill("risk", "Sum"), "DESC"),
-                   title="Action queue: latest scores at or above the threshold (synthetic IDs)"))
+                   title="Action queue: latest scores at or above the threshold (synthetic IDs)", fit="fit-width"))
     s.append(Sheet("Billing tie-out", bill, "Bar", cols=[Pill("month_start", "Month-Trunc")],
                    rows=[Pill("invoiced", "Sum"), Pill("paid", "Sum")], mark_color="#1f3a5f",
                    title="Invoiced and paid by month"))
@@ -304,9 +310,9 @@ def build_workbook(frames: dict[str, pd.DataFrame], refresh: str) -> Workbook:
                    label=[Pill("invoice_id", "CountD")], color=Pill("severity"),
                    title="Exception classes (select a bar to list its invoices)"))
     s.append(Sheet("Exception rows", exc, "Text", rows=[Pill("invoice_id"), Pill("exception_type"), Pill("invoice_date")],
-                   text=[Pill("billed_amount", "Sum")], title="Exception invoices (synthetic IDs)"))
+                   text=[Pill("billed_amount", "Sum")], title="Exception invoices (synthetic IDs)", fit="fit-width"))
     s.append(Sheet("Control status", ctl, "Text", rows=[Pill("check"), Pill("status"), Pill("detail")],
-                   text=[Pill("check", "CountD")], title="Reconciliation status and data freshness"))
+                   text=[Pill("check", "CountD")], title="Reconciliation status and data freshness", fit="fit-width"))
     wb.sheets = s
 
     def header(title: str, sub: str) -> Box:
@@ -346,7 +352,8 @@ def build_workbook(frames: dict[str, pd.DataFrame], refresh: str) -> Workbook:
         Dashboard("Finance controls", 1366, 768, Box("vert", [
             header("Finance controls", "Invoices must equal successful payments plus unpaid failed exposure. "
                    "Exceptions are a review queue; all current exceptions trace to invoice dating in the generator."),
-            Box("horz", [View("KPI Failed-payment exposure"), View("KPI Reconciliation variance"), View("Control status")], [1, 1, 3]),
+            Box("horz", [Box("vert", [month_ctrl(), View("KPI Failed-payment exposure")], [2, 5]),
+                         Box("vert", [Text(" ", 8), View("KPI Reconciliation variance")], [2, 5]), View("Control status")], [1, 1, 3]),
             Box("horz", [View("Billing tie-out"), View("Tie-out variance"), View("Failed-payment exposure trend")]),
             Box("horz", [View("Exception classes"), View("Exception rows")], [1, 1]),
             Text(foot, 8, False, "#555555")], [9, 9, 14, 14, 2])),

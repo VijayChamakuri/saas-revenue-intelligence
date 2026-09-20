@@ -20,7 +20,11 @@ Starting commit: `69af662c793219c0e70295ae8aae532e84977f4e` (main, 2026-09-19). 
 
 ## Not verified yet
 
-- **Tableau package prepared; workbook and publication not verified.** Pixel QA of the four dashboards, Tableau screenshots and the Tableau Public URL wait on the manual checkpoint (`docs/tableau_public_release.md`).
+- Phone layout of the Tableau workbook (desktop layout tested).
+
+## Tableau checkpoint (2026-09-19)
+
+Opened in Tableau Public 2026.2.2, all four dashboards inspected, defects fixed in the generator (see `reports/visual_qa.md`), screenshots captured from Tableau, and published: https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview. The live viz shows the same December 2025 KPIs as the marts.
 - No dbt Semantic Layer (MetricFlow) execution: the metric contract is validated by this project instead, and is labeled that way.
 - Cloud warehouse compilation (BigQuery or Snowflake) was not attempted.
 - Excel open-in-Excel check for repair warnings; LibreOffice opens and renders it without error.

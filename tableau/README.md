@@ -2,7 +2,9 @@
 
 > Synthetic data from a seeded generator. Not real company, customer or financial results.
 
-**Status: Tableau package prepared; workbook generated and load-checked in Tableau Public 2026.2.2; visual QA and Tableau Public publication not yet verified.** Tableau Public URL: _not yet published_.
+**Status: published and checked.** Tableau Public URL: https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview
+
+The workbook opens in Tableau Public 2026.2.2 with no errors, all four dashboards were inspected at 1366 x 768, every KPI tile ties to `expected_kpis.csv`, and screenshots from Tableau are in `screenshots/`.
 
 | File | Purpose |
 |---|---|

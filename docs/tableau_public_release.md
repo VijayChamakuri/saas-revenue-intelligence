@@ -2,7 +2,7 @@
 
 > Synthetic data from a seeded generator. Not real company, customer or financial results.
 
-Status: **Tableau package prepared; workbook generated and load-checked in Tableau Public 2026.2.2; visual QA and publication not yet verified.**
+Status: **published 2026-09-19** at https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview. Repeat these steps for every refresh.
 
 1. `make pipeline` regenerates `tableau/data`, `tableau/workbook/saas_revenue_intelligence.twbx`, `expected_kpis.csv` and `validation_evidence.csv` (every row must pass).
 2. Open the `.twbx` in Tableau Public; it must open with no error dialog.
