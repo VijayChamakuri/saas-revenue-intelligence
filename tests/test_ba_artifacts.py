@@ -1,8 +1,9 @@
 """The business-analysis documents: structure, working references, and guarded language.
 
-These documents cite tests and files as evidence. This module fails if a cited path or test name does
-not exist, if a required section is missing, if the synthetic-data caveat is dropped, or if a phrase
-that would claim real data or real stakeholder interviews appears without a denial.
+These documents cite tests and files as evidence. This module fails if a cited path does not exist, if
+a cited test is not defined in the file the citation names, if a test is cited without its file, if a
+required section is missing, if the synthetic-data caveat is dropped, or if a phrase that would claim
+real data or real stakeholder interviews appears without a denial.
 """
 
 from __future__ import annotations
@@ -30,17 +31,21 @@ NEGATION = re.compile(r"\b(not|no|never|without|cannot|nor|neither|nothing|none|
 TEST_NAME = re.compile(r"\btest_[a-z0-9_]+\b(?!\.py)")  # a cited test function, not a module file name
 DBT_TEST = re.compile(r"\bassert_[a-z0-9_]+\b")
 PATH_REF = re.compile(r"`([A-Za-z0-9_./-]+\.(?:py|sql|yml|yaml|csv|json|md|xlsx|pdf|twbx))`")
+# A pytest citation names its file and its function, so a real test named in the wrong file fails.
+CITATION = re.compile(r"`(tests/[A-Za-z0-9_./-]+\.py)::(test_[a-z0-9_]+)`")
 
 
 def read(name: str) -> str:
     return (DOCS / name).read_text(encoding="utf-8")
 
 
-def repo_test_names() -> set[str]:
-    names: set[str] = set()
+def repo_test_locations() -> dict[str, set[str]]:
+    """Every test function in the repository, mapped to the files that define it."""
+    where: dict[str, set[str]] = {}
     for path in (REPO / "tests").rglob("test_*.py"):
-        names |= set(re.findall(r"def (test_[a-z0-9_]+)", path.read_text(encoding="utf-8")))
-    return names
+        for found in re.findall(r"def (test_[a-z0-9_]+)", path.read_text(encoding="utf-8")):
+            where.setdefault(found, set()).add(str(path.relative_to(REPO)))
+    return where
 
 
 def repo_dbt_tests() -> set[str]:
@@ -79,14 +84,21 @@ def test_every_referenced_path_exists(name: str) -> None:
 
 
 @pytest.mark.parametrize("name", sorted(REQUIRED_SECTIONS))
-def test_every_referenced_test_exists(name: str) -> None:
-    known, dbt = repo_test_names(), repo_dbt_tests()
-    text = read(name)
-    modules = {p.stem for p in (REPO / "tests").rglob("test_*.py")}
-    for cited in set(TEST_NAME.findall(text)) - modules:
-        assert cited in known, f"{name}: no such pytest test {cited}"
-    for cited in set(DBT_TEST.findall(text)):
-        assert cited in dbt, f"{name}: no such dbt test {cited}"
+def test_every_cited_test_is_defined_in_the_file_it_names(name: str) -> None:
+    where, text = repo_test_locations(), read(name)
+    for path, func in sorted(set(CITATION.findall(text))):
+        assert (REPO / path).exists(), f"{name}: no such test file {path}"
+        assert func in where, f"{name}: no such pytest test {func}"
+        assert path in where[func], f"{name}: {func} is defined in {sorted(where[func])}, not in {path}"
+    for cited in sorted(set(DBT_TEST.findall(text))):
+        assert cited in repo_dbt_tests(), f"{name}: no such dbt test {cited}"
+
+
+@pytest.mark.parametrize("name", sorted(REQUIRED_SECTIONS))
+def test_no_pytest_test_is_cited_without_its_file(name: str) -> None:
+    """A bare function name cannot be path-checked, so every citation must carry its file."""
+    stray = sorted(set(TEST_NAME.findall(CITATION.sub("", read(name)))))
+    assert not stray, f"{name}: cite these as `path/to/test_file.py::name` so the path is checked: {stray}"
 
 
 @pytest.mark.parametrize("name", sorted(REQUIRED_SECTIONS))
