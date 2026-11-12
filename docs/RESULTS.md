@@ -29,7 +29,7 @@ Gross revenue retention is 0.844535 (84.5% to one decimal place): opening minus 
 | Of those, dated 2025-12-31 | End date equals the last day of the window | 120 |
 | Churned customers | Distinct customers with a churn movement (MRR to zero) | 129 |
 
-The median count of cancellations in earlier months is 4. The mean of those earlier months is 4.46. The median is the "typical month" figure in the README.
+The median count of cancellations in earlier months is 4. The mean of those earlier months is 4.46. Churned customers (129) are a different grain from cancellation end dates (132).
 
 ## Billing
 

@@ -4,11 +4,11 @@
 [![Python 3.11 and 3.12](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-A recurring-revenue close can look like a customer problem when a date in the extract is wrong.
+This is a revenue-analytics pipeline for a subscription business: a warehouse, a governed metric contract, dashboards, and a churn score.
 
-I built a warehouse, a metric contract, and two dashboards on a seeded company of 1,200 accounts, from January 2023 through December 2025. Synthetic data stands in for a billing extract I do not have.
+Synthetic data stands in for a real billing extract. The company is seeded: 1,200 accounts, January 2023 through December 2025.
 
-The monthly recurring revenue (MRR) bridge matches to the cent in every month. December 2025 still falls by $259,564.02, and 120 of the 132 cancellations that month are dated 2025-12-31.
+The monthly recurring revenue (MRR) bridge ties to the cent in all 36 months. The checks caught that December's drop comes from how the generator dates cancellations, not from customer behavior.
 
 ![Ending MRR from January 2023 to December 2025, and the December movements: new $61,123.55, expansion $17,342.09, contraction −$2,929.51, churn −$335,100.15. December ending MRR is $1,914,752.62.](assets/readme/revenue_movement.png)
 
@@ -23,9 +23,9 @@ The monthly recurring revenue (MRR) bridge matches to the cent in every month. D
 | Bridge variance | $0.00 | All 36 months |
 | Failed-payment exposure | $1,461,681.54 | All 36 months, 638 invoices |
 
-Ending MRR is recurring revenue still active at month end. Net new MRR adds new, expansion, and reactivation, and subtracts contraction and churn. Gross revenue retention keeps expansion out of the numerator; net revenue retention includes it. The 132 cancellations are subscription end dates. That is not the 129 customers whose MRR went to zero in the same month.
+Ending MRR is recurring revenue still active at month end. Net new MRR is new plus expansion plus reactivation, minus contraction and churn. Gross revenue retention leaves expansion out; net revenue retention counts it.
 
-The bridge matches, so the December drop is in the ledger. I would not report it as a change in customer behavior: the generator clips a cancellation to 2025-12-31 when the drawn end date falls past the window, and the median earlier month has 4 cancellations. The failed-payment total is a different figure, summed across every month, and it is 3.6% of the $40,862,284.26 billed in the window. December alone is $53,721.83. Full ratios, the churn score, and the forecast errors are in [docs/RESULTS.md](docs/RESULTS.md).
+December's drop is in the ledger because the generator clips cancellations to the last day of the window, not because customers changed. The other December counts are in [docs/RESULTS.md](docs/RESULTS.md).
 
 ## How it works
 
@@ -85,26 +85,18 @@ The published workbook is [on Tableau Public](https://public.tableau.com/app/pro
 
 `make pipeline` builds the warehouse and then runs Ruff, mypy, and pytest. The suite is 103 tests, and they pass at the end of that command. Pytest skips the warehouse checks if you run it before the build. dbt parses 37 models. Three intermediate models are ephemeral, so `dbt build` runs 114 resources: 34 models and 80 data tests, all passing, and source freshness passes for all 22 sources. Line coverage of `src` is 67%.
 
-- [`tests/test_generation.py`](tests/test_generation.py) — the seed rebuilds the same rows, and those rows pass the source checks. 2 tests.
-- [`tests/test_source_validation.py`](tests/test_source_validation.py) — bad keys, bad dates, and duplicate usage events are rejected. 4 tests.
-- [`tests/test_adversarial_sources.py`](tests/test_adversarial_sources.py) — planted defects fail the contracts; the clean file passes. 8 tests.
-- [`tests/test_semantic_layer.py`](tests/test_semantic_layer.py) — the metric contract ties to the marts, and a bridge that does not roll forward is caught. 11 tests.
-- [`tests/test_run_audit.py`](tests/test_run_audit.py) — a failed check closes the run as failed. 3 tests.
-- [`tests/dashboard/test_dashboard.py`](tests/dashboard/test_dashboard.py) — dashboard measures, including the warehouse tie-out. 8 tests.
-- [`tests/test_excel_workbook.py`](tests/test_excel_workbook.py) — sheets, 854 formulas, protection, and which cells can be edited. 8 tests.
-- [`tests/test_tableau_package.py`](tests/test_tableau_package.py) — four dashboards, the synthetic-data notice, and the KPI tie-out. 7 tests.
-- [`tests/modeling/test_churn.py`](tests/modeling/test_churn.py) — the time split and the cost threshold. 4 tests.
-- [`tests/modeling/test_diagnostics.py`](tests/modeling/test_diagnostics.py) — calibration, drift, and forecast error. 7 tests.
-- [`tests/modeling/test_forecast.py`](tests/modeling/test_forecast.py) — the backtest uses only months before the origin. 4 tests.
-- [`tests/analytics/test_survival_crosscheck.py`](tests/analytics/test_survival_crosscheck.py) — a known Kaplan-Meier example. 2 tests.
-- [`tests/test_ba_artifacts.py`](tests/test_ba_artifacts.py) — the business-analysis docs cite real files and do not claim a real company. 35 tests.
-- [`dbt/tests/`](dbt/tests/) — 8 singular SQL tests, inside the 80 data tests. The bridge test is [`assert_mrr_bridge_rolls_forward.sql`](dbt/tests/assert_mrr_bridge_rolls_forward.sql).
+- Data generation and source checks: [`test_generation.py`](tests/test_generation.py), [`test_source_validation.py`](tests/test_source_validation.py), [`test_adversarial_sources.py`](tests/test_adversarial_sources.py). 14 tests.
+- Metric contract and the bridge: [`test_semantic_layer.py`](tests/test_semantic_layer.py), [`test_run_audit.py`](tests/test_run_audit.py), and the 8 singular tests in [`dbt/tests/`](dbt/tests/) (inside the 80 dbt data tests). 14 pytest tests.
+- Dashboards, Excel, and Tableau: [`test_dashboard.py`](tests/dashboard/test_dashboard.py), [`test_excel_workbook.py`](tests/test_excel_workbook.py), [`test_tableau_package.py`](tests/test_tableau_package.py). 23 tests.
+- Modeling: [`test_churn.py`](tests/modeling/test_churn.py), [`test_diagnostics.py`](tests/modeling/test_diagnostics.py), [`test_forecast.py`](tests/modeling/test_forecast.py), [`test_survival_crosscheck.py`](tests/analytics/test_survival_crosscheck.py). 17 tests.
+- Docs: [`test_ba_artifacts.py`](tests/test_ba_artifacts.py). 35 tests.
 
 ## Limitations
 
-Every number describes this generated company. It is not a real book of business, and it is not evidence that a retention program would pay for itself. The December cliff and the 969 contract-date rows are date conventions in the generator. The churn score is weak: ROC-AUC 0.633, area under the precision-recall curve (PR-AUC) 0.031, against a 1.9% holdout base rate (58 of 3,057 rows), and the holdout payoff is −$1,705.
-
-Churned MRR is not forecastable. On a rolling-origin backtest the best of the three methods, seasonal naive, has a weighted absolute percentage error (WAPE) of 93.9%. Ending MRR is a different series: drift has a WAPE of 1.4%. Those are point estimates on 48 forecast points, with no interval stored in the repo. Lifetime value, payback period, and renewal rate are not marts. There is no Power BI report. Spark, R, and Airflow are optional and are not part of `make pipeline` or CI.
+- Every number is this generated company. It is not a real book of business, and it is not evidence that a retention program would pay for itself.
+- The December cliff and the 969 contract-date rows are date conventions in the generator.
+- The churn score is weak: ROC-AUC 0.633, area under the precision-recall curve (PR-AUC) 0.031, against a 1.9% holdout base rate, and the payoff is −$1,705.
+- Churned MRR is not forecastable (seasonal naive, weighted absolute percentage error (WAPE) 93.9% on 48 points). Ending MRR is a different series (drift, WAPE 1.4%). Lifetime value, payback, and renewal rate are not marts. There is no Power BI report. Spark, R, and Airflow are outside `make pipeline` and CI.
 
 ## What I'd do next
 
@@ -128,18 +120,18 @@ Spark, the Hive-compatible check, R, and the Airflow DAG test are `make pipeline
 ## Repository
 
 ```text
-src/generation/generate.py     Seeded company
-src/modeling/churn.py          Time-split churn score
-src/modeling/forecast.py       Rolling-origin backtest
-src/validation/semantic_layer.py
-dbt/models/marts/revenue/      MRR movement, bridge, retention
-dbt/models/marts/finance/      Invoice tie-out and exceptions
-metrics/semantic_layer.yml     Metric contract
-dashboard/index.html           Offline dashboard
-tableau/                       Workbook, extracts, tie-out
-excel/finance_reconciliation.xlsx
-docs/RESULTS.md                Holdout, forecast, and segment rates
-docs/METHODOLOGY.md            Generator rates and model settings
+src/generation/generate.py          Seeded company
+src/modeling/churn.py               Time-split churn score
+src/modeling/forecast.py            Rolling-origin backtest
+src/validation/semantic_layer.py    Recomputes the metric contract in DuckDB
+dbt/models/marts/revenue/           MRR movement, bridge, retention
+dbt/models/marts/finance/           Invoice tie-out and exceptions
+metrics/semantic_layer.yml          Metric contract
+dashboard/index.html                Offline dashboard
+tableau/                            Workbook, extracts, tie-out
+excel/finance_reconciliation.xlsx   Finance workbook with live formulas
+docs/RESULTS.md                     Holdout, forecast, and segment rates
+docs/METHODOLOGY.md                 Generator rates and model settings
 ```
 
 MIT licensed. See [CONTRIBUTING.md](CONTRIBUTING.md).
