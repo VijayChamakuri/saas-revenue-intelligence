@@ -79,12 +79,12 @@ make airflow-test
 
 | Check | Result |
 |---|---|
-| dbt build | 114 of 114 resources passed (34 models, 80 tests) |
+| dbt build | 114 of 114 resources passed (34 models and 80 tests; 37 model files, 3 intermediate models ephemeral) |
 | Dashboard measures tied to the warehouse | 128 of 128 |
 | MRR bridge maximum variance | $0.00 |
 | Source contracts | 23 of 23 tables passed |
 | Ruff, mypy | Clean |
-| Python tests | 47 passed, 84% line coverage |
+| Python tests | 103 passed, 67% line coverage of `src` |
 | CI | Python 3.11 and 3.12 matrix runs the same commands as `make pipeline` |
 | Spark, Hive, R, Airflow | Local runs recorded in [reports/runtime_verification.md](../reports/runtime_verification.md); not part of CI |
 | Power BI, BigQuery | Not executed; not claimed |

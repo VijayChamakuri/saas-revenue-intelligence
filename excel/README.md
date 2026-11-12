@@ -23,6 +23,6 @@ make excel      # writes excel/finance_reconciliation.xlsx
 - `tests/test_excel_workbook.py` checks sheet names, that every cross-sheet reference resolves, that the file has
   no macros, that formula cells are locked, and that only the scenario input cells are unlocked.
 - The formulas were also evaluated with an independent calculation engine (the Python `formulas` package) against the
-  full synthetic dataset: Control reports `ALL CHECKS PASS`, December 2025 NRR is 85.25% and GRR is 84.45% (matching
-  `mart_revenue_kpis`), and invoiced totals of $40,862,284.26 tie to the warehouse. That evaluation was a one-off
+  full synthetic dataset: Control reports `ALL CHECKS PASS`, December 2025 net revenue retention is 85.3% and gross revenue retention is 84.5% (the ratios 0.852511 and 0.844535; 85.25% and 84.45% are the same ratios to two decimal places), matching
+  `mart_revenue_kpis`, and invoiced totals of $40,862,284.26 tie to the warehouse. That evaluation was a one-off
   check, not part of CI, and the workbook has not been opened in desktop Excel on this build host.

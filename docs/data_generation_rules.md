@@ -25,7 +25,7 @@ presented as findings about customers.
 
 | Pattern | Cause | Evidence |
 |---|---|---|
-| December 2025 churn cliff | Cancellation dates are clipped to the end of the observation window | 120 of 132 December 2025 cancellations are dated 2025-12-31; a typical month has about 4 |
+| December 2025 churn cliff | Cancellation dates are clipped to the end of the observation window | 120 of 132 December 2025 cancellations are dated 2025-12-31; the median earlier month has 4 |
 | 969 `contract_date_conflict` exceptions | Every invoice is dated the first of the month, and some contracts start mid-month | All 969 precede the contract start within the start month; none falls after the contract end |
 
 Treat both as data-quality diagnoses: the first is a window-boundary check, the second is an invoice-dating

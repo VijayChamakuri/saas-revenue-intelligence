@@ -17,7 +17,7 @@ Python generates and validates deterministic source records. DuckDB provides the
 
 ## Transformation and quality evidence
 
-Source contracts passed for all 23 files, including schemas, keys, date ordering, range constraints, and 25 cross-table relationships. dbt built 36 models and executed 71 data tests. The final run passed all 104 dbt resources without deprecation warnings. Source freshness remains unexecuted because generated raw files have no warehouse ingestion timestamp. No incremental equivalence benchmark is claimed.
+Source contracts passed for all 23 files, including schemas, keys, date ordering, range constraints, and 25 cross-table relationships. dbt parses 37 models. Three intermediate models are ephemeral, so `dbt build` runs 114 resources: 34 models and 80 data tests, all passing. Source freshness passes for all 22 dbt sources. No incremental equivalence benchmark is claimed.
 
 ## Revenue and finance validation
 
@@ -25,7 +25,7 @@ The 36-month MRR bridge enforces `closing = opening + new + expansion + reactiva
 
 ## Churn modeling
 
-The modeling contract is one account snapshot per as-of date with a 90-day future churn label. Identifiers and post-outcome fields are excluded. Ex-ante latent account characteristics generate both behavior and later cancellation, so predictors never read the realized future outcome or cancellation timing. The generator also introduces missing and delayed observations, temporal drift, label noise, and unseen future conditions. Splits contain 2,122 training, 1,587 calibration, and 3,057 future test rows. Calibrated logistic regression reaches 0.633 ROC-AUC, 0.031 PR-AUC, and 0.019 Brier score. The boosting challenger reaches 0.502 ROC-AUC and 0.020 PR-AUC. Economics assume a $35 contact cost, $6,000 retained margin, and 18% intervention success. The modest precision reflects the low event rate and is disclosed rather than hidden.
+The modeling contract is one account snapshot per as-of date with a 90-day future churn label. Identifiers and post-outcome fields are excluded. Ex-ante latent account characteristics generate both behavior and later cancellation, so predictors never read the realized future outcome or cancellation timing. The generator also introduces missing and delayed observations, temporal drift, label noise, and unseen future conditions. Splits contain 2,122 training, 1,587 calibration, and 3,057 future test rows. Calibrated logistic regression reaches 0.633 ROC-AUC, 0.031 PR-AUC, and a Brier score of 0.0186. The boosting challenger reaches 0.502 ROC-AUC and 0.020 PR-AUC. Economics assume a $35 contact cost, $6,000 retained margin, and 18% intervention success. The modest precision reflects the low event rate and is disclosed rather than hidden.
 
 ## Forecasting and statistical validation
 
@@ -41,4 +41,4 @@ Eight BI-ready extracts were generated, including 18,596 MRR movement rows, 17,3
 
 ## Residual limitations
 
-The project uses synthetic data and cannot substantiate production impact, causal effects, audited accounting compliance, cloud performance, or production security readiness. BigQuery credentials were not provided, Tableau was intentionally omitted as duplicative, and source freshness requires ingestion timestamps before it can be enforced.
+The project uses synthetic data and cannot substantiate production impact, causal effects, audited accounting compliance, cloud performance, or production security readiness. BigQuery was not compiled. The Tableau workbook is generated from the marts and tied to them (288 of 288 KPI values). There is no Power BI file.

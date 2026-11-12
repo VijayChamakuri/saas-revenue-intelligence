@@ -1,8 +1,8 @@
 # Portable metric contract for SaaS Revenue Intelligence.
-# Shaped like a dbt Semantic Layer spec (semantic models, entities, dimensions, measures, metrics), but it is NOT
-# executed by MetricFlow: the pinned dbt version has no MetricFlow install in this project. It is validated instead
-# by src/validation/semantic_layer.py, which computes every metric from its source model in DuckDB and ties it to
-# the marts, the Excel workbook and tableau/expected_kpis.csv. Synthetic data only.
+# Shaped like a dbt Semantic Layer spec (semantic models, entities, dimensions, measures, metrics).
+# It is not executed by MetricFlow. src/validation/semantic_layer.py computes every metric from its
+# source model in DuckDB and ties it to the marts, the Excel workbook, and tableau/expected_kpis.csv.
+# Synthetic data only.
 contract_version: 1
 
 semantic_models:

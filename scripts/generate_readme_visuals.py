@@ -1,18 +1,21 @@
-"""Generate README evidence charts from verified pipeline outputs."""
+"""Charts for the README, drawn from the committed extracts.
+
+The warehouse exports are not in git. These figures use tableau/data and
+dashboard/validation_evidence.csv, which are.
+"""
 
 from __future__ import annotations
 
-import json
+import csv
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib.ticker import FuncFormatter, PercentFormatter
+from matplotlib.ticker import FuncFormatter
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPORTS = ROOT / "data" / "exports"
-ARTIFACTS = ROOT / "artifacts"
+DATA = ROOT / "tableau" / "data"
 OUTPUT = ROOT / "assets" / "readme"
 
 NAVY = "#102A43"
@@ -35,7 +38,7 @@ def setup() -> None:
             "font.family": "DejaVu Sans",
             "font.size": 10,
             "axes.titleweight": "bold",
-            "axes.titlesize": 14,
+            "axes.titlesize": 13,
             "axes.labelcolor": NAVY,
             "axes.edgecolor": LIGHT,
             "xtick.color": SLATE,
@@ -47,221 +50,172 @@ def setup() -> None:
     )
 
 
-def revenue_story() -> None:
-    kpis = pd.read_csv(EXPORTS / "revenue_kpis.csv", parse_dates=["month_start"])
-    bridge = pd.read_csv(EXPORTS / "mrr_bridge.csv", parse_dates=["month_start"])
-    latest = bridge.iloc[-1]
+def _dollars(value: float) -> str:
+    sign = "−" if value < 0 else ""
+    return f"{sign}${abs(value):,.2f}"
 
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5.4), gridspec_kw={"width_ratios": [1.55, 1]})
+
+def revenue_story() -> None:
+    kpis = pd.read_csv(DATA / "kpi_monthly.csv", parse_dates=["month_start"])
+    bridge = pd.read_csv(DATA / "mrr_bridge_long.csv")
+    latest = bridge[bridge["month_label"] == "2025-12"].set_index("component")["value"]
+    ending = float(kpis.loc[kpis["month_label"] == "2025-12", "closing_mrr"].iloc[0])
+
+    fig, axes = plt.subplots(1, 2, figsize=(12.2, 4.6), gridspec_kw={"width_ratios": [1.45, 1]})
     ax = axes[0]
-    ax.plot(kpis.month_start, kpis.closing_mrr, color=BLUE, linewidth=3)
+    ax.plot(kpis.month_start, kpis.closing_mrr, color=BLUE, linewidth=2.4)
     ax.fill_between(kpis.month_start, kpis.closing_mrr, color=BLUE, alpha=0.08)
-    ax.scatter(kpis.month_start.iloc[-1], kpis.closing_mrr.iloc[-1], color=RED, s=55, zorder=3)
+    ax.scatter(kpis.month_start.iloc[-1], ending, color=RED, s=42, zorder=3)
     ax.annotate(
-        f"Dec 2025\n${kpis.closing_mrr.iloc[-1] / 1_000_000:.2f}M MRR",
-        xy=(kpis.month_start.iloc[-1], kpis.closing_mrr.iloc[-1]),
-        xytext=(-72, -52),
+        f"Dec 2025\n{_dollars(ending)}",
+        xy=(kpis.month_start.iloc[-1], ending),
+        xytext=(-78, -46),
         textcoords="offset points",
-        fontsize=10,
+        fontsize=9,
         fontweight="bold",
         arrowprops={"arrowstyle": "-", "color": SLATE},
     )
-    ax.set_title("Recurring revenue scaled, then reversed in the closing month", loc="left")
+    ax.set_title("Ending MRR", loc="left")
     ax.set_ylabel("Monthly recurring revenue")
     ax.yaxis.set_major_formatter(FuncFormatter(money_millions))
     ax.grid(axis="y", color=LIGHT, linewidth=0.8)
     ax.grid(axis="x", visible=False)
 
-    movement_names = ["New", "Expansion", "Contraction", "Churn"]
-    movement_values = [
-        latest.new_mrr,
-        latest.expansion_mrr,
-        -latest.contraction_mrr,
-        -latest.churned_mrr,
+    names = ["New", "Expansion", "Contraction", "Churn"]
+    # The long extract stores contraction and churn as negative movements.
+    values = [
+        float(latest["New"]),
+        float(latest["Expansion"]),
+        float(latest["Contraction"]),
+        float(latest["Churned"]),
     ]
     colors = [TEAL, BLUE, AMBER, RED]
     ax = axes[1]
-    bars = ax.bar(movement_names, movement_values, color=colors, width=0.68)
-    ax.axhline(0, color=NAVY, linewidth=0.9)
-    for bar, value in zip(bars, movement_values, strict=False):
+    bars = ax.bar(names, values, color=colors, width=0.68)
+    ax.axhline(0, color=NAVY, linewidth=0.8)
+    for bar, value in zip(bars, values, strict=True):
         ax.text(
             bar.get_x() + bar.get_width() / 2,
-            value + (5500 if value >= 0 else -5500),
-            f"${abs(value) / 1000:.0f}K",
+            value + (12000 if value >= 0 else -12000),
+            _dollars(value),
             ha="center",
             va="bottom" if value >= 0 else "top",
+            fontsize=8,
             fontweight="bold",
-            fontsize=9,
         )
-    ax.set_title("Churn dominates the December MRR bridge", loc="left")
+    ax.set_title("December 2025 movements", loc="left")
     ax.set_ylabel("MRR movement")
     ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"${value / 1000:.0f}K"))
-    ax.tick_params(axis="x", rotation=18)
+    ax.set_ylim(-390000, 120000)
     ax.grid(axis="y", color=LIGHT, linewidth=0.8)
     ax.grid(axis="x", visible=False)
 
     for axis in axes:
-        axis.spines[["top", "right", "left"]].set_visible(False)
-    fig.suptitle(
-        "Revenue movement: 36 months reconcile to the cent",
-        x=0.04,
-        y=1.03,
-        ha="left",
-        fontsize=18,
-        fontweight="bold",
-    )
-    fig.text(
-        0.04, -0.01, "Synthetic portfolio dataset. Source: tested dbt revenue marts.", color=SLATE
-    )
+        axis.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
-    fig.savefig(OUTPUT / "revenue_movement.png", dpi=180, bbox_inches="tight")
+    fig.savefig(OUTPUT / "revenue_movement.png", dpi=160, bbox_inches="tight")
+    plt.close(fig)
+
+
+def _wape(series: list[float], method: str, horizon: int = 3, min_train: int = 18) -> float:
+    total_abs = 0.0
+    total_act = 0.0
+    for cutoff in range(min_train, len(series) - horizon + 1):
+        history = series[:cutoff]
+        actual = series[cutoff : cutoff + horizon]
+        if method == "naive":
+            predicted = [history[-1]] * horizon
+        elif method == "seasonal_naive":
+            season = 12
+            predicted = [history[-season + (index % season)] for index in range(horizon)]
+        elif method == "drift":
+            slope = (history[-1] - history[0]) / max(len(history) - 1, 1)
+            predicted = [history[-1] + slope * (index + 1) for index in range(horizon)]
+        else:
+            raise ValueError(method)
+        for truth, estimate in zip(actual, predicted, strict=True):
+            estimate = max(estimate, 0.0)
+            total_abs += abs(truth - estimate)
+            total_act += truth
+    return total_abs / total_act
+
+
+def model_story() -> None:
+    kpis = list(csv.DictReader((DATA / "kpi_monthly.csv").open()))
+    bridge: dict[str, dict[str, float]] = {}
+    for row in csv.DictReader((DATA / "mrr_bridge_long.csv").open()):
+        bridge.setdefault(row["month_start"], {})[row["component"]] = float(row["value"])
+    closing = [float(row["closing_mrr"]) for row in kpis]
+    churned = [-bridge[row["month_start"]]["Churned"] for row in kpis]
+    methods = ["naive", "seasonal_naive", "drift"]
+    labels = ["Naive", "Seasonal naive", "Drift"]
+    mrr = [_wape(closing, method) for method in methods]
+    churn = [_wape(churned, method) for method in methods]
+
+    fig, ax = plt.subplots(figsize=(8.2, 4.2))
+    x = np.arange(len(labels))
+    width = 0.36
+    b1 = ax.bar(x - width / 2, mrr, width, label="Ending MRR", color=BLUE)
+    b2 = ax.bar(x + width / 2, churn, width, label="Churned MRR", color=RED)
+    ax.bar_label(b1, labels=[f"{value:.1%}" for value in mrr], padding=3, fontsize=8)
+    ax.bar_label(b2, labels=[f"{value:.1%}" for value in churn], padding=3, fontsize=8)
+    ax.set_xticks(x, labels)
+    ax.set_ylim(0, 1.25)
+    ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"{value:.0%}"))
+    ax.set_ylabel("Weighted absolute percentage error")
+    ax.set_title("Rolling-origin backtest, 48 forecast points", loc="left")
+    ax.legend(frameon=False)
+    ax.grid(axis="y", color=LIGHT, linewidth=0.8)
+    ax.grid(axis="x", visible=False)
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+    fig.savefig(OUTPUT / "model_validation.png", dpi=160, bbox_inches="tight")
     plt.close(fig)
 
 
 def finance_story() -> None:
-    billing = pd.read_csv(EXPORTS / "billing_reconciliation.csv", parse_dates=["invoice_date"])
-    exceptions = pd.read_csv(EXPORTS / "finance_exceptions.csv")
-    monthly = (
-        billing.assign(month=billing.invoice_date.dt.to_period("M").dt.to_timestamp())
-        .groupby("month", as_index=False)
-        .agg(
-            failed_payment_exposure=("failed_payment_exposure", "sum"),
-            collected_cash=("net_collected_cash", "sum"),
-        )
+    billing = pd.read_csv(DATA / "billing_monthly.csv", parse_dates=["month_start"])
+    exceptions = pd.read_csv(DATA / "exceptions.csv")
+    evidence = pd.read_csv(ROOT / "dashboard" / "validation_evidence.csv")
+    attempts = int(
+        evidence.loc[evidence["measure"] == "failed_payment_attempts", "warehouse_total"].iloc[0]
     )
-    exception_counts = exceptions.exception_type.value_counts()
-    total_exposure = billing.failed_payment_exposure.sum()
-    failed_attempts = int((billing.failed_payment_exposure > 0).sum())
+    total = float(billing["failed_payment_exposure"].sum())
+    counts = exceptions["exception_type"].value_counts()
 
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5.3), gridspec_kw={"width_ratios": [1.6, 1]})
+    fig, axes = plt.subplots(1, 2, figsize=(12.2, 4.4), gridspec_kw={"width_ratios": [1.6, 1]})
     ax = axes[0]
-    ax.bar(monthly.month, monthly.failed_payment_exposure, width=21, color=RED, alpha=0.88)
-    ax.set_title("Failed-payment exposure concentrates as revenue scales", loc="left")
-    ax.set_ylabel("Monthly exposure")
+    ax.bar(billing.month_start, billing.failed_payment_exposure, width=20, color=RED, alpha=0.9)
+    ax.set_title("Failed-payment exposure by invoice month", loc="left")
+    ax.set_ylabel("Exposure")
     ax.yaxis.set_major_formatter(FuncFormatter(lambda value, _: f"${value / 1000:.0f}K"))
-    ax.grid(axis="y", color=LIGHT, linewidth=0.8)
-    ax.grid(axis="x", visible=False)
     ax.text(
         0.01,
-        0.94,
-        f"${total_exposure / 1_000_000:.3f}M exposure across {failed_attempts} failed attempts",
+        0.95,
+        f"{_dollars(total)} across {attempts} invoices, all months",
         transform=ax.transAxes,
-        fontsize=11,
+        fontsize=9,
         fontweight="bold",
         color=RED,
         va="top",
     )
+    ax.grid(axis="y", color=LIGHT, linewidth=0.8)
+    ax.grid(axis="x", visible=False)
 
     ax = axes[1]
-    bars = ax.barh(
-        exception_counts.index.str.replace("_", " ").str.title(), exception_counts, color=AMBER
-    )
-    ax.bar_label(bars, padding=6, fontweight="bold")
-    ax.set_title("Contract dates drive the exception queue", loc="left")
-    ax.set_xlabel("Detected exceptions")
-    ax.set_xlim(0, exception_counts.max() * 1.18)
+    names = [name.replace("_", " ") for name in counts.index]
+    bars = ax.barh(names, counts.values, color=AMBER)
+    ax.bar_label(bars, padding=4, fontweight="bold")
+    ax.set_title("Exception queue", loc="left")
+    ax.set_xlabel("Invoice-rule rows")
+    ax.set_xlim(0, counts.max() * 1.25)
     ax.grid(axis="x", color=LIGHT, linewidth=0.8)
     ax.grid(axis="y", visible=False)
 
     for axis in axes:
-        axis.spines[["top", "right", "left"]].set_visible(False)
-    fig.suptitle(
-        "Finance control evidence: exposure is quantified and exceptions are actionable",
-        x=0.04,
-        y=1.03,
-        ha="left",
-        fontsize=18,
-        fontweight="bold",
-    )
-    fig.text(
-        0.04, -0.01, "Synthetic portfolio dataset. Source: tested dbt finance marts.", color=SLATE
-    )
+        axis.spines[["top", "right"]].set_visible(False)
     fig.tight_layout()
-    fig.savefig(OUTPUT / "finance_controls.png", dpi=180, bbox_inches="tight")
-    plt.close(fig)
-
-
-def model_story() -> None:
-    metrics = json.loads((ARTIFACTS / "modeling" / "churn_metrics.json").read_text())
-    backtests = json.loads((ARTIFACTS / "forecast" / "forecast_backtest.json").read_text())
-    model_names = ["Logistic baseline", "Gradient boosting"]
-    model_keys = ["logistic_regression", "hist_gradient_boosting"]
-    metric_names = ["ROC-AUC", "PR-AUC", "Recall"]
-    metric_keys = ["roc_auc", "pr_auc", "recall"]
-    values = np.array([[metrics[model][metric] for metric in metric_keys] for model in model_keys])
-
-    fig, axes = plt.subplots(1, 2, figsize=(14, 5.5))
-    ax = axes[0]
-    x = np.arange(len(metric_names))
-    width = 0.34
-    for index, (name, color) in enumerate(zip(model_names, [BLUE, TEAL], strict=False)):
-        bars = ax.bar(x + (index - 0.5) * width, values[index], width, label=name, color=color)
-        ax.bar_label(
-            bars, labels=[f"{value:.3f}" for value in values[index]], padding=4, fontsize=9
-        )
-    ax.set_xticks(x, metric_names)
-    ax.set_ylim(0, 1.12)
-    ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-    ax.set_title("Transparent baseline remains competitive", loc="left")
-    ax.legend(frameon=False, loc="lower left")
-    ax.grid(axis="y", color=LIGHT, linewidth=0.8)
-    ax.grid(axis="x", visible=False)
-
-    selected = {}
-    for metric, rows in backtests.items():
-        best = min(rows, key=lambda row: row["mae"])
-        selected[metric] = best
-    labels = ["MRR", "Churned MRR", "Cash"]
-    mapes = [selected[key]["mape"] for key in ["mrr", "churned_mrr", "cash_collected"]]
-    methods = [
-        selected[key]["method"].replace("_", " ").title()
-        for key in ["mrr", "churned_mrr", "cash_collected"]
-    ]
-    ax = axes[1]
-    bars = ax.bar(labels, mapes, color=[BLUE, RED, TEAL], width=0.62)
-    for bar, mape, method in zip(bars, mapes, methods, strict=False):
-        if mape > 0.25:
-            label_y = mape - 0.07
-            vertical_alignment = "top"
-            label_color = "white"
-        else:
-            label_y = mape + 0.08
-            vertical_alignment = "bottom"
-            label_color = NAVY
-        ax.text(
-            bar.get_x() + bar.get_width() / 2,
-            label_y,
-            f"{mape:.1%}\n{method}",
-            ha="center",
-            va=vertical_alignment,
-            fontweight="bold",
-            fontsize=9,
-            color=label_color,
-        )
-    ax.set_title("Rolling backtests expose the hard-to-forecast metric", loc="left")
-    ax.set_ylabel("Selected method MAPE")
-    ax.yaxis.set_major_formatter(PercentFormatter(1.0))
-    ax.grid(axis="y", color=LIGHT, linewidth=0.8)
-    ax.grid(axis="x", visible=False)
-
-    for axis in axes:
-        axis.spines[["top", "right", "left"]].set_visible(False)
-    fig.suptitle(
-        "Predictive proof: time-aware churn validation and rolling forecast backtests",
-        x=0.04,
-        y=1.03,
-        ha="left",
-        fontsize=18,
-        fontweight="bold",
-    )
-    fig.text(
-        0.04,
-        -0.01,
-        "Synthetic signals make churn unusually separable. Metrics are evidence of pipeline behavior, not production impact.",
-        color=SLATE,
-    )
-    fig.tight_layout()
-    fig.savefig(OUTPUT / "model_validation.png", dpi=180, bbox_inches="tight")
+    fig.savefig(OUTPUT / "finance_controls.png", dpi=160, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -270,7 +224,7 @@ def main() -> None:
     revenue_story()
     finance_story()
     model_story()
-    print(f"Generated README visuals in {OUTPUT}")
+    print(f"Wrote charts to {OUTPUT}")
 
 
 if __name__ == "__main__":

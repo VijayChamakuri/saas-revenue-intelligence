@@ -8,6 +8,8 @@ Starting commit: `69af662c793219c0e70295ae8aae532e84977f4e` (main, 2026-09-19). 
 |---|---|
 | `make pipeline` (baseline, before changes) | dbt 111 of 111, dashboard 128 of 128, 47 tests passed |
 | `make pipeline` (after changes) | dbt 114 of 114 (34 models, 80 tests); metric contract 361 of 361 metric-months tie to the marts and stay in bounds; dashboard 128 of 128; audit passed; 68 tests passed; Ruff and mypy clean |
+
+The 68-test count is that day's suite. Business-analysis tests landed in a later commit. The suite is now 103 tests. dbt is unchanged: 37 model files, 3 of them ephemeral, and 114 resources (34 models and 80 tests).
 | Formula engine on `excel/finance_reconciliation.xlsx` | 854 formulas, 0 errors, all checks pass |
 | `reports/finance_control_summary.pdf` | 1 page, readable, no clipping (rendered and inspected) |
 | Tableau tie-out (`tableau/validation_evidence.csv`) | 288 of 288 KPI values in the packaged Hyper extract match |

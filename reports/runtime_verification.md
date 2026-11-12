@@ -5,7 +5,7 @@ All results below were measured locally on 2026-08-31 against deterministic synt
 | Component | Verified result |
 |---|---|
 | Source contracts | 23 source tables passed schema, key, date, range, and relationship validation |
-| dbt | 36 models and 71 data tests; all 104 resources passed with no deprecation warnings |
+| dbt | 37 model files, 3 of them ephemeral; `dbt build` runs 114 resources (34 models and 80 data tests), all passing. Source freshness passes for 22 sources. |
 | Spark | PySpark 3.5.9 processed 600,000 events in 5.984 seconds using `local[*]` |
 | Parquet and Hive | 481,716 account-day rows, 36 year/month partitions, and 600,000 source events reconciled through the Hive-compatible DDL |
 | R survival | R analyzed 1,004 customer spells with 248 churn events; Cox concordance was 0.6246 |
